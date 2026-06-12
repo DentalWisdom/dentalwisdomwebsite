@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Wisdom Deals | Exclusive Offers for the Dental Wisdom Network</title>
+  <meta name="description" content="Curated deals from sponsors, vendors, and suppliers — exclusive pricing and promotions for the Dental Wisdom network of Jewish dentists.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dental Wisdom Deals">
+  <meta property="og:description" content="Curated deals from sponsors, vendors, and suppliers — exclusive pricing and promotions for the Dental Wisdom network.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/deals.html">
+  <!-- TODO: replace with a real 1200x630 social share image once available -->
+  <meta property="og:image" content="images/social-share.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/tooth-icon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <img class="site-logo__icon" src="images/tooth-icon.svg" alt="" width="32" height="32">
+        Dental Wisdom
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html" aria-current="page">Deals</a></li>
+          <li><a href="giving.html">Giving</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html" aria-current="page">Deals</a></li>
+        <li><a href="giving.html">Giving</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on Deals (sub-nav appears only on
+       index.html, agenda.html, speakers.html, faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Dental Wisdom Deals</h1>
+          <p>Curated Deals from Sponsors, Vendors &amp; Suppliers</p>
+        </div>
+        <div class="lede text-center" data-reveal>
+          <p>Welcome to Dental Wisdom Deals, your premier destination for exclusive dental industry savings. Here is some reference copy... Our thriving Dental Wisdom Network collaborates with trusted suppliers, vendors, and service providers to deliver competitive pricing and tailored promotions for dental professionals. These companies are proudly recommended by the Dental Wisdom Network, reflecting our commitment to fostering trusted partnerships for our community. Discover unbeatable deals with our carefully curated partners to elevate your practice while saving time and money.</p>
+
+          <p>At the Dental Wisdom Conference 2025, we discussed leveraging our network&rsquo;s collective strength to secure preferred pricing and drive business to vendors and suppliers we value. This led to the creation of an informal Group Purchasing Organization to maximize savings for our members., at no cost to the Dentists. We&rsquo;ve worked diligently to craft exclusive deals and compile a trusted vendor list, making it easy for all members to access reliable partners. Our growing list of vetted vendors offers exclusive benefits, fostering mutual growth for our network and these quality businesses.</p>
+
+          <p>Have a new company in mind or a trusted partner you recommend? Share it with us, and we&rsquo;ll reach out to secure exclusive promotional offers, delivering value for our entire Dental Wisdom community.</p>
+
+          <p>Check out Dental Wisdom Deals to explore our trusted vendor list, recommend new partners, and connect with reliable businesses to strengthen our dental community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SEARCH + CATEGORY FILTER ===================== -->
+    <section class="section section--ivory" id="deals-directory">
+      <div class="container">
+        <div class="deals-toolbar" data-reveal>
+          <div class="deals-search">
+            <label for="dealsSearch" class="visually-hidden">Search deals</label>
+            <svg class="deals-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="dealsSearch" placeholder="Search deals by name or keyword&hellip;" autocomplete="off">
+          </div>
+
+          <div class="deals-categories" id="dealsCategories" role="group" aria-label="Filter deals by category">
+            <!-- Category buttons populated by js/deals.js -->
+          </div>
+        </div>
+
+        <!-- ===================== DEALS GRID ===================== -->
+        <div class="card-grid card-grid--3 deals-grid" id="dealsGrid" aria-live="polite">
+          <p class="placeholder" role="status">Loading deals&hellip;</p>
+        </div>
+
+        <p class="placeholder" id="dealsNoResults" role="status" hidden>No deals match your search &mdash; try a different word or category.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Dental Wisdom</h2>
+          <p>High-quality cross-specialty dental CE in a relaxed, warm Jewish community environment. Learn, connect, rest, and recharge.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Conference</a></li>
+            <li><a href="live.html">Dental Wisdom Live</a></li>
+            <li><a href="deals.html">Deals</a></li>
+            <li><a href="giving.html">Giving</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul class="footer-links">
+            <li><a href="sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="lecture.html">Want to Lecture?</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="faq.html#accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Dental Wisdom. All rights reserved.</span>
+        <a href="faq.html#accessibility">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <span class="join-fab__tag">For Dentists Only</span>
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <span class="modal__tag">For Dentists Only</span>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>Connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <!-- TODO: replace with Join-the-Network Jotform once Ben creates and shares the form URL -->
+        <div class="modal__placeholder">Join form placeholder — Jotform URL to be added</div>
+        <!--
+          <iframe src="JOIN_JOTFORM_URL_HERE" title="Join the Dental Wisdom Network"></iframe>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Papa Parse (CSV parsing for Deals, per SITE_SPEC §6) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="js/sheets.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/deals.js"></script>
+</body>
+</html>

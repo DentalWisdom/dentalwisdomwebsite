@@ -293,7 +293,7 @@ Includes all the detailed content you provided + new drafted items:
 You will create and publish **three** Google Sheets as public CSV.
 
 **How to publish each sheet**: File → Share → Publish to web → choose the tab → CSV → Publish, then paste the URLs here:
-- DEALS_CSV_URL: `TBD`
+- DEALS_CSV_URL: `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=1635986973&single=true&output=csv`
 - LIVE_CSV_URL: `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=0&single=true&output=csv`
 - AGENDA_CSV_URL: `TBD`
 
@@ -302,15 +302,16 @@ Published CSVs are public to anyone with the link (fine — this is public site 
 ### Deals Sheet
 **Columns**:
 - Title
+- Category
 - Description (short)
 - Link (URL)
-- Category
-- ImageURL (optional)
+- Promo (optional — short text shown as a highlighted badge, e.g. "10% off")
+- ImageURL (optional — relative path to a logo in the repo, e.g. `images/deals/companyname.png`; leave blank if no logo yet)
 
 **Sample Row**:
-| Title              | Description                                      | Link                  | Category                  | ImageURL |
-|--------------------|--------------------------------------------------|-----------------------|---------------------------|----------|
-| ClearCorrect      | Exclusive conference pricing on aligner cases   | https://example.com  | Key Dental Solutions     | (optional) |
+| Title         | Category              | Description                                    | Link                  | Promo     | ImageURL                       |
+|----------------|------------------------|-------------------------------------------------|-----------------------|-----------|----------------------------------|
+| ClearCorrect  | Key Dental Solutions  | Exclusive conference pricing on aligner cases  | https://example.com  | 10% off  | images/deals/clearcorrect.png  |
 
 ### Live CE Sheet
 **Columns**:
