@@ -1,6 +1,6 @@
 # Terms & Conditions (`terms.html`)
 
-These Terms of Service ("Terms") govern your registration for and participation in the Dental Wisdom Conference ("Conference") scheduled for March 3-6, 2026, at The Altair Bay Harbor Hotel, 9540 West Bay Harbor Drive, Bay Harbor Islands, FL 33154, organized by Dental Wisdom LLC, a Colorado LLC. ("Organizers"). By registering or attending (as attendee, guest, vendor, exhibitor, sponsor, or advertiser), you agree to these binding Terms.
+These Terms of Service ("Terms") govern your registration for and participation in the Dental Wisdom Conference ("Conference") scheduled for March 3-6, 2027, at The Altair Bay Harbor Hotel, 9540 West Bay Harbor Drive, Bay Harbor Islands, FL 33154, organized by Dental Wisdom LLC, a Colorado LLC. ("Organizers"). By registering or attending (as attendee, guest, vendor, exhibitor, sponsor, or advertiser), you agree to these binding Terms.
 
 ## Registration and Fees
 All registration fees for the Conference are non-refundable except for documented medical emergencies (doctor's note required; subject to Organizers' reasonable approval). Payments are final upon submission. A valid email address is required for registration and all communications. Registration is confirmed only upon receipt of payment and email confirmation from Organizers. Registrations are non-transferable; no substitutions or name changes are permitted.
