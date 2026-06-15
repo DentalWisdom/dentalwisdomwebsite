@@ -20,7 +20,9 @@
 |-----------------------|-------------------|-------------------------------------------------------|-------------------|-------------|
 | Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | **1st**     |
 | Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Google Sheet      | 2nd         |
+| Want to Get Involved? (Live) | `live-present-sponsor.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | Built (with Live, 2nd) |
 | Deals                 | `deals.html`      | Searchable + filterable partner offers               | Google Sheet      | 3rd         |
+| Become a Deals Partner | `deals-partner.html` | Companion to Deals — why it was built + how companies can become a partner | Static | Planned — added 2026-06-15 |
 | Giving (MDA)          | `giving.html`     | Tzedaka / Ambulance fundraiser                       | Static            | 4th         |
 | Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | 5th         |
 | Conference Terms & Conditions | `conference-terms.html` | Conference-specific legal page (Attendees/Exhibitors) | Static     | 5th (with Terms) |
@@ -327,6 +329,14 @@ Page for companies/organizations interested in sponsoring, presenting giveaways,
 **How to Get Started**
 - *How do we inquire about getting involved with Dental Wisdom Live?* Please email us at Info@DentalWisdom.org with the subject line "Dental Wisdom Live Partnership Inquiry." In your message, please include: a brief overview of your company and what you offer; the type of involvement you're most interested in (session sponsorship, giveaways, speaker recommendation, etc.); any specific sessions or timing preferences you have in mind. We review all inquiries thoughtfully and will respond within a few business days.
 - *Is there a formal application or prospectus?* We currently handle Dental Wisdom Live partnerships on a more personalized basis rather than through a public prospectus. This allows us to ensure every partnership feels like a natural fit for our community.
+
+---
+
+**Become a Deals Partner (`deals-partner.html`)**
+
+Companion page to Dental Wisdom Deals (added to the build plan 2026-06-15, built same day with copy provided by Ben). Explains why Dental Wisdom Deals was created and gives companies/vendors details on how to become a featured partner. Same header, footer, mobile menu, and Join modal as every other page; sections: Why Dental Wisdom Deals Exists, How It Works, For Dentists, For Companies & Sponsors, closing CTA.
+
+**Footer**: The page's own footer links to itself as "Become a Deals Partner" alongside "Browse Deals" under "Dental Wisdom Deals". <!-- TODO: add the "Become a Deals Partner" link to the "Dental Wisdom Deals" footer section on the other 13 pages — Ben is deferring this to the footer reconciliation pass (see footer redesign notes). -->
 
 ---
 
