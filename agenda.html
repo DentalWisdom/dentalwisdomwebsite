@@ -87,9 +87,24 @@
           <p>The full Dental Wisdom Conference 2027 schedule</p>
         </div>
         <div class="lede text-center" data-reveal>
-          <!-- TODO: build tabbed day-by-day agenda powered by js/agenda-data.js per SITE_SPEC §5–6.
-               Placeholder schedule (same for all three days) for v1, with tabs for each day. -->
-          <p class="placeholder" role="status">Full agenda coming soon — check back for the day-by-day schedule.</p>
+          <p>Browse a sample day-by-day schedule below to get a feel for the conference flow. The confirmed 2027 lineup of speakers and sessions will be posted here as it&rsquo;s finalized.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory" id="agenda-schedule">
+      <div class="container">
+        <!-- TODO: this is a SAMPLE schedule (same for all three days), powered by
+             js/agenda-data.js per SITE_SPEC §6. Replace with the confirmed 2027
+             day-by-day lineup once available. -->
+        <p class="agenda-note" role="status" data-reveal>Sample schedule shown for each day — the confirmed 2027 lineup will be added here.</p>
+
+        <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Conference day" data-reveal>
+          <!-- Tab buttons populated by js/agenda.js -->
+        </div>
+
+        <div id="agendaPanels" data-reveal>
+          <!-- Tab panels populated by js/agenda.js -->
         </div>
       </div>
     </section>
@@ -165,5 +180,7 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/agenda-data.js"></script>
+  <script src="js/agenda.js"></script>
 </body>
 </html>
