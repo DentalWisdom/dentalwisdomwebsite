@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dental Wisdom Deals | Exclusive Offers for the Dental Wisdom Network</title>
-  <meta name="description" content="Curated deals from sponsors, vendors, and suppliers — exclusive pricing and promotions for the Dental Wisdom network of Jewish dentists.">
+  <title>Speakers | Dental Wisdom Conference 2027</title>
+  <meta name="description" content="Meet the speakers presenting at the Dental Wisdom Conference 2027 — coming soon.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Dental Wisdom Deals">
-  <meta property="og:description" content="Curated deals from sponsors, vendors, and suppliers — exclusive pricing and promotions for the Dental Wisdom network.">
+  <meta property="og:title" content="Speakers | Dental Wisdom Conference 2027">
+  <meta property="og:description" content="Meet the speakers presenting at the Dental Wisdom Conference 2027 — coming soon.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dentalwisdom.org/deals.html">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-speakers.html">
   <!-- TODO: replace with a real 1200x630 social share image once available -->
   <meta property="og:image" content="images/social-share.jpg">
 
@@ -31,15 +31,15 @@
   <header class="site-header">
     <div class="container site-header__bar">
       <a class="site-logo" href="index.html">
-        <span class="site-logo__section">Deals</span>
+        <span class="site-logo__section">Conference</span>
         <img class="site-logo__mark" src="images/dental-wisdom-logo.svg" alt="Dental Wisdom" width="100" height="31">
       </a>
 
       <nav class="site-nav" aria-label="Primary">
         <ul class="site-nav__list">
-          <li><a href="index.html">Conference</a></li>
+          <li><a href="index.html" aria-current="page">Conference</a></li>
           <li><a href="live.html">Live</a></li>
-          <li><a href="deals.html" aria-current="page">Deals</a></li>
+          <li><a href="deals.html">Deals</a></li>
         </ul>
       </nav>
 
@@ -58,63 +58,38 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav aria-label="Mobile">
       <ul class="mobile-menu__list">
-        <li><a href="index.html">Conference</a></li>
+        <li><a href="index.html" aria-current="page">Conference</a></li>
         <li><a href="live.html">Live</a></li>
-        <li><a href="deals.html" aria-current="page">Deals</a></li>
+        <li><a href="deals.html">Deals</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- No conference sub-navigation on Deals (sub-nav appears only on
-       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="index.html#overview">Overview</a>
+      <a href="conference-agenda.html">Agenda</a>
+      <a href="conference-speakers.html" aria-current="page">Speakers</a>
+      <a href="conference-faq.html">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
 
   <main id="main">
 
-    <!-- ===================== HERO / INTRO ===================== -->
     <section class="section section--sand texture">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <h1>Dental Wisdom Deals</h1>
-          <p>Curated Deals from Sponsors, Vendors &amp; Suppliers</p>
+          <h1>Speakers</h1>
+          <p>Meet the people teaching at the Dental Wisdom Conference 2027</p>
         </div>
         <div class="lede text-center" data-reveal>
-          <p>Welcome to Dental Wisdom Deals, your premier destination for exclusive dental industry savings. Here is some reference copy... Our thriving Dental Wisdom Network collaborates with trusted suppliers, vendors, and service providers to deliver competitive pricing and tailored promotions for dental professionals. These companies are proudly recommended by the Dental Wisdom Network, reflecting our commitment to fostering trusted partnerships for our community. Discover unbeatable deals with our carefully curated partners to elevate your practice while saving time and money.</p>
-
-          <p>At the Dental Wisdom Conference 2025, we discussed leveraging our network&rsquo;s collective strength to secure preferred pricing and drive business to vendors and suppliers we value. This led to the creation of an informal Group Purchasing Organization to maximize savings for our members., at no cost to the Dentists. We&rsquo;ve worked diligently to craft exclusive deals and compile a trusted vendor list, making it easy for all members to access reliable partners. Our growing list of vetted vendors offers exclusive benefits, fostering mutual growth for our network and these quality businesses.</p>
-
-          <p>Have a new company in mind or a trusted partner you recommend? Share it with us, and we&rsquo;ll reach out to secure exclusive promotional offers, delivering value for our entire Dental Wisdom community.</p>
-
-          <p>Check out Dental Wisdom Deals to explore our trusted vendor list, recommend new partners, and connect with reliable businesses to strengthen our dental community.</p>
+          <!-- TODO: build grid of 16 static hand-edited speaker cards (name, specialty, short bio,
+               sample course + time), each opening a modal, per SITE_SPEC §5. Clearly mark as
+               placeholders until real speakers are confirmed. -->
+          <p class="placeholder" role="status">Speaker profiles coming soon — check back for names, specialties, and session previews.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ===================== SEARCH + CATEGORY FILTER ===================== -->
-    <section class="section section--ivory" id="deals-directory">
-      <div class="container">
-        <div class="deals-toolbar" data-reveal>
-          <div class="deals-search">
-            <label for="dealsSearch" class="visually-hidden">Search deals</label>
-            <svg class="deals-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="search" id="dealsSearch" placeholder="Search deals by name or keyword&hellip;" autocomplete="off">
-          </div>
-
-          <div class="deals-categories" id="dealsCategories" role="group" aria-label="Filter deals by category">
-            <!-- Category buttons populated by js/deals.js -->
-          </div>
-
-          <p class="deals-suggest">Know a great vendor for the network? <a class="btn btn-secondary" href="mailto:Info@DentalWisdom.org?subject=Vendor%20Suggestion%20for%20Dental%20Wisdom%20Deals">Suggest a Vendor</a></p>
-        </div>
-
-        <!-- ===================== DEALS GRID ===================== -->
-        <div class="deals-grid" id="dealsGrid" aria-live="polite">
-          <p class="placeholder" role="status">Loading deals&hellip;</p>
-        </div>
-
-        <p class="placeholder" id="dealsNoResults" role="status" hidden>No deals match your search &mdash; try a different word or category.</p>
       </div>
     </section>
 
@@ -134,7 +109,7 @@
           <ul class="footer-links">
             <li><a href="index.html">Overview</a></li>
             <li><a href="conference-agenda.html">Agenda</a></li>
-            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-speakers.html" aria-current="page">Speakers</a></li>
             <li><a href="conference-faq.html">FAQs</a></li>
             <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
             <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
@@ -152,7 +127,7 @@
           <div class="footer-subgroup">
             <h4>Dental Wisdom Deals</h4>
             <ul class="footer-links">
-              <li><a href="deals.html" aria-current="page">Browse Deals</a></li>
+              <li><a href="deals.html">Browse Deals</a></li>
             </ul>
           </div>
           <div class="footer-subgroup">
@@ -196,12 +171,9 @@
           <iframe src="JOIN_JOTFORM_URL_HERE" title="Join the Dental Wisdom Network"></iframe>
         -->
       </div>
-      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
     </div>
   </div>
 
   <script src="js/main.js"></script>
-  <script src="js/deals-data.js"></script>
-  <script src="js/deals.js"></script>
 </body>
 </html>

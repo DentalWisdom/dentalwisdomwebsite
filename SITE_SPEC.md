@@ -20,17 +20,17 @@
 |-----------------------|-------------------|-------------------------------------------------------|-------------------|-------------|
 | Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | **1st**     |
 | Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Google Sheet      | 2nd         |
-| Want to Get Involved? (Live) | `live-present-sponsor.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | Built (with Live, 2nd) |
+| Want to Get Involved? (Live) | `live-get-involved.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | Built (with Live, 2nd) |
 | Deals                 | `deals.html`      | Searchable + filterable partner offers               | Google Sheet      | 3rd         |
 | Become a Deals Partner | `deals-partner.html` | Companion to Deals — why it was built + how companies can become a partner | Static | Planned — added 2026-06-15 |
 | Giving (MDA)          | `giving.html`     | Tzedaka / Ambulance fundraiser                       | Static            | 4th         |
 | Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | 5th         |
 | Conference Terms & Conditions | `conference-terms.html` | Conference-specific legal page (Attendees/Exhibitors) | Static     | 5th (with Terms) |
 | Privacy Policy        | `privacy.html`    | Privacy page (text in §9)                            | Static            | 5th (with Terms) |
-| Agenda                | `agenda.html`     | Full detailed schedule                               | Google Sheet      | 6th         |
-| Speakers              | `speakers.html`   | View all speaker profiles + bios                     | Static            | 7th         |
+| Agenda                | `conference-agenda.html` | Full detailed schedule                         | Google Sheet      | 6th         |
+| Speakers              | `conference-speakers.html` | View all speaker profiles + bios             | Static            | 7th         |
 | Speaker FAQ           | `speaker-faq.html`| FAQ + application for people who want to lecture     | Static            | 8th (TBD)   |
-| Sponsors              | `sponsors.html`   | View all confirmed sponsors (~10-20 logos/list)      | Static            | 9th (TBD)   |
+| Sponsors              | `conference-sponsors.html` | View all confirmed sponsors (~10-20 logos/list) | Static          | 9th — Built (placeholder) |
 | Sponsor FAQ           | `sponsor-faq.html`| FAQ + inquiry for businesses who want to sponsor     | Static            | 10th (TBD)  |
 | Join WhatsApp Group   | `whatsapp.html`   | Simple page with info/link to join the WhatsApp group | Static           | 11th (TBD)  |
 | FAQ                   | `conference-faq.html` | Conference FAQ (includes Accessibility)          | Static            | 12th        |
@@ -44,7 +44,7 @@
 - **Programs** — Dental Wisdom Live, Deals, Giving, Join WhatsApp Group
 - **Site** — Terms & Conditions, Privacy Policy, Accessibility
 
-**Conference Sub-Navigation** (conference pages only — `index.html`, `agenda.html`, `speakers.html`, `conference-faq.html`):
+**Conference Sub-Navigation** (conference pages only — `index.html`, `conference-agenda.html`, `conference-speakers.html`, `conference-faq.html`):
 A slim secondary bar under the main header: Overview • Agenda • Speakers • FAQ • **Register** (accent button). It appears only within the conference section, so Live, Deals, and Giving stay uncluttered.
 
 ---
@@ -142,8 +142,8 @@ Last year’s Dental Wisdom Conference brought together Jewish dentists and thei
 
 ### Conference Details Section
 Use the full detailed content from your PDF (broken into clean, readable sections). Include links to:
-- “View Full Agenda” → `/agenda.html`
-- “View Featured Speakers” → `/speakers.html`
+- “View Full Agenda” → `/conference-agenda.html`
+- “View Featured Speakers” → `/conference-speakers.html`
 
 ### What You Will Experience
 **Exact Text** (from your PDF):
@@ -177,8 +177,8 @@ The Dental Wisdom Conference is managed and organized by Dental Wisdom.
 
 ## 5. Dedicated Pages – Summary
 
-**Sponsors (`sponsors.html`)**  
-View-only page for attendees: showcase/list of confirmed sponsors (~10-20), logos + names. <!-- TODO: layout (grid vs. tiers), copy, and link from index.html Sponsors section still to be worked out -->
+**Sponsors (`conference-sponsors.html`)**  
+View-only page for attendees: showcase/list of confirmed sponsors (~10-20), logos + names. Built as a placeholder logo grid for now. <!-- TODO: real sponsor logos/names, tier layout, and link from index.html Sponsors section still to be worked out -->
 
 **Sponsor FAQ (`sponsor-faq.html`)**  
 Use the full sponsorship Q&A content you provided. Format with clean accordions for premium readability. <!-- TODO: CTA wording and footer link placement still to be worked out -->
@@ -190,10 +190,10 @@ Use the full lecturing Q&A content you provided. Format with clean accordions.
 **Join WhatsApp Group (`whatsapp.html`)**  
 <!-- TODO: page content, copy, and WhatsApp invite link not yet provided. Simple page explaining the group + a join link/button. -->
 
-**Agenda (`agenda.html`)**  
+**Agenda (`conference-agenda.html`)**  
 Tabbed by day. Placeholder schedule (same for all three days for v1). Powered by Google Sheet.
 
-**Speakers (`speakers.html`)**  
+**Speakers (`conference-speakers.html`)**  
 Grid of 16 placeholder speaker cards. Each includes: Name, Specialty, Short Bio, Sample Course Title + Time. Click opens modal. Clearly marked as placeholders. Easy to update later.
 
 **Dental Wisdom Live (`live.html`)**
@@ -296,9 +296,9 @@ Dental Wisdom Live is one of the many ways we support our community year-round �
 
 ---
 
-**Want to Get Involved? (`live-present-sponsor.html`)**
+**Want to Get Involved? (`live-get-involved.html`)**
 
-Page for companies/organizations interested in sponsoring, presenting giveaways, vendor spotlights, or speaking as part of Dental Wisdom Live. Linked from the Dental Wisdom Live footer column as "Want to Get Involved?" <!-- TODO: filename still says live-present-sponsor.html — reconcile with the "Want to Get Involved?" title/URL naming at some point. -->
+Page for companies/organizations interested in sponsoring, presenting giveaways, vendor spotlights, or speaking as part of Dental Wisdom Live. Linked from the Dental Wisdom Live footer column as "Want to Get Involved?"
 
 **Hero**: "Want to Get Involved?" / "Sponsorship, giveaways, and speaker opportunities with Dental Wisdom Live"
 
