@@ -292,6 +292,44 @@ Dental Wisdom Live is one of the many ways we support our community year-round �
 
 **Update Method**: Upcoming and Past sessions are powered by Google Sheet (see Google Sheets section below) so you can easily add, remove, or update sessions without touching code.
 
+---
+
+**Want to Get Involved? (`live-present-sponsor.html`)**
+
+Page for companies/organizations interested in sponsoring, presenting giveaways, vendor spotlights, or speaking as part of Dental Wisdom Live. Linked from the Dental Wisdom Live footer column as "Want to Get Involved?" <!-- TODO: filename still says live-present-sponsor.html — reconcile with the "Want to Get Involved?" title/URL naming at some point. -->
+
+**Hero**: "Want to Get Involved?" / "Sponsorship, giveaways, and speaker opportunities with Dental Wisdom Live"
+
+**Intro**: Dental Wisdom Live is our monthly online continuing education series, created exclusively for the Dental Wisdom network. We welcome aligned companies and organizations that genuinely want to support high-quality education and the growth of our community. Below are the most common ways companies can get involved.
+
+**Why Get Involved with Dental Wisdom Live?**
+- *What is the value of sponsoring or participating in Dental Wisdom Live?* Dental Wisdom Live reaches a highly engaged, targeted audience of Jewish dentists who are actively invested in their professional growth. Sessions are intentionally high-quality, practical, and community-oriented. Partnering with Dental Wisdom Live allows your brand to associate with trusted education while building authentic relationships within a close-knit professional network.
+
+**Sponsorship Opportunities**
+- *What sponsorship opportunities are available for Dental Wisdom Live?* We offer limited sponsorship opportunities for individual sessions as well as multi-session packages. These can include branding during the session, recognition in pre- and post-session communications, and other integrated touchpoints. Because we keep attendance and sponsorship intentionally limited, every partner receives meaningful visibility without overwhelming the educational experience.
+- *Can my company sponsor an entire Dental Wisdom Live session?* Yes. Companies may sponsor individual sessions or a series of sessions. Session sponsorship typically includes branding, a short introduction, and the opportunity to support the educational content.
+
+**Giveaways & Promotions**
+- *Can sponsors offer giveaways or door prizes during a session?* Yes. We welcome relevant, professional giveaways that add value for attendees (such as product samples, educational resources, or tools). All giveaways must be pre-approved by the organizers to ensure they align with the educational and community-focused nature of the program.
+- *Are there guidelines for giveaways?* Giveaways should be thoughtful and relevant to dental professionals. We generally avoid overly promotional or low-value items. Organizers reserve the right to approve or decline proposed giveaways.
+
+**Vendor Spotlights**
+- *Can we have a short vendor spotlight or introduction during a session?* Yes. Depending on the sponsorship level, we can include a brief (approximately 30–60 second) vendor spotlight or introduction at the beginning or end of a session. These spotlights are meant to be informative rather than sales-focused and must be pre-approved.
+- *What is the difference between a vendor spotlight and a full presentation?* A vendor spotlight is a short, approved introduction or mention. A full presentation or sponsored educational segment would be considered a different level of involvement and is handled on a case-by-case basis to protect the educational integrity of the program.
+
+**Speaker & Content Opportunities**
+- *Can we recommend or select a speaker for a Dental Wisdom Live session?* Yes. We welcome thoughtful recommendations for speakers and topics, especially when they are paired with sponsorship support. All speakers and topics are ultimately selected by the Dental Wisdom team to ensure they meet our standards for quality, relevance, and alignment with our community values.
+- *Can a sponsor deliver or co-present educational content?* In select cases, yes — particularly when the content is genuinely educational and not primarily promotional. These opportunities are evaluated individually to maintain the high educational standard our members expect.
+
+**Other Ways to Get Involved**
+- *Are there other ways for companies to support Dental Wisdom Live?* Yes. Other opportunities include: providing relevant resources or tools for attendees; supporting giveaways or prizes across multiple sessions; exploring multi-month or annual partnership packages. We are happy to discuss custom opportunities that align with both your goals and the values of the Dental Wisdom community.
+
+**How to Get Started**
+- *How do we inquire about getting involved with Dental Wisdom Live?* Please email us at Info@DentalWisdom.org with the subject line "Dental Wisdom Live Partnership Inquiry." In your message, please include: a brief overview of your company and what you offer; the type of involvement you're most interested in (session sponsorship, giveaways, speaker recommendation, etc.); any specific sessions or timing preferences you have in mind. We review all inquiries thoughtfully and will respond within a few business days.
+- *Is there a formal application or prospectus?* We currently handle Dental Wisdom Live partnerships on a more personalized basis rather than through a public prospectus. This allows us to ensure every partnership feels like a natural fit for our community.
+
+---
+
 **FAQ (`conference-faq.html`)**  
 Includes all the detailed content you provided + new drafted items:
 - What happens after I register? (confirmed text)

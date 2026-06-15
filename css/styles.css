@@ -889,7 +889,7 @@ body.menu-open {
 
 @media (min-width: 1280px) {
   .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
 
@@ -912,6 +912,23 @@ body.menu-open {
 .footer-links a {
   text-decoration: none;
   font-size: 0.95rem;
+}
+
+.footer-subgroup {
+  margin-top: var(--space-md);
+}
+
+.footer-subgroup:first-of-type {
+  margin-top: var(--space-sm);
+}
+
+.footer-grid h4 {
+  color: var(--color-ivory);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  margin: 0 0 0.5rem;
 }
 
 .footer-bottom {
