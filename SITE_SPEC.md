@@ -22,7 +22,8 @@
 | Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Google Sheet      | 2nd         |
 | Deals                 | `deals.html`      | Searchable + filterable partner offers               | Google Sheet      | 3rd         |
 | Giving (MDA)          | `giving.html`     | Tzedaka / Ambulance fundraiser                       | Static            | 4th         |
-| Terms & Conditions    | `terms.html`      | Legal page                                           | Static            | 5th         |
+| Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | 5th         |
+| Conference Terms & Conditions | `conference-terms.html` | Conference-specific legal page (Attendees/Exhibitors) | Static     | 5th (with Terms) |
 | Privacy Policy        | `privacy.html`    | Privacy page (text in §9)                            | Static            | 5th (with Terms) |
 | Agenda                | `agenda.html`     | Full detailed schedule                               | Google Sheet      | 6th         |
 | Speakers              | `speakers.html`   | View all speaker profiles + bios                     | Static            | 7th         |
