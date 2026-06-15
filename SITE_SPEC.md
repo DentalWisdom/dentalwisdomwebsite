@@ -448,7 +448,7 @@ To make any of these requests, email us at info@dentalwisdom.org. We'll respond 
 The Site may link to third-party websites (such as sponsor or partner sites). We are not responsible for the privacy practices of those sites and encourage you to review their policies.
 
 **Changes to This Policy**
-We may update this Privacy Policy from time to time. We'll post the revised policy on this page with an updated effective date, and we'll let registered attendees know about any material changes.
+We may update this Privacy Policy from time to time. We'll post the revised policy on this page with an updated effective date, and where a change is significant, we'll do our best to let you know — for example, with a notice on the Site or an email to those who've registered for one of our programs.
 
 **Contact Us**
 If you have questions about this Privacy Policy or how we handle your information, email us at info@dentalwisdom.org.
