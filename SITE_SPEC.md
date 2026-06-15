@@ -12,27 +12,33 @@
 
 ## 1. Site Architecture (Final)
 
-**11 content pages (plus a custom 404)**
+**13 content pages (plus a custom 404)**
 
-| Page                  | File            | Purpose                                      | Update Method     | Build Order |
-|-----------------------|-----------------|----------------------------------------------|-------------------|-------------|
-| Main Conference       | `index.html`    | Core 2027 sales + experience page            | Static HTML       | **1st**     |
-| Dental Wisdom Live    | `live.html`     | Monthly online CE + calendar                 | Google Sheet      | 2nd         |
-| Deals                 | `deals.html`    | Searchable + filterable partner offers       | Google Sheet      | 3rd         |
-| Giving (MDA)          | `giving.html`   | Tzedaka / Ambulance fundraiser               | Static            | 4th         |
-| Terms & Conditions    | `terms.html`    | Legal page                                   | Static            | 5th         |
-| Privacy Policy        | `privacy.html`  | Privacy page (text in §9)                    | Static            | 5th (with Terms) |
-| Agenda                | `agenda.html`   | Full detailed schedule                       | Google Sheet      | 6th         |
-| Speakers              | `speakers.html` | Speaker profiles + bios                      | Static            | 7th         |
-| Want to Sponsor       | `sponsor.html`  | Full sponsorship Q&A + inquiry               | Static            | 8th         |
-| Want to Lecture       | `lecture.html`  | Full lecturing Q&A + application             | Static            | 9th         |
-| FAQ                   | `faq.html`      | Conference FAQ (includes Accessibility)      | Static            | 10th        |
+<!-- TODO: Build order below for Speakers/Speaker FAQ/Sponsors/Sponsor FAQ/WhatsApp is provisional — finalize before we reach this part of the build. -->
+
+| Page                  | File              | Purpose                                              | Update Method     | Build Order |
+|-----------------------|-------------------|-------------------------------------------------------|-------------------|-------------|
+| Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | **1st**     |
+| Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Google Sheet      | 2nd         |
+| Deals                 | `deals.html`      | Searchable + filterable partner offers               | Google Sheet      | 3rd         |
+| Giving (MDA)          | `giving.html`     | Tzedaka / Ambulance fundraiser                       | Static            | 4th         |
+| Terms & Conditions    | `terms.html`      | Legal page                                           | Static            | 5th         |
+| Privacy Policy        | `privacy.html`    | Privacy page (text in §9)                            | Static            | 5th (with Terms) |
+| Agenda                | `agenda.html`     | Full detailed schedule                               | Google Sheet      | 6th         |
+| Speakers              | `speakers.html`   | View all speaker profiles + bios                     | Static            | 7th         |
+| Speaker FAQ           | `speaker-faq.html`| FAQ + application for people who want to lecture     | Static            | 8th (TBD)   |
+| Sponsors              | `sponsors.html`   | View all confirmed sponsors (~10-20 logos/list)      | Static            | 9th (TBD)   |
+| Sponsor FAQ           | `sponsor-faq.html`| FAQ + inquiry for businesses who want to sponsor     | Static            | 10th (TBD)  |
+| Join WhatsApp Group   | `whatsapp.html`   | Simple page with info/link to join the WhatsApp group | Static           | 11th (TBD)  |
+| FAQ                   | `faq.html`        | Conference FAQ (includes Accessibility)              | Static            | 12th        |
 
 **Top Navigation** (on every page):  
 **Conference** | **Live** | **Deals** | **Giving**
 
 **Footer Links** (on every page):  
 Want to Sponsor? • Want to Lecture? • Terms & Conditions • Privacy Policy • FAQs • Accessibility
+
+<!-- TODO: Footer links need rework now that Sponsors/Speakers each split into a "view" page and an "FAQ" page, and a WhatsApp page was added. Decide final wording + which pages the footer links to before we build the footer. -->
 
 **Conference Sub-Navigation** (conference pages only — `index.html`, `agenda.html`, `speakers.html`, `faq.html`):
 A slim secondary bar under the main header: Overview • Agenda • Speakers • FAQ • **Register** (accent button). It appears only within the conference section, so Live, Deals, and Giving stay uncluttered.
@@ -167,12 +173,18 @@ The Dental Wisdom Conference is managed and organized by Dental Wisdom.
 
 ## 5. Dedicated Pages – Summary
 
-**Want to Sponsor (`sponsor.html`)**  
-Use the full Q&A content you provided. Format with clean accordions for premium readability.
+**Sponsors (`sponsors.html`)**  
+View-only page for attendees: showcase/list of confirmed sponsors (~10-20), logos + names. <!-- TODO: layout (grid vs. tiers), copy, and link from index.html Sponsors section still to be worked out -->
 
-**Want to Lecture (`lecture.html`)**  
-Use the full Q&A content you provided. Format with clean accordions.  
+**Sponsor FAQ (`sponsor-faq.html`)**  
+Use the full sponsorship Q&A content you provided. Format with clean accordions for premium readability. <!-- TODO: CTA wording and footer link placement still to be worked out -->
+
+**Speaker FAQ (`speaker-faq.html`)**  
+Use the full lecturing Q&A content you provided. Format with clean accordions.  
 **CTA Text**: “Apply to Speak”
+
+**Join WhatsApp Group (`whatsapp.html`)**  
+<!-- TODO: page content, copy, and WhatsApp invite link not yet provided. Simple page explaining the group + a join link/button. -->
 
 **Agenda (`agenda.html`)**  
 Tabbed by day. Placeholder schedule (same for all three days for v1). Powered by Google Sheet.
