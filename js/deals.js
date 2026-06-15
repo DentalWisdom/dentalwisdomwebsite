@@ -109,57 +109,78 @@ document.addEventListener('DOMContentLoaded', function () {
     if (noResultsEl) noResultsEl.hidden = true;
     gridEl.hidden = false;
 
-    gridEl.innerHTML = deals.map(function (deal) {
-      var html = '<div class="card deal-card">';
-
-      var imageInner = '';
-      if (deal.imageUrl) {
-        imageInner = '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
-          escapeAttr(deal.title + ' logo') + '" loading="lazy" ' +
-          'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
-          '<div class="placeholder" style="display:none;">Image coming soon</div>';
-      } else {
-        imageInner = '<div class="placeholder">Image coming soon</div>';
+    // Group the deals by category so each category gets its own
+    // heading followed by a grid of its cards.
+    var groupOrder = [];
+    var groups = {};
+    deals.forEach(function (deal) {
+      var key = deal.category || '';
+      if (!groups[key]) {
+        groups[key] = [];
+        groupOrder.push(key);
       }
+      groups[key].push(deal);
+    });
 
-      html += '<div class="deal-card__image-wrap">';
-      if (deal.link) {
-        html += '<a href="' + escapeAttr(deal.link) + '" target="_blank" rel="noopener" aria-label="' +
-          escapeAttr('Visit ' + deal.title + ' website') + '">' + imageInner + '</a>';
-      } else {
-        html += imageInner;
-      }
-      html += '</div>';
+    groupOrder.sort(function (a, b) {
+      if (!a) return 1;
+      if (!b) return -1;
+      return a.localeCompare(b);
+    });
 
-      var tags = '';
-      if (deal.category) {
-        tags += '<span class="deal-card__category">' + escapeHtml(deal.category) + '</span>';
-      }
-      if (deal.promo) {
-        tags += '<span class="badge--promo">' + escapeHtml(deal.promo) + '</span>';
-      }
-      if (tags) {
-        html += '<div class="deal-card__tags">' + tags + '</div>';
-      }
-
-      html += '<h3>' + escapeHtml(deal.title) + '</h3>';
-
-      if (deal.shortDescription) {
-        html += '<p class="deal-card__tagline">' + escapeHtml(deal.shortDescription) + '</p>';
-      }
-
-      if (deal.description) {
-        html += '<p>' + escapeHtml(deal.description) + '</p>';
-      }
-
-      if (deal.link) {
-        html += '<a class="btn btn-secondary" href="' + escapeAttr(deal.link) +
-          '" target="_blank" rel="noopener">View Deal</a>';
-      }
-
-      html += '</div>';
-      return html;
+    gridEl.innerHTML = groupOrder.map(function (category) {
+      var cardsHtml = groups[category].map(renderDealCard).join('');
+      var headingHtml = category ?
+        '<h2 class="deals-group__heading">' + escapeHtml(category) + '</h2>' : '';
+      return '<div class="deals-group">' + headingHtml +
+        '<div class="card-grid card-grid--3">' + cardsHtml + '</div></div>';
     }).join('');
+  }
+
+  function renderDealCard(deal) {
+    var html = '<div class="card deal-card">';
+
+    var imageInner = '';
+    if (deal.imageUrl) {
+      imageInner = '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
+        escapeAttr(deal.title + ' logo') + '" loading="lazy" ' +
+        'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
+        '<div class="placeholder" style="display:none;">Image coming soon</div>';
+    } else {
+      imageInner = '<div class="placeholder">Image coming soon</div>';
+    }
+
+    html += '<div class="deal-card__image-wrap">';
+    if (deal.link) {
+      html += '<a href="' + escapeAttr(deal.link) + '" target="_blank" rel="noopener" aria-label="' +
+        escapeAttr('Visit ' + deal.title + ' website') + '">' + imageInner + '</a>';
+    } else {
+      html += imageInner;
+    }
+    html += '</div>';
+
+    if (deal.promo) {
+      html += '<div class="deal-card__tags"><span class="badge--promo">' +
+        escapeHtml(deal.promo) + '</span></div>';
+    }
+
+    html += '<h3>' + escapeHtml(deal.title) + '</h3>';
+
+    if (deal.shortDescription) {
+      html += '<p class="deal-card__tagline">' + escapeHtml(deal.shortDescription) + '</p>';
+    }
+
+    if (deal.description) {
+      html += '<p>' + escapeHtml(deal.description) + '</p>';
+    }
+
+    if (deal.link) {
+      html += '<a class="btn btn-secondary" href="' + escapeAttr(deal.link) +
+        '" target="_blank" rel="noopener">View Deal</a>';
+    }
+
+    html += '</div>';
+    return html;
   }
 
   function escapeHtml(str) {

@@ -1223,12 +1223,20 @@ body.menu-open {
   margin-bottom: var(--space-xs);
 }
 
-.deal-card__category {
-  font-weight: 600;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: var(--fs-small);
+.deals-group {
+  margin-bottom: var(--space-xl);
+}
+
+.deals-group:last-child {
+  margin-bottom: 0;
+}
+
+.deals-group__heading {
+  font-size: var(--fs-h3);
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
 .badge--promo {
