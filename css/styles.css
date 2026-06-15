@@ -317,25 +317,44 @@ ul {
   height: var(--header-height);
 }
 
+/* Logo box: section label on top ("Conference" / "Live" / "Deals"),
+   Dental Wisdom logo mark on the bottom. General (non-section) pages
+   use .site-logo--plain and show just the logo mark. */
 .site-logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--color-ink);
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  line-height: 1;
   text-decoration: none;
+  transition: border-color var(--transition-base);
 }
 
 .site-logo:hover {
+  border-color: var(--color-seaglass);
+}
+
+.site-logo--plain {
+  padding: 0.5rem 1rem;
+}
+
+.site-logo__section {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--color-seaglass);
 }
 
-.site-logo__icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
+.site-logo__mark {
+  display: block;
+  height: 22px;
+  width: auto;
 }
 
 /* Desktop nav */
