@@ -1293,6 +1293,7 @@ body.menu-open {
   height: 100%;
   object-fit: contain;
   background-color: var(--color-white);
+  transform: scale(1.15);
 }
 
 .deal-card__image-wrap a {
@@ -1314,11 +1315,10 @@ body.menu-open {
   margin: 0;
 }
 
-.deal-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-xs);
+/* Reserve space for two lines so company names of different
+   lengths still line up across a row of cards. */
+.deal-card h3 {
+  min-height: 2.4em;
 }
 
 .deals-group {
@@ -1337,14 +1337,12 @@ body.menu-open {
   margin-bottom: var(--space-md);
 }
 
-.badge--promo {
-  display: inline-block;
-  font-weight: 600;
+.deal-card .deal-card__promo {
+  font-weight: 700;
+  font-style: italic;
   font-size: var(--fs-small);
-  color: var(--color-ink);
-  background-color: var(--color-highlight);
-  border-radius: 999px;
-  padding: 0.15rem 0.7rem;
+  color: var(--color-seaglass);
+  margin-bottom: var(--space-sm);
 }
 
 .deal-card__tagline {

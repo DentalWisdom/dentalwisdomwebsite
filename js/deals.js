@@ -159,11 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '</div>';
 
-    if (deal.promo) {
-      html += '<div class="deal-card__tags"><span class="badge--promo">' +
-        escapeHtml(deal.promo) + '</span></div>';
-    }
-
     html += '<h3>' + escapeHtml(deal.title) + '</h3>';
 
     if (deal.shortDescription) {
@@ -172,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (deal.description) {
       html += '<p>' + escapeHtml(deal.description) + '</p>';
+    }
+
+    if (deal.promo) {
+      html += '<p class="deal-card__promo">' + escapeHtml(deal.promo) + '</p>';
     }
 
     if (deal.link) {
