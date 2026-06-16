@@ -741,10 +741,16 @@ body.menu-open {
 
 .conf-photo-grid img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-sm);
   display: block;
+}
+
+/* Bottom row photos slightly taller, matching mockup */
+.conf-photo-grid img:nth-child(3),
+.conf-photo-grid img:nth-child(4) {
+  aspect-ratio: 3 / 2;
 }
 
 /* Pricing block (legacy — kept for other pages) */
