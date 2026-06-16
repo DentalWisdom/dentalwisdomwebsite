@@ -2180,6 +2180,24 @@ body.menu-open {
 .sponsor-tier__grid--silver   .sponsor-card__logo { height: 78px; }
 .sponsor-tier__grid--bronze   .sponsor-card__logo { height: 62px; }
 
+/* Sponsor tier badge inside the pop-up */
+.sponsor-modal__tier {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: var(--space-xs);
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+.sponsor-modal__tier--platinum { background: #e8e0d0; color: #5a4a2a; }
+.sponsor-modal__tier--gold     { background: #f5e9c8; color: #7a5a10; }
+.sponsor-modal__tier--silver   { background: #e8ecf0; color: #3a4a5a; }
+.sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
+
 /* Sponsor pop-up: logo header above the reused .modal styling */
 .sponsor-modal__logo {
   display: flex;

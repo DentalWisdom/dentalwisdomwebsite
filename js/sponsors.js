@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '<div class="modal__dialog">' +
         '<button class="modal__close" id="sponsorModalClose" aria-label="Close" data-sponsor-close>&times;</button>' +
         '<div class="sponsor-modal__logo"><img id="sponsorModalLogo" src="" alt=""></div>' +
+        '<span class="sponsor-modal__tier" id="sponsorModalTier"></span>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<p id="sponsorModalBlurb"></p>' +
         '<div class="link-row" id="sponsorModalLinkRow">' +
@@ -150,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var logoEl = modal.querySelector('#sponsorModalLogo');
   var logoWrap = modal.querySelector('.sponsor-modal__logo');
+  var tierEl = modal.querySelector('#sponsorModalTier');
   var nameEl = modal.querySelector('#sponsorModalName');
   var blurbEl = modal.querySelector('#sponsorModalBlurb');
   var linkRow = modal.querySelector('#sponsorModalLinkRow');
@@ -171,6 +173,12 @@ document.addEventListener('DOMContentLoaded', function () {
       logoWrap.style.display = '';
     } else {
       logoWrap.style.display = 'none';
+    }
+    if (tierEl) {
+      var tierLabels = { platinum: 'Platinum Sponsor', gold: 'Gold Sponsor', silver: 'Silver Sponsor', bronze: 'Bronze Sponsor' };
+      tierEl.textContent = tierLabels[sponsor.tier] || '';
+      tierEl.className = 'sponsor-modal__tier sponsor-modal__tier--' + (sponsor.tier || '');
+      tierEl.style.display = sponsor.tier ? '' : 'none';
     }
     nameEl.textContent = sponsor.name;
     blurbEl.textContent = sponsor.blurb || '';
