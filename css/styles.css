@@ -638,7 +638,115 @@ body.menu-open {
   .card-grid--4 { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Pricing block */
+/* ── Conference Overview Section (navy split layout) ── */
+.conf-overview-section {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.conf-overview-heading {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.conf-overview-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.conf-overview-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.conf-overview-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .conf-overview-body {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .conf-overview-title {
+    font-size: 2rem;
+  }
+}
+
+.conf-overview-left p {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.75;
+  margin-bottom: 1em;
+}
+
+.conf-pricing-box {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.conf-pricing-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+  margin-bottom: var(--space-sm);
+}
+
+.conf-pricing-row {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-ink);
+  margin-bottom: 0.25rem;
+}
+
+.conf-pricing-row strong {
+  color: var(--color-ink);
+}
+
+.conf-pricing-note {
+  font-size: 0.85rem;
+  color: var(--color-slate);
+  margin: var(--space-sm) 0 var(--space-md);
+  line-height: 1.6;
+}
+
+.conf-pricing-btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 2×2 photo grid */
+.conf-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.conf-photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+/* Pricing block (legacy — kept for other pages) */
 .pricing-grid {
   display: grid;
   gap: var(--space-sm);
