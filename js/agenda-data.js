@@ -17,7 +17,7 @@
 
    Locations: Library (Daf Yomi Shiur, Shacharis), Shul (Lectures,
    Welcoming Remarks, Davening, Dvar Torah, Kiddush, Mincha/Maariv,
-   Shalashidus, Oneg), OVO at The Altair (Breakfast, Lunches,
+   Shalosh Seudos, Oneg), OVO at The Altair (Breakfast, Lunches,
    Shabbos Dinner), Atrium (Welcome Event, Welcome Party, Closing
    Party).
    ========================================================= */
@@ -64,7 +64,7 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "3:00 PM", title: "Lecture", speaker: "Speaker TBD", location: "Shul" },
   { day: "Shabbos", time: "4:30 PM", title: "Lecture", speaker: "Speaker TBD", location: "Shul" },
   { day: "Shabbos", time: "6:00 PM", title: "Mincha", speaker: "", location: "Shul" },
-  { day: "Shabbos", time: "6:30 PM", title: "Shalashidus", speaker: "", location: "Shul" },
+  { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "7:00 PM", title: "Maariv", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "8:30 PM", title: "Closing Party", speaker: "", location: "Atrium" }
 ];
