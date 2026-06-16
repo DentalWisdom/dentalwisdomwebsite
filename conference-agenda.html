@@ -217,11 +217,19 @@
       <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
       <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
       <div class="modal__iframe-wrap">
-        <!-- TODO: replace with Join-the-Network Jotform once Ben creates and shares the form URL -->
-        <div class="modal__placeholder">Join form placeholder — Jotform URL to be added</div>
-        <!--
-          <iframe src="JOIN_JOTFORM_URL_HERE" title="Join the Dental Wisdom Network"></iframe>
-        -->
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
       </div>
     </div>
   </div>
