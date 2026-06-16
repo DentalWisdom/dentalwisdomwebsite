@@ -2161,8 +2161,15 @@ body.menu-open {
   justify-content: center;
 }
 
-/* Cards in each tier have a fixed width; flex-wrap + justify-content:center
-   gives you 3 per row and naturally centers any orphaned cards on the last row */
+/* Each tier has a fixed card width + a max-width that fits exactly N cards
+   (N * card + (N-1) * gap). flex-wrap + justify-content:center then gives
+   exactly N per row with any orphan row centered automatically.
+   gap = --space-md = 24px */
+.sponsor-tier__grid--platinum { max-width: 738px;  } /* 3 × 230 + 2 × 24 */
+.sponsor-tier__grid--gold     { max-width: 852px;  } /* 4 × 195 + 3 × 24 */
+.sponsor-tier__grid--silver   { max-width: 921px;  } /* 5 × 165 + 4 × 24 */
+.sponsor-tier__grid--bronze   { max-width: 990px;  } /* 6 × 145 + 5 × 24 */
+
 .sponsor-tier__grid--platinum .sponsor-card { width: 230px; }
 .sponsor-tier__grid--gold     .sponsor-card { width: 195px; }
 .sponsor-tier__grid--silver   .sponsor-card { width: 165px; }
