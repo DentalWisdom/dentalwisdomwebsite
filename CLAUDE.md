@@ -33,6 +33,7 @@ Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Sess
 - Commit after each approved page: `git add -A && git commit -m "Build <page>"`. Never leave a session uncommitted.
 - Local preview: `python3 -m http.server 8000` from the repo root, then http://localhost:8000.
 - Do not touch DNS, CNAME, or Squarespace until Ben explicitly starts the launch step.
+- **File flow**: All changes go to the local Desktop folder (`/Users/dr.lisa/Desktop/Dental Wisdom Site`) first and are committed locally. Never push to GitHub — Ben pushes manually when ready with `git push origin main`. Never instruct or trigger a push; just remind Ben to push after a session if he wants GitHub updated.
 
 ## Saving tokens / chat length
 - Long chats use up more of Ben's usage budget as they go (everything said so far gets re-read each turn). To keep this efficient, tell Ben when it's a good moment to start a fresh chat — right after a page is finished and committed, or after a big batch of edits is wrapped up and confirmed.
