@@ -69,7 +69,7 @@ window.SPONSORS_DATA = [
   /* ── GOLD ─────────────────────────────────────────────── */
   {
     name: "MB Precious Metals",
-    logoUrl: "",
+    logoUrl: "images/sponsors/mb-precious-metals.png",
     link: "https://mbpreciousmetals.com/",
     blurb: "Trusted dental refiner with over 50 years of experience — MB Precious Metals comes to your office, assays your scrap on-site, and pays you the highest value for gold, silver, platinum, and palladium.",
     tier: "gold"
