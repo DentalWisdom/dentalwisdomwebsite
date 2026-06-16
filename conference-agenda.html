@@ -15,7 +15,8 @@
   <meta property="og:image" content="images/social-share.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/tooth-icon.svg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,12 +111,12 @@
           <h2 id="sponsors-heading">Our Sponsors</h2>
           <p>Proud to be supported by these partners</p>
         </div>
-      </div>
-      <!-- TODO: placeholder logo boxes — replace js/sponsors-data.js entries
-           with confirmed sponsor names and add logo files to
-           images/sponsors/ once Ben provides them. -->
-      <div class="sponsor-strip" data-reveal>
-        <div class="sponsor-strip__track" id="sponsorTrack">
+
+        <!-- Sponsor cards are built by js/sponsors.js from js/sponsors-data.js.
+             Clicking a card opens a pop-up with the logo, a short blurb, and a
+             website link. SAMPLE sponsors for now — swap the real confirmed
+             2027 list into js/sponsors-data.js once available. -->
+        <div class="sponsor-grid" id="sponsorGrid" data-reveal>
           <!-- Populated by js/sponsors.js -->
         </div>
       </div>

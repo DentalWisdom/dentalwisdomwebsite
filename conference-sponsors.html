@@ -15,7 +15,8 @@
   <meta property="og:image" content="images/social-share.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/tooth-icon.svg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,22 +71,16 @@
     <section class="section section--sand texture">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <h1>Sponsors</h1>
+          <h1>Our Sponsors</h1>
           <p>Thank you to the organizations who help make Dental Wisdom possible.</p>
         </div>
 
-        <!-- TODO: replace with real sponsor logos + names (images/sponsor-*.png), grouped by tier per SITE_SPEC §5 once confirmed -->
-        <div class="logo-grid" data-reveal>
-          <div class="placeholder">Sponsor logo</div>
-          <div class="placeholder">Sponsor logo</div>
-          <div class="placeholder">Sponsor logo</div>
-          <div class="placeholder">Sponsor logo</div>
-          <div class="placeholder">Sponsor logo</div>
-          <div class="placeholder">Sponsor logo</div>
-        </div>
-
-        <div class="lede text-center" data-reveal>
-          <p class="placeholder" role="status">Full sponsor list coming soon — check back as we confirm partners for 2027.</p>
+        <!-- Sponsor cards are built by js/sponsors.js from js/sponsors-data.js.
+             Clicking a card opens a pop-up with the logo, a short blurb, and a
+             website link. SAMPLE sponsors for now — swap the real confirmed
+             2027 list into js/sponsors-data.js once available. -->
+        <div class="sponsor-grid" id="sponsorGrid" data-reveal>
+          <!-- Populated by js/sponsors.js -->
         </div>
 
         <div class="link-row" data-reveal>
@@ -186,5 +181,7 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/sponsors-data.js"></script>
+  <script src="js/sponsors.js"></script>
 </body>
 </html>

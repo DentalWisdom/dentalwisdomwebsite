@@ -1627,71 +1627,89 @@ body.menu-open {
   padding-bottom: var(--space-2xl);
 }
 
-.sponsor-strip {
-  overflow: hidden;
-  width: 100%;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+/* Clickable sponsor cards (conference-sponsors.html + conference-agenda.html) */
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  max-width: 940px;
+  margin: var(--space-lg) auto 0;
 }
 
-.sponsor-strip__track {
+@media (min-width: 700px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sponsor-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-xl);
-  width: max-content;
-  padding: var(--space-sm) 0;
-  animation: sponsor-scroll 36s linear infinite;
-}
-
-.sponsor-strip:hover .sponsor-strip__track,
-.sponsor-strip:focus-within .sponsor-strip__track {
-  animation-play-state: paused;
-}
-
-@keyframes sponsor-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.sponsor-logo {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 100px;
-  padding: var(--space-sm) var(--space-md);
+  gap: var(--space-xs);
+  padding: var(--space-md);
   background-color: var(--color-white);
-  border: 2px dashed var(--color-border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   text-align: center;
-  color: var(--color-text-muted);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-ink);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-a.sponsor-logo:hover,
-a.sponsor-logo:focus-visible {
+.sponsor-card:hover,
+.sponsor-card:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
 }
 
-.sponsor-logo img {
+.sponsor-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+
+.sponsor-card__logo img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .sponsor-strip__track {
-    animation-play-state: paused;
-  }
+.sponsor-card__logo--text {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
 
-  .sponsor-strip {
-    overflow-x: auto;
-  }
+.sponsor-card__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.sponsor-card__cta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-coral);
+}
+
+/* Sponsor pop-up: logo header above the reused .modal styling */
+.sponsor-modal__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  margin-bottom: var(--space-sm);
+}
+
+.sponsor-modal__logo img {
+  max-width: 70%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* -----------------------------
