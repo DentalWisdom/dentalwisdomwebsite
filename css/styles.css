@@ -860,14 +860,15 @@ body.menu-open {
 .gallery {
   overflow: hidden;
   width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
 .gallery__track {
   display: flex;
-  flex-wrap: nowrap;
   gap: var(--space-md);
   width: max-content;
-  animation: gallery-scroll 90s linear infinite;
+  animation: gallery-scroll 120s linear infinite;
 }
 
 .gallery__track:hover {
@@ -876,7 +877,7 @@ body.menu-open {
 
 @keyframes gallery-scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -884,7 +885,7 @@ body.menu-open {
 }
 
 .gallery__item {
-  flex: 0 0 320px;
+  flex: 0 0 auto;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-card);
