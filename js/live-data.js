@@ -48,7 +48,7 @@ window.LIVE_DATA = [
     date: "July 9, 2026",
     time: "8:00 PM – 9:30 PM ET",
     presenter: "Dr. Daniel Reich",
-    description: "Practical strategies for building a values-driven, profitable dental practice.",
+    description: "The All-on-X concept has transformed full-arch rehabilitation, but does every case require immediate surgery and restoration on the same day? Join Dr. Daniel Reich as he examines the clinical considerations, advantages, and limitations of both immediate and staged treatment approaches.\n\nThrough five comprehensive patient cases, attendees will follow the complete treatment journey from diagnosis and digital planning through surgical placement, provisionalization, and final restoration. Dr. Reich will discuss patient selection, treatment sequencing, prosthetic considerations, and real-world decision-making that influence clinical outcomes.\n\nThis case-based presentation will provide practical insights into when immediate loading is appropriate, when a staged approach may lead to more predictable results, and how clinicians can optimize workflows to achieve long-term functional and esthetic success for their patients.",
     registerLink: "https://events.teams.microsoft.com/event/80092a8e-92c4-4ea1-8a5a-e390fcf02300@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
     sponsor: "Adin",
     sponsorLink: "https://www.adin-implants.com/",
