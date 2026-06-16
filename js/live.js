@@ -1,89 +1,111 @@
 /* =========================================================
-   Dental Wisdom Live — Upcoming / Past session cards
+   Dental Wisdom Live — Upcoming / Past session rows
    Reads from window.LIVE_DATA (js/live-data.js) and renders
-   cards into the Upcoming and Past Sessions sections.
+   horizontal event rows into the Upcoming and Past sections.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
   var upcomingEl = document.getElementById('upcomingSessions');
-  var pastEl = document.getElementById('pastSessions');
+  var pastEl     = document.getElementById('pastSessions');
 
   if (!upcomingEl || !pastEl) return;
 
   var sessions = window.LIVE_DATA || [];
 
-  var upcoming = sessions.filter(function (s) {
-    return s.status === 'upcoming';
-  });
-  var past = sessions.filter(function (s) {
-    return s.status === 'past';
-  });
+  var upcoming = sessions.filter(function (s) { return s.status === 'upcoming'; });
+  var past     = sessions.filter(function (s) { return s.status === 'past'; });
 
-  renderSessionCards(upcoming, upcomingEl, {
-    emptyMessage: 'New sessions are being scheduled — check back soon!',
-    buttonLabel: 'Register'
-  });
+  render(upcoming, upcomingEl, { buttonLabel: 'Register', isPast: false });
+  render(past,     pastEl,     { buttonLabel: 'Watch Recording', isPast: true });
 
-  renderSessionCards(past, pastEl, {
-    emptyMessage: 'No past sessions yet — check back after our first Dental Wisdom Live session.',
-    buttonLabel: 'Watch Recording'
-  });
-
-  function renderSessionCards(rows, container, options) {
+  function render(rows, container, opts) {
     if (!rows.length) {
-      container.innerHTML = '<p class="placeholder">' + escapeHtml(options.emptyMessage) + '</p>';
+      container.innerHTML = opts.isPast
+        ? '<p class="placeholder">No past sessions yet — check back after our first Dental Wisdom Live session.</p>'
+        : '<p class="placeholder">New sessions are being scheduled — check back soon!</p>';
       return;
     }
 
     container.innerHTML = rows.map(function (s) {
-      var meta = [s.date, s.time].filter(Boolean).join(' • ');
-
-      var html = '<div class="card">';
-      html += '<h3>' + escapeHtml(s.title) + '</h3>';
-
-      if (meta) {
-        html += '<p class="session-card__meta">' + escapeHtml(meta) + '</p>';
+      // Parse sortDate for the date badge: "2026-06-18" → month abbr + day
+      var parts = (s.sortDate || '').split('-');
+      var monthAbbr = '';
+      var dayNum    = '';
+      if (parts.length === 3) {
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        monthAbbr = months[parseInt(parts[1], 10) - 1] || '';
+        dayNum    = String(parseInt(parts[2], 10));
       }
 
+      // Time: "8:00 PM – 9:30 PM ET" → split on em-dash for two lines
+      var timeDisplay = (s.time || '').replace(' – ', '\n');
+
+      var modClass = opts.isPast ? ' session-item--past' : '';
+
+      var html = '<article class="session-item' + modClass + '">';
+
+      // Date badge
+      html += '<div class="session-item__date" aria-label="' + escAttr(s.date) + '">';
+      if (monthAbbr) html += '<span class="session-item__month">' + escHtml(monthAbbr) + '</span>';
+      if (dayNum)    html += '<span class="session-item__day">'   + escHtml(dayNum)    + '</span>';
+      if (timeDisplay) {
+        html += '<span class="session-item__time">'
+          + timeDisplay.split('\n').map(function(t){ return escHtml(t.trim()); }).join('<br>')
+          + '</span>';
+      }
+      html += '</div>'; // .session-item__date
+
+      // Body
+      html += '<div class="session-item__body">';
+      html += '<h3 class="session-item__title">' + escHtml(s.title) + '</h3>';
+
       if (s.presenter) {
-        html += '<p class="session-card__presenter"><strong>' + escapeHtml(s.presenter) + '</strong></p>';
+        html += '<p class="session-item__presenter">' + escHtml(s.presenter) + '</p>';
       }
 
       if (s.description) {
-        // Render newlines as paragraph breaks
-        var paras = s.description.split(/\n\n+/);
-        paras.forEach(function (p) {
-          if (p.trim()) html += '<p>' + escapeHtml(p.trim()) + '</p>';
-        });
+        // Use only the first paragraph for the clamped preview
+        var firstPara = s.description.split(/\n\n+/)[0].trim();
+        html += '<p class="session-item__desc">' + escHtml(firstPara) + '</p>';
       }
 
-      if (s.sponsor && s.sponsorLink) {
-        html += '<p class="session-card__sponsor">Sponsored by <a href="' + escapeAttr(s.sponsorLink) + '" target="_blank" rel="noopener">' + escapeHtml(s.sponsor) + '</a></p>';
-      } else if (s.sponsor) {
-        html += '<p class="session-card__sponsor">Sponsored by ' + escapeHtml(s.sponsor) + '</p>';
+      // Footer: sponsor + CTA
+      html += '<div class="session-item__footer">';
+
+      if (s.sponsor) {
+        html += '<span class="session-item__sponsor">Sponsored by ';
+        if (s.sponsorLink) {
+          html += '<a href="' + escAttr(s.sponsorLink) + '" target="_blank" rel="noopener">' + escHtml(s.sponsor) + '</a>';
+        } else {
+          html += escHtml(s.sponsor);
+        }
+        html += '</span>';
+      } else {
+        html += '<span></span>'; // spacer so button stays right-aligned
       }
 
-      if (s.registerLink && options.buttonLabel === 'Register') {
-        html += '<a class="btn btn-primary" href="' + escapeAttr(s.registerLink) + '" target="_blank" rel="noopener">' + escapeHtml(options.buttonLabel) + '</a>';
-      } else if (options.buttonLabel === 'Watch Recording') {
-        html += '<p class="lede" style="margin:0;">Recording available upon request for network members.</p>';
+      if (!opts.isPast && s.registerLink) {
+        html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+      } else if (opts.isPast) {
+        html += '<span class="session-item__sponsor" style="font-style:italic;">Recording available upon request.</span>';
       }
 
-      html += '</div>';
+      html += '</div>'; // .session-item__footer
+      html += '</div>'; // .session-item__body
+      html += '</article>'; // .session-item
+
       return html;
     }).join('');
   }
 
-  function escapeHtml(str) {
+  function escHtml(str) {
     return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+      .replace(/&/g,  '&amp;')
+      .replace(/</g,  '&lt;')
+      .replace(/>/g,  '&gt;')
+      .replace(/"/g,  '&quot;')
+      .replace(/'/g,  '&#039;');
   }
 
-  function escapeAttr(str) {
-    return escapeHtml(str);
-  }
+  function escAttr(str) { return escHtml(str); }
 });

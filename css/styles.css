@@ -654,6 +654,7 @@ body.menu-open {
 }
 
 /* Session cards (Dental Wisdom Live: Upcoming / Past Sessions) */
+/* Legacy session card meta (kept for backward compat) */
 .session-card__meta {
   font-weight: 600;
   color: var(--color-accent);
@@ -666,6 +667,160 @@ body.menu-open {
 .session-card__presenter {
   font-style: italic;
   color: var(--color-text-muted);
+}
+
+/* Session list — horizontal event rows (Dental Wisdom Live) */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.session-item {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.session-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.session-item__date {
+  flex: 0 0 5.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background: var(--color-seaglass);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) 0.5rem;
+  color: #fff;
+}
+
+.session-item__month {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  opacity: 0.85;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.session-item__day {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.session-item__time {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.session-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.session-item__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 0.3rem;
+  color: var(--color-text);
+}
+
+.session-item__presenter {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-seaglass);
+  margin: 0 0 0.6rem;
+}
+
+.session-item__desc {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 var(--space-sm);
+}
+
+.session-item__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.session-item__sponsor {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.session-item__sponsor a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.session-item__sponsor a:hover {
+  text-decoration: underline;
+}
+
+.session-item--past .session-item__date {
+  background: var(--color-slate, #6B7889);
+  opacity: 0.85;
+}
+
+/* Mobile: stack date badge above body */
+@media (max-width: 540px) {
+  .session-item {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .session-item__date {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  .session-item__month {
+    margin-bottom: 0;
+  }
+
+  .session-item__day {
+    font-size: 1.5rem;
+  }
+
+  .session-item__time {
+    margin-top: 0;
+    margin-left: auto;
+    text-align: right;
+  }
 }
 
 /* Numbered step badge (Dental Wisdom Live: How It Works) */
