@@ -161,6 +161,29 @@
       text-decoration: none;
     }
 
+    /* Day group headings */
+    .speaker-day-group {
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+    .speaker-day-group:first-child {
+      margin-top: 0;
+    }
+    .speaker-day-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      color: var(--color-ink);
+      margin: 0 0 0.5rem;
+    }
+    .speaker-day-heading::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-seaglass);
+      margin-top: 0.4rem;
+    }
+
     /* Placeholder notice */
     .placeholder-notice {
       display: inline-block;
@@ -387,6 +410,11 @@
         </div>
 
         <!-- ===== SPEAKER GRID ===== -->
+
+        <!-- Thursday -->
+        <div class="speaker-day-group" data-reveal>
+          <h2 class="speaker-day-heading">Thursday</h2>
+        </div>
         <div class="speaker-grid">
 
           <!-- 1: Dr. Harold Katz -->
@@ -461,6 +489,14 @@
             </button>
           </article>
 
+        </div><!-- /speaker-grid thursday -->
+
+        <!-- Shabbos -->
+        <div class="speaker-day-group" data-reveal>
+          <h2 class="speaker-day-heading">Shabbos</h2>
+        </div>
+        <div class="speaker-grid">
+
           <!-- 4: Sam Waller -->
           <article class="speaker-card" id="speaker-sam-waller" data-reveal
             data-photo="images/speaker-sam-waller.png"
@@ -515,7 +551,7 @@
             </button>
           </article>
 
-        </div><!-- /speaker-grid -->
+        </div><!-- /speaker-grid shabbos -->
 
       </div>
     </section>
