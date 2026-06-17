@@ -219,6 +219,10 @@ ul {
   padding: var(--space-2xl) 0;
 }
 
+.section--compact {
+  padding: var(--space-xl) 0;
+}
+
 .section--sand {
   background-color: var(--color-bg-alt);
 }
