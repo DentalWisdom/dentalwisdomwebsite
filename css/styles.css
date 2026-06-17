@@ -551,7 +551,7 @@ body.menu-open {
 
 .sub-nav__bar a {
   white-space: nowrap;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--color-text-muted);
