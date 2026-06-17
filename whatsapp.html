@@ -28,7 +28,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -90,10 +90,10 @@
       <div class="container">
         <div class="section-heading" data-reveal>
           <h1>Join the Dental Wisdom WhatsApp Community</h1>
-          <p>Stay connected with the Dental Wisdom network all year round.</p>
+          <p>More than a group chat &mdash; it&rsquo;s where the community actually lives.</p>
         </div>
         <div class="lede text-center" data-reveal>
-          <p>Our WhatsApp group is where the Dental Wisdom community stays in touch between events &mdash; session invitations and reminders, exclusive partner deals, conference updates, and genuine conversation with fellow Jewish dentists.</p>
+          <p>Our WhatsApp group is the heartbeat of the Dental Wisdom network &mdash; session invitations and reminders, exclusive partner deals, conference updates, and genuine conversation with fellow Jewish dentists, all in one place.</p>
         </div>
         <div class="link-row" data-reveal>
           <button class="btn btn-primary" type="button" data-open-join-modal>Apply to Join</button>
@@ -108,19 +108,64 @@
           <h2>What you&rsquo;ll receive as a member</h2>
         </div>
 
-        <div class="card-grid card-grid--4" data-reveal>
-          <div class="card">
-            <p>Invitations and reminders for Dental Wisdom Live sessions</p>
+        <div class="card-grid card-grid--4 live-delivers-grid" data-reveal>
+
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <path d="M24 6a14 14 0 0 1 14 14c0 7-2 11-4 14H14c-2-3-4-7-4-14A14 14 0 0 1 24 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M20 34v2a4 4 0 0 0 8 0v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="35" cy="11" r="5" fill="var(--color-gold-warm)" stroke="var(--color-ivory)" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Live Session Invites</h3>
+            <p class="live-delivers-blurb">Be the first to know about every Dental Wisdom Live session — invitations and reminders sent directly to your phone.</p>
           </div>
-          <div class="card">
-            <p>Exclusive deals and offers from our partners</p>
+
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <path d="M8 16a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V16Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 20h32" stroke="currentColor" stroke-width="2"/>
+                <circle cx="16" cy="30" r="2" fill="currentColor"/>
+                <path d="M22 30h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M38 12l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M38 12c2 2 2 5 0 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Exclusive Partner Deals</h3>
+            <p class="live-delivers-blurb">Access member-only offers and discounts from Dental Wisdom's carefully selected partners — real savings for your practice.</p>
           </div>
-          <div class="card">
-            <p>Updates and announcements about the 2027 Conference</p>
+
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <rect x="8" y="28" width="32" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 28V18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M20 18v-4a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 35h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Conference Updates</h3>
+            <p class="live-delivers-blurb">Stay in the loop on the 2027 Conference — announcements, speaker reveals, and early registration opportunities, straight to the group.</p>
           </div>
-          <div class="card">
-            <p>Genuine connection with a warm community of Jewish dentists</p>
+
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <circle cx="16" cy="18" r="6" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="18" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 40c0-6.627 5.373-12 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M44 40c0-6.627-5.373-12-12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 28c2.2-.65 4.53-1 7-1a20.3 20.3 0 0 1 5 .65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 40h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Real Community</h3>
+            <p class="live-delivers-blurb">Genuine conversation and connection with fellow Jewish dental professionals — colleagues who understand your world.</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -133,27 +178,35 @@
           <p>To keep the group focused and welcoming, new members join by application.</p>
         </div>
 
-        <div class="card-grid card-grid--3" data-reveal>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">1</span>
-            <h3>Apply</h3>
-            <p>Tell us a little about yourself using our short questionnaire.</p>
+        <div class="steps-row" data-reveal>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h3 class="step-title">Apply</h3>
+              <p class="step-desc">Tell us a little about yourself using our short questionnaire — it only takes a minute.</p>
+            </div>
           </div>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">2</span>
-            <h3>We Review</h3>
-            <p>Our team reviews each application personally to keep the group focused and welcoming.</p>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h3 class="step-title">We Review</h3>
+              <p class="step-desc">Our team personally reviews every application to keep the group focused, warm, and welcoming.</p>
+            </div>
           </div>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">3</span>
-            <h3>Welcome In</h3>
-            <p>Once approved, you&rsquo;ll receive an invitation to join the group directly on WhatsApp.</p>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h3 class="step-title">Welcome In</h3>
+              <p class="step-desc">Once approved, we&rsquo;ll reach out via WhatsApp to add you to the group — and you&rsquo;re in.</p>
+            </div>
           </div>
+
         </div>
 
-        <p class="lede text-center" style="margin-top: var(--space-lg);">Once you&rsquo;re a member, your phone number and any messages you send will be visible to other members of the group, per WhatsApp&rsquo;s own privacy policy. You can leave the group at any time. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
-
-        <p class="lede text-center">Curious about who can join, our community culture, or how companies can get involved? See our <a href="whatsapp-policies.html">Group Policies</a>.</p>
+        <p class="lede text-center" style="margin-top: var(--space-lg);">Your number and messages are visible to group members per WhatsApp&rsquo;s privacy policy. You can leave at any time. See our <a href="privacy.html">Privacy Policy</a> and <a href="whatsapp-policies.html">Group Policies</a> for full details.</p>
       </div>
     </section>
 
@@ -161,10 +214,12 @@
     <section class="section section--ivory cta-band">
       <div class="container" data-reveal>
         <h2>Ready to join the conversation?</h2>
-        <p class="lede" style="margin-bottom: var(--space-md);">Apply below and our team will be in touch once your application has been reviewed.</p>
+        <p class="lede" style="margin-bottom: var(--space-md);">We review every application personally and will be in touch within a few days.</p>
         <div class="link-row">
           <button class="btn btn-primary" type="button" data-open-join-modal>Apply to Join</button>
-          <a class="btn btn-secondary" href="live.html">Learn About Dental Wisdom Live</a>
+          <a class="btn btn-secondary" href="live.html">Dental Wisdom Live</a>
+          <a class="btn btn-secondary" href="index.html">The Conference</a>
+          <a class="btn btn-secondary" href="deals.html">Partner Deals</a>
         </div>
       </div>
     </section>

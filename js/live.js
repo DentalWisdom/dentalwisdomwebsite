@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
   render(upcoming, upcomingEl, { buttonLabel: 'Register', isPast: false });
   render(past,     pastEl,     { buttonLabel: 'Watch Recording', isPast: true });
 
+  var SESSIONS_LIMIT = 3;
+
   function render(rows, container, opts) {
     if (!rows.length) {
       container.innerHTML = opts.isPast
@@ -26,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    container.innerHTML = rows.map(function (s) {
+    var overflow = rows.length > SESSIONS_LIMIT;
+
+    container.innerHTML = rows.map(function (s, i) {
+      var hidden = overflow && i >= SESSIONS_LIMIT ? ' session-item--hidden' : '';
       // Parse sortDate for the date badge: "2026-06-18" → month abbr + day
       var parts = (s.sortDate || '').split('-');
       var monthAbbr = '';
@@ -42,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var modClass = opts.isPast ? ' session-item--past' : '';
 
-      var html = '<article class="session-item' + modClass + '">';
+      var html = '<article class="session-item' + modClass + hidden + '">';
 
       // Date badge
       html += '<div class="session-item__date" aria-label="' + escAttr(s.date) + '">';
@@ -96,6 +101,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       return html;
     }).join('');
+
+    // "Show more" button — only appears when there are more than 3
+    if (overflow) {
+      var extra = rows.length - SESSIONS_LIMIT;
+      var btn = document.createElement('button');
+      btn.className = 'btn btn-secondary sessions-show-more';
+      btn.textContent = 'Show ' + extra + ' more';
+      btn.addEventListener('click', function () {
+        container.querySelectorAll('.session-item--hidden').forEach(function (el) {
+          el.classList.remove('session-item--hidden');
+        });
+        btn.remove();
+      });
+      container.appendChild(btn);
+    }
   }
 
   function escHtml(str) {

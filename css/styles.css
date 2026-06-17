@@ -687,12 +687,12 @@ body.menu-open {
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-md) var(--space-md) var(--space-lg);
-  border-top: 3px solid transparent;
-  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .live-delivers-card:hover {
-  border-top-color: var(--color-gold-warm);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(30, 42, 56, 0.13);
 }
 
 .live-delivers-icon {
@@ -1011,6 +1011,15 @@ body.menu-open {
 .session-item--past .session-item__date {
   background: var(--color-slate, #6B7889);
   opacity: 0.85;
+}
+
+.session-item--hidden {
+  display: none;
+}
+
+.sessions-show-more {
+  display: block;
+  margin: var(--space-md) auto 0;
 }
 
 /* Mobile: stack date badge above body */
