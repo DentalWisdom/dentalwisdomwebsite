@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Wisdom Conference 2027 — Flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FBF9F4;
+    color: #1E2A38;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .flyer {
+    width: 100%;
+    max-width: 760px;
+    background: #FBF9F4;
+    border: 1.5px solid rgba(30,42,56,0.14);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 48px rgba(30,42,56,0.10);
+  }
+
+  /* ── Hero band ── */
+  .hero {
+    background: #1E2A38;
+    color: #FBF9F4;
+    text-align: center;
+    padding: 3rem 2.5rem 2.5rem;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 2px;
+    background: #B8892A;
+    margin: 1.5rem auto 0;
+  }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #B8892A;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.18;
+    margin-bottom: 0.3rem;
+    color: #FBF9F4;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: #D9C08A;
+  }
+  .hero-sub {
+    font-size: 0.88rem;
+    color: rgba(251,249,244,0.65);
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Meta strip ── */
+  .meta-strip {
+    background: #B8892A;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    color: #fff;
+    text-align: center;
+    padding: 0.85rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-item strong {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 0.1rem;
+  }
+
+  /* ── Body ── */
+  .body {
+    padding: 2.5rem 2.75rem;
+  }
+
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem;
+    font-style: italic;
+    color: #1E2A38;
+    text-align: center;
+    line-height: 1.55;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(30,42,56,0.10);
+  }
+
+  /* Two-column section */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .col-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1E2A38;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1.5px solid #B8892A;
+  }
+
+  ul.experience-list {
+    list-style: none;
+    padding: 0;
+  }
+  ul.experience-list li {
+    font-size: 0.83rem;
+    color: #3a4a58;
+    line-height: 1.55;
+    padding: 0.3rem 0 0.3rem 1.1rem;
+    position: relative;
+    border-bottom: 1px solid rgba(30,42,56,0.07);
+  }
+  ul.experience-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #B8892A;
+    font-size: 0.55rem;
+    top: 0.42rem;
+  }
+  ul.experience-list li:last-child { border-bottom: none; }
+
+  /* Pricing */
+  .pricing-block {
+    background: #F1ECE2;
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(30,42,56,0.10);
+    font-size: 0.84rem;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-label { color: #5C6670; }
+  .price-amt {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1E2A38;
+  }
+  .price-note {
+    font-size: 0.73rem;
+    color: #5C6670;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* About band */
+  .about-band {
+    background: #EDE8DE;
+    padding: 1.5rem 2.75rem;
+    text-align: center;
+  }
+  .about-band p {
+    font-size: 0.84rem;
+    color: #3a4a58;
+    line-height: 1.65;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* CTA footer */
+  .cta-footer {
+    background: #1E2A38;
+    padding: 2rem 2.75rem;
+    text-align: center;
+  }
+  .cta-footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #FBF9F4;
+    margin-bottom: 0.4rem;
+  }
+  .cta-footer p {
+    font-size: 0.8rem;
+    color: rgba(251,249,244,0.6);
+    margin-bottom: 1.25rem;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #B8892A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 2.25rem;
+    border-radius: 40px;
+    margin-bottom: 1.25rem;
+  }
+  .contact {
+    font-size: 0.75rem;
+    color: rgba(251,249,244,0.5);
+    letter-spacing: 0.03em;
+  }
+  .contact a { color: #D9C08A; text-decoration: none; }
+
+  @media print {
+    body { padding: 0; background: #fff; }
+    .flyer { box-shadow: none; border: none; }
+    .cta-btn { border: 2px solid #fff; }
+  }
+
+  @media (max-width: 540px) {
+    .hero h1 { font-size: 1.7rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .body { padding: 1.75rem 1.25rem; }
+    .about-band, .cta-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .meta-item { padding: 0.75rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="flyer">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="eyebrow">Dental Wisdom presents</div>
+    <h1>The <em>2027</em><br>Dental Wisdom Conference</h1>
+    <div class="hero-sub">Created by Jewish Dentists, for Jewish Dentists</div>
+  </div>
+
+  <!-- Meta strip -->
+  <div class="meta-strip">
+    <div class="meta-item"><strong>March 3–6, 2027</strong>Dates</div>
+    <div class="meta-item"><strong>Miami, FL</strong>Location</div>
+    <div class="meta-item"><strong>20 CE Credits</strong>Cross-Specialty</div>
+    <div class="meta-item"><strong>The Altair</strong>Bay Harbor Islands</div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <p class="tagline">
+      "This is not simply a dental conference.<br>
+      This is a 3-day <em>Pesach Program</em> experience designed for Jewish dentists."
+    </p>
+
+    <div class="two-col">
+
+      <!-- Experience -->
+      <div>
+        <div class="col-heading">What You'll Experience</div>
+        <ul class="experience-list">
+          <li>Cross-specialty lectures &amp; hands-on classes</li>
+          <li>Warm, distinctive Jewish environment</li>
+          <li>Elegant, family-friendly kosher events</li>
+          <li>On-site minyanim &amp; inspiring shiurim</li>
+          <li>An unforgettable Shabbos together</li>
+          <li>Genuine connections with colleagues</li>
+          <li>Space to rest, recharge &amp; reconnect</li>
+        </ul>
+      </div>
+
+      <!-- Pricing -->
+      <div>
+        <div class="col-heading">Early Bird Pricing</div>
+        <div class="pricing-block">
+          <div class="price-row">
+            <span class="price-label">Dentist</span>
+            <span class="price-amt">$1,995</span>
+          </div>
+          <div class="price-row">
+            <span class="price-label">Student</span>
+            <span class="price-amt">$1,595</span>
+          </div>
+          <div class="price-row">
+            <span class="price-label">Vendor Dentist</span>
+            <span class="price-amt">$2,995</span>
+          </div>
+          <p class="price-note">
+            Limited-time early bird pricing.<br>
+            We expect this conference to sell out — prices increase as we approach the event.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- About band -->
+  <div class="about-band">
+    <p>
+      The Dental Wisdom Conference was created to give Jewish dentists a chance to reset — to engage
+      with meaningful, high-quality continuing education while finding calm and clarity. Set at The Altair Hotel
+      in Bay Harbor Islands, the experience fosters professional excellence, spiritual growth, and
+      lasting community connection.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-footer">
+    <h3>Reserve Your Place Today</h3>
+    <p>Space is limited — early registration is strongly encouraged.</p>
+    <a class="cta-btn" href="https://pci.jotform.com/form/252998619124166">Register Now</a>
+    <div class="contact">
+      Questions? <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a> &nbsp;·&nbsp;
+      <a href="https://dentalwisdom.org">dentalwisdom.org</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
