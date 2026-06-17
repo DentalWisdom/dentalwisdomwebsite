@@ -22,9 +22,6 @@
                bottom group. The Agenda page ignores tiers and
                shows everyone together.
 
-   NOTE: These 8 entries are SAMPLES so we can preview the
-   feature. Tell Claude which real sponsors to show, and which
-   tier each belongs in, and they'll be swapped in here.
    ========================================================= */
 
 window.SPONSORS_DATA = [
