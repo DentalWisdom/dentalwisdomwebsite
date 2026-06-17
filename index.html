@@ -420,39 +420,50 @@
     }
 
     /* ════════════════════════════════════════════════════════
-       SPONSORS — ivory
+       SPONSORS — dark blue
        ════════════════════════════════════════════════════════ */
-    #section-sponsors { background-color: #FBF9F4; }
+    #section-sponsors { background-color: #1E2A38; }
     #section-sponsors .logo-scroll-wrap { margin-top: 0; }
     .sponsor-thanks {
       font-size: var(--fs-small);
-      color: var(--color-text-muted);
+      color: rgba(251,249,244,0.65);
       margin-bottom: var(--space-md);
+    }
+    #section-sponsors .btn-secondary {
+      border-color: rgba(251,249,244,0.45);
+      color: var(--color-ivory);
+    }
+    #section-sponsors .btn-secondary:hover {
+      background-color: rgba(251,249,244,0.12);
+      color: var(--color-ivory);
     }
 
     /* ════════════════════════════════════════════════════════
-       FINAL CTA — ink, large editorial
+       FINAL CTA + QUESTIONS — sand, merged
        ════════════════════════════════════════════════════════ */
     #section-cta {
-      background-color: var(--color-ink);
+      background-color: #F1ECE2;
       text-align: center;
       padding: var(--space-2xl) 0;
     }
     #section-cta h2 {
-      color: #fff; font-size: 2rem; max-width: 16ch;
+      color: var(--color-ink); font-size: 2rem; max-width: 16ch;
       margin: 0 auto var(--space-lg); line-height: 1.25;
     }
     @media (min-width: 768px) { #section-cta h2 { font-size: 2.75rem; } }
     #section-cta .btn-primary { background-color: var(--color-gold-warm); border-color: var(--color-gold-warm); color: #fff; }
     #section-cta .btn-primary:hover { background-color: #9e7523; }
-
-    /* ════════════════════════════════════════════════════════
-       HAVE QUESTIONS — sand
-       ════════════════════════════════════════════════════════ */
-    #section-questions { background-color: #F1ECE2; }
-    #section-questions h3 { font-size: 1.4rem; margin-bottom: var(--space-xs); }
-    #section-questions a[href^="mailto"] { color: var(--color-gold-warm); font-weight: 600; text-decoration: none; }
-    #section-questions a[href^="mailto"]:hover { text-decoration: underline; }
+    #section-cta .cta-questions {
+      margin-top: var(--space-sm);
+      font-size: 0.85rem;
+      color: var(--color-slate);
+    }
+    #section-cta .cta-questions a {
+      color: var(--color-gold-warm);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #section-cta .cta-questions a:hover { text-decoration: underline; }
 
   </style>
 </head>
@@ -880,19 +891,12 @@
       </div>
     </section>
 
-    <!-- ═══ 11. FINAL CTA — ink, gold rule, large Playfair ═══ -->
+    <!-- ═══ 11. FINAL CTA + QUESTIONS — sand, merged ═══ -->
     <section id="section-cta" class="section">
       <div class="container" data-reveal>
         <h2>Space is limited. Reserve yours.</h2>
         <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Reserve Your Place Today</a>
-      </div>
-    </section>
-
-    <!-- ═══ 12. HAVE QUESTIONS — sand ═══ -->
-    <section id="section-questions" class="section text-center">
-      <div class="container" data-reveal>
-        <h3>Have Questions?</h3>
-        <p><a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        <p class="cta-questions">Have Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
       </div>
     </section>
 
