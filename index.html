@@ -423,6 +423,12 @@
        SPONSORS — ivory
        ════════════════════════════════════════════════════════ */
     #section-sponsors { background-color: #FBF9F4; }
+    #section-sponsors .logo-scroll-wrap { margin-top: 0; }
+    .sponsor-thanks {
+      font-size: var(--fs-small);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
+    }
 
     /* ════════════════════════════════════════════════════════
        FINAL CTA — ink, large editorial
@@ -613,14 +619,11 @@
     <!-- ═══ 5. VIDEO — ivory, gold rule ═══ -->
     <section id="section-video" class="section">
       <div class="container">
-        <div class="section-heading" data-reveal>
-          <h2>A Glimpse of the Dental Wisdom Conference</h2>
-          <p>Last year's Dental Wisdom Conference brought together Jewish dentists and their families for an unforgettable getaway of learning, community, and connection. Here's a quick look at what made it special.</p>
-        </div>
         <div class="video-embed" data-reveal>
           <iframe src="https://www.youtube.com/embed/OQZFNNB9YE0?si=FDCCACoNmqoCC6y4" title="A Glimpse of the Dental Wisdom Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
         </div>
-        <div class="link-row" data-reveal>
+        <div class="video-caption" data-reveal>
+          <em>A Glimpse of the Dental Wisdom Conference.</em>
           <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Join the 2027 Dental Wisdom Conference!</a>
         </div>
       </div>
@@ -631,7 +634,6 @@
       <div class="container">
         <div class="section-heading" data-reveal>
           <h2>A Look Back</h2>
-          <p>Moments from past Dental Wisdom Conferences. Scroll or swipe to explore.</p>
         </div>
       </div>
       <div class="logo-scroll-wrap">
@@ -866,16 +868,11 @@
 
     <!-- ═══ 10. SPONSORS — ivory ═══ -->
     <section id="section-sponsors" class="section sponsor-strip-section">
-      <div class="container text-center">
-        <div class="section-heading" data-reveal>
-          <h2>Our Sponsors</h2>
-          <p>Thank you to the partners who make Dental Wisdom possible.</p>
-        </div>
-      </div>
       <div class="logo-scroll-wrap" data-reveal>
         <div class="logo-scroll-track" id="logoScrollStrip"></div>
       </div>
       <div class="container text-center">
+        <p class="sponsor-thanks" data-reveal>Thank you to the partners who make Dental Wisdom possible.</p>
         <div class="link-row" data-reveal>
           <a class="btn btn-secondary" href="conference-sponsors.html">Meet All Our Sponsors &rarr;</a>
           <a class="btn btn-secondary" href="conference-new-sponsor.html">Want to Sponsor?</a>
@@ -955,8 +952,6 @@
           <a href="terms.html">Terms &amp; Conditions</a>
           <span aria-hidden="true">•</span>
           <a href="privacy.html">Privacy Policy</a>
-          <span aria-hidden="true">•</span>
-          <a href="conference-faq.html#accessibility">Accessibility</a>
         </nav>
       </div>
     </div>

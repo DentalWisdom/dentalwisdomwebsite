@@ -1621,6 +1621,22 @@ body.menu-open {
   border: 0;
 }
 
+.video-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.video-caption em {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
 /* Sponsor / partner logo grid */
 .logo-grid {
   display: grid;
@@ -2069,9 +2085,9 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  height: 80px;
-  padding: 3px 6px;
+  width: 240px;
+  height: 120px;
+  padding: 6px 12px;
   background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
