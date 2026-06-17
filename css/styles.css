@@ -1093,8 +1093,8 @@ body.menu-open {
   border-radius: 50%;
   background-color: var(--color-gold-warm);
   color: var(--color-white);
-  font-family: 'Bebas Neue', var(--font-heading);
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: 2rem;
   display: flex;
   align-items: center;
