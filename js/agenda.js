@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var speakerUrl = (item.speakerUrl || '').trim();
     var location   = (item.location   || '').trim();
     var isCE       = !!item.ce;
+    var ceCredits  = item.ceCredits || null;
 
     // Speaker — hyperlink if speakerUrl provided
     var speakerHtml = '';
@@ -158,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var html = '<div class="' + classes + '">';
     if (time) {
       html += '<div class="agenda-item__time">' + escapeHtml(time) +
-        (isCE ? '<span class="agenda-item__ce-badge">CE Credit</span>' : '') +
+        (isCE ? '<span class="agenda-item__ce-badge">' + (ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit') + '</span>' : '') +
         '</div>';
     }
     html += '<div class="agenda-item__details">';
