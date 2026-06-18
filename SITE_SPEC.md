@@ -347,9 +347,9 @@ Companion page to Dental Wisdom Deals (added to the build plan 2026-06-15, built
 ---
 
 **FAQ (`conference-faq.html`)**  
-Includes all the detailed content you provided + new drafted items:
-- What happens after I register? (confirmed text)
-- What should I expect as a first-time attendee? (drafted)
+Includes all the detailed content you provided + two additional items added June 2026:
+- What happens after I register? ✅ added
+- What should I expect as a first-time attendee? ✅ added
 
 **Note:** Accessibility FAQ item and footer link removed — not needed.
 
