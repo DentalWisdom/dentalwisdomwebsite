@@ -2451,6 +2451,7 @@ body.menu-open {
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 20px;
+  line-height: 1.4;
   margin-bottom: var(--space-xs);
   background: var(--color-sand);
   color: var(--color-ink);
@@ -2471,7 +2472,7 @@ body.menu-open {
   text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 20px;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 /* Card: badge pinned top-left */
