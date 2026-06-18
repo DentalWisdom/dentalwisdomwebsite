@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Build day sections ──────────────────────────────────
   panelsEl.innerHTML = dayOrder.map(function (day) {
-    var itemsHtml = groups[day].map(renderAgendaItem).join('');
+    var itemsHtml = renderDayItems(groups[day]);
     return '<div class="agenda-day-section" data-day="' + escapeHtml(day) + '">' +
       '<h2 class="agenda-day-heading">' + escapeHtml(day) + '</h2>' +
       '<div class="agenda-list">' + itemsHtml + '</div>' +
@@ -178,6 +178,77 @@ document.addEventListener('DOMContentLoaded', function () {
   applyFilters();
 
   // ── Render helpers ──────────────────────────────────────
+
+  // Groups consecutive items sharing the same `concurrent` id into a block.
+  function renderDayItems(items) {
+    var html = '';
+    var i = 0;
+    while (i < items.length) {
+      var item = items[i];
+      if (item.concurrent) {
+        var groupId = item.concurrent;
+        var group = [];
+        while (i < items.length && items[i].concurrent === groupId) {
+          group.push(items[i]);
+          i++;
+        }
+        html += renderConcurrentBlock(group);
+      } else {
+        html += renderAgendaItem(item);
+        i++;
+      }
+    }
+    return html;
+  }
+
+  function renderConcurrentBlock(items) {
+    var first      = items[0];
+    var time       = (first.time || '').trim();
+    var isCE       = items.some(function (it) { return !!it.ce; });
+    var ceCredits  = first.ceCredits || null;
+    var isCEView   = isCE || items.some(function (it) { return !!it.showInCEView; });
+    var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
+
+    var html = '<div class="agenda-concurrent-block"' + ceViewAttr + '>';
+
+    if (time) {
+      html += '<div class="agenda-item__time">' + escapeHtml(time);
+      if (isCE) {
+        var credLabel = ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit';
+        html += '<span class="agenda-item__ce-badge">' + credLabel + ' — choose one session</span>';
+      }
+      html += '</div>';
+    }
+
+    html += '<p class="agenda-concurrent-block__label">Concurrent sessions</p>';
+    html += '<div class="agenda-concurrent-block__grid">';
+
+    items.forEach(function (item) {
+      var title      = (item.title      || '').trim();
+      var speaker    = (item.speaker    || '').trim();
+      var speakerUrl = (item.speakerUrl || '').trim();
+      var location   = (item.location   || '').trim();
+
+      var speakerHtml = '';
+      if (speaker) {
+        speakerHtml = speakerUrl
+          ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
+          : escapeHtml(speaker);
+      }
+      var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
+
+      html += '<div class="agenda-concurrent-card">';
+      html += '<h3>' + escapeHtml(title || 'Session TBD') + '</h3>';
+      if (metaParts.length) {
+        html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+      }
+      html += '</div>';
+    });
+
+    html += '</div></div>';
+    return html;
+  }
+
   function renderAgendaItem(item) {
     var title      = (item.title      || '').trim();
     var time       = (item.time       || '').trim();
@@ -185,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var speakerUrl = (item.speakerUrl || '').trim();
     var location   = (item.location   || '').trim();
     var isCE        = !!item.ce;
+    var isEvent     = !!item.event;
     var ceCredits   = item.ceCredits || null;
     var sponsor     = (item.sponsor    || '').trim();
     var sponsorUrl  = (item.sponsorUrl || '').trim();
@@ -200,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
 
-    var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '');
+    var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '') + (isEvent ? ' agenda-item--event' : '');
     var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
     var html = '<div class="' + classes + '"' + ceViewAttr + '>';
     if (time) {
@@ -209,14 +281,13 @@ document.addEventListener('DOMContentLoaded', function () {
         '</div>';
     }
     html += '<div class="agenda-item__details">';
-    var titleHtml = escapeHtml(title || 'Untitled session');
+    html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
     if (sponsor) {
       var sponsorInline = sponsorUrl
         ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
         : escapeHtml(sponsor);
-      titleHtml += ' <span class="agenda-item__sponsor">Sponsored by ' + sponsorInline + '</span>';
+      metaParts.unshift('<strong class="agenda-item__sponsor-label">Sponsored by ' + sponsorInline + '</strong>');
     }
-    html += '<h3>' + titleHtml + '</h3>';
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
     }

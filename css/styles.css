@@ -1937,7 +1937,7 @@ body.menu-open {
 }
 
 .agenda-list {
-  max-width: 760px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
@@ -1950,22 +1950,29 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
   text-align: left;
 }
 
 .agenda-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* CE lecture highlight */
 .agenda-item--ce {
   background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
+  border: 1px solid rgba(82,153,145,0.25);
   border-left: 3px solid var(--color-seaglass);
-  padding-left: var(--space-sm);
-  margin-left: -var(--space-sm);
-  border-bottom-color: rgba(82,153,145,0.18);
+}
+
+/* Social event highlight */
+.agenda-item--event {
+  background: linear-gradient(to right, rgba(184,137,42,0.07) 0%, transparent 100%);
+  border: 1px solid rgba(184,137,42,0.25);
+  border-left: 3px solid var(--color-gold-warm);
 }
 
 .agenda-item__ce-badge {
@@ -2017,6 +2024,10 @@ body.menu-open {
   margin: 0;
 }
 
+.agenda-item__sponsor-label {
+  font-weight: 700;
+}
+
 @media (min-width: 640px) {
   .agenda-item {
     flex-direction: row;
@@ -2026,6 +2037,55 @@ body.menu-open {
 
   .agenda-item__time {
     flex: 0 0 170px;
+  }
+}
+
+/* ── Concurrent session block ─────────────────────────── */
+.agenda-concurrent-block {
+  padding: var(--space-sm);
+  border: 1px solid rgba(82,153,145,0.25);
+  border-left: 3px solid var(--color-seaglass);
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
+}
+
+.agenda-concurrent-block__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0.55rem 0 0.7rem;
+}
+
+.agenda-concurrent-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.agenda-concurrent-card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-seaglass);
+  border-radius: 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.agenda-concurrent-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.agenda-concurrent-card .agenda-item__meta {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 639px) {
+  .agenda-concurrent-block__grid {
+    grid-template-columns: 1fr;
   }
 }
 
