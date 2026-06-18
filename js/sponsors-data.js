@@ -51,7 +51,7 @@ window.SPONSORS_DATA = [
   {
     name: "Touro College of Dental Medicine",
     logoUrl: "/images/sponsors/touro.png",
-    link: "https://www.touro.edu/",
+    link: "https://dental.touro.edu/",
     blurb: "Touro College of Dental Medicine trains the next generation of compassionate, community-focused dental professionals with an emphasis on innovation, clinical excellence, and service.",
     tier: "platinum"
   },
@@ -167,7 +167,7 @@ window.SPONSORS_DATA = [
     tier: "bronze"
   },
   {
-    name: "GC Insurance Group",
+    name: "CG Insurance Group",
     logoUrl: "/images/sponsors/gc-insurance-group.png",
     link: "https://cginsurancegroup.com/dental-wisdom/",
     blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
@@ -188,7 +188,7 @@ window.SPONSORS_DATA = [
     tier: "bronze"
   },
   {
-    name: "Pizza Bizza",
+    name: "Pizza Biza",
     logoUrl: "/images/sponsors/pizza-bizza.png",
     link: "https://www.pizzabiza.com/",
     blurb: "Beloved kosher pizza right in Miami — the go-to spot for Dental Wisdom conference-goers looking for a great meal with great company.",
