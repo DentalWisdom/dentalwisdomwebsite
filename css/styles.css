@@ -2462,9 +2462,7 @@ body.menu-open {
 
 /* "Attending" gold pill badge — matches tier pill style exactly */
 .sponsor-attending-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
+  display: inline-block;
   background: #f5e9c8;
   color: #7a5a10;
   font-size: 0.7rem;

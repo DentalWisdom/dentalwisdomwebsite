@@ -31,9 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     bronze: 'Bronze Sponsors'
   };
 
-  var ATTENDING_BADGE = '<span class="sponsor-attending-badge" aria-label="In attendance at conference">' +
-    '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:3px"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-    'Attending</span>';
+  var ATTENDING_BADGE = '<span class="sponsor-attending-badge" aria-label="In attendance at conference">&#10003; Attending</span>';
 
   var sponsors = (window.SPONSORS_DATA || [])
     .map(function (row) {
