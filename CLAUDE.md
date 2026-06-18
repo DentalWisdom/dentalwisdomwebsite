@@ -1,8 +1,5 @@
 # CLAUDE.md — Dental Wisdom website
 
-## 📌 Reminder for next session
-Ben asked about **removing `.html` from URLs**. The plan: use the folder/index.html pattern (move each `page.html` → `page/index.html`). Doable in one batch but touches all 16 pages + every internal link. Ask Ben if he wants to tackle this before starting other work.
-
 ## What this is
 Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference (flagship), Dental Wisdom Live monthly CE, partner Deals, plus supporting pages. All requirements and exact copy live in `SITE_SPEC.md` — read it before any work. Exact copy in the spec is final: never rewrite it, only format it. Anything missing gets a visible placeholder plus `<!-- TODO: ... -->`.
 
@@ -16,7 +13,7 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 ## Stack (locked — do not introduce frameworks, build steps, or npm)
 - GitHub Pages hosting. Plain HTML files, one shared stylesheet `css/styles.css`, vanilla JS in `js/main.js` (nav, modal, scroll reveals).
 - Dynamic content (Deals, Live sessions, Agenda) lives in local data files (`js/deals-data.js`, `js/live-data.js`, `js/agenda-data.js`) that each page's script reads directly — no Google Sheets, no CSV fetching. Ben tells Claude about changes (new/updated/removed entries) in chat, and Claude edits the relevant data file and commits. See SITE_SPEC.md §6 for each file's field format.
-- **Agenda data fields** (June 2026): `day`, `time`, `title` (use real course title, not "Lecture"; placeholders say "Lecture Title TBD"), `speaker` ("Speaker TBD" if unconfirmed), `speakerUrl` (links to `conference-speakers.html#anchor`), `location`, `ce: true` (CE credit lecture), `ceCredits` (number, e.g. 1, 2, 1.5).
+- **Agenda data fields** (June 2026): `day`, `time`, `title` (use real course title, not "Lecture"; placeholders say "Lecture Title TBD"), `speaker` ("Speaker TBD" if unconfirmed), `speakerUrl` (links to `/conference-speakers#anchor`), `location`, `ce: true` (CE credit lecture), `ceCredits` (number, e.g. 1, 2, 1.5).
 - **Agenda page behavior** (June 2026): defaults to **all-days view** (all days stacked, scrollable). Filter bar shows "All Days" + one button per day. Clicking a day filters to that day only; prev/next arrows appear in single-day mode. CE lectures get a teal left-border highlight and "X CE Credits" label under the time. Speaker names are teal hyperlinks to the speakers page.
 - Forms: Jotform. Direct links for registration; the floating "Join the Network" button opens our own styled modal containing the Jotform iframe. Modal: focus-trapped, Esc closes, scroll-locked behind.
 - Fonts: Playfair Display (headings) + Inter (body) via Google Fonts with preconnect and `display=swap`.
@@ -35,10 +32,11 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 - `#section-cta` (index.html): padding `1.5rem`, h2 margin-bottom `1rem`, questions margin-top `0.5rem`, gold line margin-bottom `0.75rem`
 
 ## Conventions
-- Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda.html, conference-speakers.html, conference-sponsors.html, conference-faq.html.
+- Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda/index.html, conference-speakers/index.html, conference-sponsors/index.html, conference-faq/index.html.
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
-- Speakers page (`conference-speakers.html`): **5 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
+- **URL structure (June 2026)**: All pages use the folder/index.html pattern — no `.html` in URLs. `dentalwisdom.org/conference-agenda` serves `conference-agenda/index.html`, etc. Only `index.html` and `404.html` live at the root. Never create new `.html` files at the root; always create `new-page/index.html`.
+- Speakers page (`conference-speakers/index.html`): **5 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
 - Speaker modal is **760px wide** (`max-width: 760px`) and **92vh tall** — larger than default to accommodate long bios. Both the ✕ button and clicking outside close it. Esc also closes.
 - **Sponsor support in modal**: add `data-sponsor-name`, `data-sponsor-url`, `data-sponsor-logo` attributes to an article to show a logo + link at the bottom of the bio. Logos live in `images/sponsors/`. Currently wired for Sam Waller (LiveWell Capital) and Rabbi Dr. Katz (Touro).
 
