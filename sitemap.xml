@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://dentalwisdom.org/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Conference -->
+  <url>
+    <loc>https://dentalwisdom.org/conference-agenda</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-speakers</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-sponsors</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-faq</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-new-speaker</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-new-sponsor</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/conference-terms</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Dental Wisdom Live -->
+  <url>
+    <loc>https://dentalwisdom.org/live</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/live-get-involved</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Deals -->
+  <url>
+    <loc>https://dentalwisdom.org/deals</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/deals-partner</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Supporting -->
+  <url>
+    <loc>https://dentalwisdom.org/flyer</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dentalwisdom.org/terms</loc>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
