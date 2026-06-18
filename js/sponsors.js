@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     bronze: 'Bronze Sponsors'
   };
 
-  var ATTENDING_BADGE = '<span class="sponsor-attending-badge" aria-label="In attendance at conference">&#10003; Attending</span>';
+  var ATTENDING_BADGE_TEXT = '&#10003; Attending';
 
   var sponsors = (window.SPONSORS_DATA || [])
     .map(function (row) {
@@ -60,13 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
         '" alt="' + escapeAttr(s.name + ' logo') + '" loading="lazy"></span>'
       : '<span class="sponsor-card__logo sponsor-card__logo--text">' + escapeHtml(s.name) + '</span>';
 
-    var badge = s.attending ? ATTENDING_BADGE : '';
-
     return '<button type="button" class="sponsor-card" data-sponsor-index="' + i +
       '" aria-haspopup="dialog">' +
       inner +
       '<span class="sponsor-card__name">' + escapeHtml(s.name) + '</span>' +
-      (badge ? '<span class="sponsor-card__attending">' + badge + '</span>' : '') +
+      (s.attending ? '<span class="sponsor-attending-badge sponsor-card__attending" aria-label="In attendance at conference">' + ATTENDING_BADGE_TEXT + '</span>' : '') +
       '<span class="sponsor-card__cta">View details &rarr;</span>' +
       '</button>';
   }
@@ -170,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="sponsor-modal__logo"><img id="sponsorModalLogo" src="" alt=""></div>' +
         '<div class="sponsor-modal__meta">' +
           '<span class="sponsor-modal__tier" id="sponsorModalTier"></span>' +
-          '<span class="sponsor-modal__attending" id="sponsorModalAttending" style="display:none">' + ATTENDING_BADGE + '</span>' +
+          '<span class="sponsor-attending-badge" id="sponsorModalAttending" style="display:none" aria-label="In attendance at conference">' + ATTENDING_BADGE_TEXT + '</span>' +
         '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<p id="sponsorModalBlurb"></p>' +

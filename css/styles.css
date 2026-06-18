@@ -2464,7 +2464,7 @@ body.menu-open {
 .sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
 .sponsor-attending-badge       { background: #f5e9c8; color: #7a5a10; }
 
-/* Card: badge pinned top-left */
+/* Card: attending badge pinned top-left */
 .sponsor-card {
   position: relative;
 }
@@ -2472,6 +2472,7 @@ body.menu-open {
   position: absolute;
   top: 8px;
   left: 8px;
+  z-index: 1;
 }
 
 /* Modal: tier pill + attending badge side by side */
