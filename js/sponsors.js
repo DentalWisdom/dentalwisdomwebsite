@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
         link: (row.link || '').trim(),
         blurb: (row.blurb || '').trim(),
         tier: (row.tier || '').trim().toLowerCase(),
-        attending: !!row.attending
+        attending: !!row.attending,
+        videoUrl: (row.videoUrl || '').trim()
       };
     })
     .filter(function (s) { return s.name; });
@@ -175,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="link-row" id="sponsorModalLinkRow">' +
           '<a class="btn btn-primary" id="sponsorModalLink" href="#" target="_blank" rel="noopener">Visit website &rarr;</a>' +
         '</div>' +
+        '<div class="sponsor-modal__video" id="sponsorModalVideo" style="display:none"></div>' +
       '</div>';
     document.body.appendChild(modal);
   }
@@ -187,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var linkRow = modal.querySelector('#sponsorModalLinkRow');
   var linkEl = modal.querySelector('#sponsorModalLink');
   var attendingEl = modal.querySelector('#sponsorModalAttending');
+  var videoEl = modal.querySelector('#sponsorModalVideo');
   var lastFocused = null;
 
   function getFocusable() {
@@ -226,6 +229,19 @@ document.addEventListener('DOMContentLoaded', function () {
       linkRow.style.display = 'none';
     }
 
+    if (videoEl) {
+      if (sponsor.videoUrl) {
+        videoEl.innerHTML = '<iframe src="' + escapeAttr(sponsor.videoUrl) +
+          '?rel=0" title="' + escapeAttr(sponsor.name) + ' video"' +
+          ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+          ' allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;display:block"></iframe>';
+        videoEl.style.display = '';
+      } else {
+        videoEl.innerHTML = '';
+        videoEl.style.display = 'none';
+      }
+    }
+
     modal.classList.add('is-open');
     document.body.classList.add('menu-open'); // reuse site scroll-lock
     document.addEventListener('keydown', handleKeydown);
@@ -237,6 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     document.removeEventListener('keydown', handleKeydown);
+    if (videoEl) { videoEl.innerHTML = ''; videoEl.style.display = 'none'; }
     if (lastFocused) lastFocused.focus();
   }
 

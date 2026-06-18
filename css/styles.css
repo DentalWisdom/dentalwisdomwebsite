@@ -2499,6 +2499,12 @@ body.menu-open {
   object-fit: contain;
 }
 
+.sponsor-modal__video {
+  margin-top: var(--space-md);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 /* -----------------------------
    FAQ Accordion
    ----------------------------- */

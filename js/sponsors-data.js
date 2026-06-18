@@ -201,9 +201,11 @@ window.SPONSORS_DATA = [
   {
     name: "Citron Films",
     logoUrl: "/images/sponsors/citron-films.png",
-    link: "https://www.citronfilms.com/",
-    blurb: "Done-for-you video production for practices and businesses — Citron Films crafts cinematic, compelling content that builds trust, drives new leads, and tells your story with real impact.",
-    tier: "bronze"
+    link: "https://hc.citronfilms.com",
+    blurb: "Strategy-first video production for practices and businesses. We find your real story, film it cinematically, and tell it in a way that earns trust and moves people to act.",
+    tier: "bronze",
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/z019852_Zmk"
   },
   {
     name: "Wonderful Dental",
