@@ -18,7 +18,7 @@
 |-----------------------|-------------------|-------------------------------------------------------|-------------------|--------|
 | Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | ✅ Built |
 | Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Local data file   | ✅ Built |
-| Want to Get Involved? (Live) | `live-get-involved.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | ✅ Built |
+| Want to Present? (Live) | `live-present/index.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | ✅ Built |
 | Deals                 | `deals.html`      | Searchable + filterable partner offers               | Local data file   | ✅ Built |
 | Become a Deals Partner | `deals-partner.html` | Companion to Deals — why it was built + how companies can become a partner | Static | ✅ Built |
 | Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | ✅ Built |
@@ -43,7 +43,7 @@
 **Footer** (on every page, 3 content columns + brand):
 - **Dental Wisdom** — brand blurb + email (column 1)
 - **Dental Wisdom WhatsApp** — Join the Group, Group Policies
-- **Dental Wisdom Live** — Overview, Want to Get Involved?
+- **Dental Wisdom Live** — CE Sessions, Want to Present?
 - **Dental Wisdom Deals** — Browse Deals, Become a Deals Partner
 - **Dental Wisdom Conference** — Overview, Agenda, Speakers, Sponsors, FAQs, Want to Sponsor?, Want to Lecture?
 - Footer bottom bar: © year • Terms & Conditions • Privacy Policy
@@ -302,11 +302,11 @@ Dental Wisdom Live is one of the many ways we support our community year-round �
 
 ---
 
-**Want to Get Involved? (`live-get-involved.html`)**
+**Want to Present? (`live-present/index.html`)**
 
-Page for companies/organizations interested in sponsoring, presenting giveaways, vendor spotlights, or speaking as part of Dental Wisdom Live. Linked from the Dental Wisdom Live footer column as "Want to Get Involved?"
+Page for companies/organizations interested in sponsoring, presenting giveaways, vendor spotlights, or speaking as part of Dental Wisdom Live. Linked from the Dental Wisdom Live footer column as "Want to Present?"
 
-**Hero**: "Want to Get Involved?" / "Sponsorship, giveaways, and speaker opportunities with Dental Wisdom Live"
+**Hero**: "Want to Present?" / "Sponsorship, giveaways, and speaker opportunities with Dental Wisdom Live"
 
 **Intro**: Dental Wisdom Live is our monthly online continuing education series, created exclusively for the Dental Wisdom network. We welcome aligned companies and organizations that genuinely want to support high-quality education and the growth of our community. Below are the most common ways companies can get involved.
 
