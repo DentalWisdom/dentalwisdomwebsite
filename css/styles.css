@@ -614,6 +614,7 @@ body.menu-open {
   max-width: 18ch;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);
 }
 
 .hero__lede {
@@ -622,6 +623,7 @@ body.menu-open {
   margin-bottom: var(--space-lg);
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.6);
 }
 
 .hero__facts {
