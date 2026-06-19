@@ -42,6 +42,7 @@
   --fs-h1: 2.25rem;
   --fs-h2: 1.75rem;
   --fs-h3: 1.25rem;
+  --fs-lg: 1.25rem;
   --fs-body: 1rem;
   --fs-small: 0.9rem;
 
@@ -641,12 +642,18 @@ body.menu-open {
 }
 
 .hero__lede {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 60ch;
   margin-bottom: var(--space-lg);
   margin-left: auto;
   margin-right: auto;
   text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+}
+
+@media (min-width: 1280px) {
+  .hero__lede {
+    font-size: 1.25rem;
+  }
 }
 
 .hero__facts {
@@ -980,7 +987,7 @@ body.menu-open {
 }
 
 .session-item__time {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   opacity: 0.8;
   margin-top: 0.5rem;
   line-height: 1.4;
@@ -2019,7 +2026,7 @@ body.menu-open {
 
 .agenda-item__ce-badge {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2093,7 +2100,7 @@ body.menu-open {
 }
 
 .agenda-concurrent-block__label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
