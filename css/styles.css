@@ -14,8 +14,6 @@
   --color-ivory: #FBF9F4;
   --color-sand: #F1ECE2;
   --color-ink: #1E2A38;
-  --color-seaglass: #1E2A38;  /* teal retired — redirected to ink */
-  --color-coral: #B8892A;     /* orange retired — redirected to warm gold */
   --color-gold: #B8892A;      /* warm gold (was #D9A441) */
   --color-gold-warm: #B8892A; /* canonical warm gold token */
   --color-parchment: #EDE8DE; /* warm section band */
@@ -801,7 +799,7 @@ body.menu-open {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-coral);
+  color: var(--color-gold-warm);
   margin-bottom: var(--space-sm);
 }
 
@@ -939,7 +937,7 @@ body.menu-open {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  background: var(--color-seaglass);
+  background: var(--color-ink);
   border-radius: var(--radius-sm);
   padding: var(--space-sm) 0.5rem;
   color: #fff;
@@ -988,7 +986,7 @@ body.menu-open {
 .session-item__presenter {
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--color-seaglass);
+  color: var(--color-ink);
   margin: 0 0 0.6rem;
 }
 
@@ -1259,7 +1257,7 @@ body.menu-open {
 }
 
 .join-fab__button {
-  background-color: var(--color-coral);
+  background-color: var(--color-gold-warm);
   color: var(--color-white);
   border: none;
   border-radius: 999px;
@@ -1351,7 +1349,7 @@ body.menu-open {
 }
 
 .modal__close:hover {
-  background-color: var(--color-coral);
+  background-color: var(--color-gold-warm);
   color: var(--color-white);
 }
 
@@ -1408,7 +1406,7 @@ body.menu-open {
 }
 
 .accordion details[open] {
-  border-left-color: var(--color-seaglass);
+  border-left-color: var(--color-ink);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -1440,7 +1438,7 @@ body.menu-open {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-  background-color: var(--color-seaglass);
+  background-color: var(--color-ink);
   border-radius: 50%;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
@@ -1689,7 +1687,7 @@ body.menu-open {
   z-index: 0;
   border-radius: 0;
   border: none;
-  background: linear-gradient(135deg, var(--color-seaglass), var(--color-ink));
+  background: linear-gradient(135deg, var(--color-ink), var(--color-ink));
   color: var(--color-ivory);
 }
 
@@ -1990,7 +1988,7 @@ body.menu-open {
 .agenda-item--ce {
   background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
   border: 1px solid rgba(82,153,145,0.25);
-  border-left: 3px solid var(--color-seaglass);
+  border-left: 3px solid var(--color-ink);
 }
 
 /* Social event highlight */
@@ -2006,7 +2004,7 @@ body.menu-open {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-seaglass);
+  color: var(--color-ink);
   margin-top: 0.3rem;
 }
 
@@ -2022,7 +2020,7 @@ body.menu-open {
 }
 
 .agenda-item__speaker-link {
-  color: var(--color-seaglass);
+  color: var(--color-ink);
   text-decoration: none;
   font-weight: 600;
 }
@@ -2069,7 +2067,7 @@ body.menu-open {
 .agenda-concurrent-block {
   padding: var(--space-sm);
   border: 1px solid rgba(82,153,145,0.25);
-  border-left: 3px solid var(--color-seaglass);
+  border-left: 3px solid var(--color-ink);
   border-radius: 4px;
   margin-bottom: 0.4rem;
   background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
@@ -2093,7 +2091,7 @@ body.menu-open {
 .agenda-concurrent-card {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-seaglass);
+  border-left: 3px solid var(--color-ink);
   border-radius: 0;
   padding: 0.8rem 0.9rem;
 }
@@ -2252,7 +2250,7 @@ body.menu-open {
   font-weight: 700;
   font-style: italic;
   font-size: var(--fs-small);
-  color: var(--color-seaglass);
+  color: var(--color-ink);
   margin-bottom: var(--space-sm);
 }
 
@@ -2510,7 +2508,7 @@ body.menu-open {
 .sponsor-card__cta {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-coral);
+  color: var(--color-gold-warm);
 }
 
 /* Tiered sponsor display (conference-sponsors.html) */
@@ -2538,7 +2536,7 @@ body.menu-open {
   width: 48px;
   height: 2px;
   margin: var(--space-xs) auto 0;
-  background-color: var(--color-coral);
+  background-color: var(--color-gold-warm);
   border-radius: 2px;
 }
 
@@ -2755,12 +2753,10 @@ body.menu-open {
    Moved from inline <style> block — do not duplicate in other pages
    ============================================================ */
 
-/* ────── TOKEN OVERRIDES — gold palette, no teal/coral ────── */
+/* ────── TOKEN OVERRIDES — gold palette ────── */
 :root {
   --color-gold-warm:  #B8892A;
   --color-parchment:  #EDE8DE;
-  --color-coral:      #B8892A;
-  --color-seaglass:   #1E2A38;
   --color-cta:        #B8892A;
   --color-accent:     #B8892A;
 }
