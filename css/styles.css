@@ -16,6 +16,8 @@
   --color-ink: #1E2A38;
   --color-gold: #B8892A;      /* warm gold (was #D9A441) */
   --color-gold-warm: #B8892A; /* canonical warm gold token */
+  --color-gold-dark: var(--color-gold-dark); /* darkened gold — button hover backgrounds */
+  --color-gold-text: #8C6A1A; /* darkened gold for text — passes WCAG AA (4.65:1 on white) */
   --color-parchment: #EDE8DE; /* warm section band */
   --color-slate: #5C6670;
   --color-white: #FFFFFF;
@@ -263,7 +265,7 @@ body.has-subnav [id] {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-gold-text);
   margin-bottom: var(--space-xs);
 }
 
@@ -301,7 +303,7 @@ body.has-subnav [id] {
 }
 
 .btn-primary:hover {
-  background-color: #9e7523;
+  background-color: var(--color-gold-dark);
   color: var(--color-white);
   box-shadow: var(--shadow-card-hover);
 }
@@ -323,7 +325,7 @@ body.has-subnav [id] {
 }
 
 .btn-accent:hover {
-  background-color: #9e7523;
+  background-color: var(--color-gold-dark);
   color: var(--color-white);
 }
 
@@ -750,7 +752,7 @@ body.menu-open {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
   margin-bottom: 0.5rem;
 }
 
@@ -799,7 +801,7 @@ body.menu-open {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   margin-bottom: var(--space-sm);
 }
 
@@ -896,7 +898,7 @@ body.menu-open {
 /* Legacy session card meta (kept for backward compat) */
 .session-card__meta {
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-gold-text);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: var(--fs-small);
@@ -1018,7 +1020,7 @@ body.menu-open {
 }
 
 .session-item__sponsor a {
-  color: var(--color-accent);
+  color: var(--color-gold-text);
   font-weight: 600;
   text-decoration: none;
 }
@@ -2010,7 +2012,7 @@ body.menu-open {
 
 .agenda-item__time {
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-gold-text);
   font-size: var(--fs-small);
 }
 
@@ -2033,7 +2035,7 @@ body.menu-open {
   color: var(--color-text);
 }
 .agenda-item__sponsor-link {
-  color: var(--color-gold);
+  color: var(--color-gold-text);
   text-decoration: none;
   font-weight: 700;
 }
@@ -2142,7 +2144,7 @@ body.menu-open {
   background: none;
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
-  color: var(--color-accent);
+  color: var(--color-gold-text);
   font-size: var(--fs-small);
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -2304,7 +2306,7 @@ body.menu-open {
   margin-top: auto;
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   letter-spacing: 0.02em;
   transition: color 0.15s ease;
 }
@@ -2508,7 +2510,7 @@ body.menu-open {
 .sponsor-card__cta {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
 }
 
 /* Tiered sponsor display (conference-sponsors.html) */
@@ -2734,7 +2736,7 @@ body.menu-open {
 .faq-item__body ul li { margin-bottom: 0.25rem; }
 
 .faq-item__body a {
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   text-decoration: underline;
 }
 
@@ -2768,13 +2770,13 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
 
 /* Buttons */
 .btn-primary { background-color: var(--color-gold-warm); color: #fff; border-color: var(--color-gold-warm); }
-.btn-primary:hover, .btn-primary:focus-visible { background-color: #9e7523; border-color: #9e7523; color: #fff; }
+.btn-primary:hover, .btn-primary:focus-visible { background-color: var(--color-gold-dark); border-color: var(--color-gold-dark); color: #fff; }
 .btn-secondary { background-color: transparent; border-color: var(--color-ink); color: var(--color-ink); }
 .btn-secondary:hover, .btn-secondary:focus-visible { background-color: var(--color-ink); color: var(--color-ivory); }
 
 /* Join FAB + modal */
 .join-fab__button { background-color: var(--color-gold-warm); color: #fff; }
-.join-fab__button:hover { background-color: #9e7523; }
+.join-fab__button:hover { background-color: var(--color-gold-dark); }
 .modal__close:hover { background-color: var(--color-gold-warm); color: #fff; }
 
 /* Eyebrows */
@@ -3141,14 +3143,14 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
 }
 @media (min-width: 768px) { #section-cta h2 { font-size: 2.75rem; } }
 #section-cta .btn-primary { background-color: var(--color-gold-warm); border-color: var(--color-gold-warm); color: #fff; }
-#section-cta .btn-primary:hover { background-color: #9e7523; }
+#section-cta .btn-primary:hover { background-color: var(--color-gold-dark); }
 #section-cta .cta-questions {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: var(--color-slate);
 }
 #section-cta .cta-questions a {
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   font-weight: 600;
   text-decoration: none;
 }
