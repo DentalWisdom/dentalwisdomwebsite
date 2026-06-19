@@ -17,7 +17,12 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 - **Agenda data fields** (June 2026): `day`, `time`, `title` (use real course title, not "Lecture"; placeholders say "Lecture Title TBD"), `speaker` ("Speaker TBD" if unconfirmed), `speakerUrl` (links to `/conference-speakers#anchor`), `location`, `ce: true` (CE credit lecture), `ceCredits` (number, e.g. 1, 2, 1.5).
 - **Agenda page behavior** (June 2026): defaults to **all-days view** (all days stacked, scrollable). Filter bar shows "All Days" + one button per day. Clicking a day filters to that day only; prev/next arrows appear in single-day mode. CE lectures get a teal left-border highlight and "X CE Credits" label under the time. Speaker names are teal hyperlinks to the speakers page.
 - Forms: Jotform. Direct links for registration; the floating "Join the Network" button opens our own styled modal containing the Jotform iframe. Modal: focus-trapped, Esc closes, scroll-locked behind.
-- Fonts: Playfair Display (headings) + Inter (body) via Google Fonts with preconnect and `display=swap`.
+- Fonts: Playfair Display (headings) + Inter (body) via Google Fonts with preconnect and `display=swap`. Canonical `<link>` (use exactly this on every page):
+  ```html
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  ```
 - Media: optimized images in `/images` (resize to max 1600px wide, WebP ~80 quality, `loading="lazy"` below the fold). Long videos = YouTube embeds. Hero = muted looping mp4 under ~8MB in `/images` with `autoplay muted loop playsinline` and a poster image; source clip per spec §4.
 
 ## Design system
@@ -33,7 +38,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 - `#section-cta` (index.html): padding `1.5rem`, h2 margin-bottom `1rem`, questions margin-top `0.5rem`, gold line margin-bottom `0.75rem`
 
 ## Conventions
-- Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda/index.html, conference-speakers/index.html, conference-sponsors/index.html, conference-faq/index.html.
+- Header, footer, floating Join button: identical markup on every page. Primary nav has 4 items: **Conference · Live · Deals · WhatsApp**. `aria-current="page"` is set on the matching nav link for each page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda/index.html, conference-speakers/index.html, conference-sponsors/index.html, conference-faq/index.html.
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
 - **URL structure (June 2026)**: All pages use the folder/index.html pattern — no `.html` in URLs. `dentalwisdom.org/conference-agenda` serves `conference-agenda/index.html`, etc. Only `index.html` and `404.html` live at the root. Never create new `.html` files at the root; always create `new-page/index.html`.
@@ -51,13 +56,34 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`.
-- Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link.
+- Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
 ## Known intentional decisions (do not "fix" these)
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
-- **CSS cache version**: The stylesheet loads as `styles.css?v=7`. Bump the version number (e.g. `?v=8`) every time you make CSS changes so returning visitors get the updated file. Do this in every HTML file (grep for `styles.css?v=` to find all occurrences).
+- **CSS cache version**: The stylesheet currently loads as `styles.css?v=9`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
+  ```python
+  import os, re
+  root = "/sessions/.../mnt/Dental Wisdom Site"  # use correct sandbox path
+  for dp, dirs, files in os.walk(root):
+      dirs[:] = [d for d in dirs if not d.startswith('.')]
+      for fn in files:
+          if not fn.endswith('.html'): continue
+          p = os.path.join(dp, fn)
+          txt = open(p).read()
+          if 'styles.css?v=OLD' in txt:
+              open(p,'w').write(txt.replace('styles.css?v=OLD','styles.css?v=NEW'))
+  ```
+
+## Color tokens (June 2026 — do not revert)
+All gold values are tokenized. Never use hardcoded hex for gold colors anywhere:
+- `--color-gold-warm: #B8892A` — decorative gold (borders, icons, backgrounds). Do NOT use for text on white.
+- `--color-gold-dark: #9e7523` — button hover backgrounds only (e.g. `.btn-primary:hover`).
+- `--color-gold-text: #8C6A1A` — all gold-colored text, including eyebrows, CTAs, links, meta labels. Passes WCAG AA (4.65:1 on white). Use this anywhere text is gold-colored at any size.
+- `--color-accent` and `--color-cta` both resolve to `#B8892A` (decorative only — do not use for text).
+
+**Rule**: if a CSS property is `color:` (text), use `--color-gold-text`. If it's a background, border, or icon fill, use `--color-gold-warm` or `--color-gold-dark`.
 
 ## Workflow rules
 - One page per session, in the spec's build order. Start each session by proposing a short plan; wait for approval before writing code.
