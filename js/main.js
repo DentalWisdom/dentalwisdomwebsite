@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileMenu.classList.add('is-open');
       document.body.classList.add('menu-open');
       menuToggle.setAttribute('aria-expanded', 'true');
-      var firstLink = mobileMenu.querySelector('a');
+      var firstLink = mobileMenu.querySelector('.mobile-menu__list a');
       if (firstLink) firstLink.focus();
     };
 
