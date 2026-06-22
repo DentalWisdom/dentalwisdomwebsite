@@ -517,6 +517,16 @@ body.has-subnav [id] {
   text-decoration: none;
 }
 
+/* Match sub-nav behavior: focus shows the same gold underline as
+   hover/current page, never the boxed outline (the menu auto-focuses
+   the first link every time it opens, so the box would show on every
+   open rather than only on real keyboard navigation). */
+.mobile-menu__list a:focus-visible {
+  outline: none;
+  color: var(--color-ink);
+  border-bottom: 2px solid var(--color-gold-warm);
+}
+
 body.menu-open {
   overflow: hidden;
 }
