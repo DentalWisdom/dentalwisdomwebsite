@@ -183,13 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Render helpers ──────────────────────────────────────
 
-  // Drops a redundant ":00" from a displayed time (e.g. "9:00 AM" -> "9 AM",
-  // "6:00 – 7:00 AM" -> "6 – 7 AM") but leaves real minutes alone
-  // (e.g. "8:45 AM", "6:09 PM" are untouched).
-  function formatTime(str) {
-    return String(str || '').replace(/:00(?=\s|$)/g, '');
-  }
-
   // Groups consecutive items sharing the same `concurrent` id into a block.
   function renderDayItems(items) {
     var html = '';
@@ -220,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var isCEView   = isCE || items.some(function (it) { return !!it.showInCEView; });
     var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
 
-    var html = '<div class="agenda-concurrent-block"' + ceViewAttr + '>';
+    var blockClasses = 'agenda-concurrent-block' + (isCE ? ' agenda-concurrent-block--ce' : '');
+    var html = '<div class="' + blockClasses + '"' + ceViewAttr + '>';
 
     html += '<div class="agenda-item__time-col">';
     if (time) {
@@ -296,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function renderAgendaItem(item) {
     var title      = (item.title      || '').trim();
-    var time       = (item.time       || '').trim();
+    var time       = (item.time || '').trim();
     var speaker    = (item.speaker    || '').trim();
     var speakerUrl = (item.speakerUrl || '').trim();
     var location   = (item.location   || '').trim();

@@ -5,6 +5,13 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 
 **All 16 pages + 404 are built.** The site is in maintenance/content-update mode — no new pages planned currently. `giving.html` is deferred; it lives in `_archive/` only.
 
+## Open follow-ups
+- **Once the full agenda is finalized AND all speaker cards are done** (all "Speaker TBD" / "Lecture Title TBD" slots in `js/agenda-data.js` filled in, all ~16 speaker cards added to `conference-speakers/index.html`), revisit every line on the site that still reads as "lineup pending" — they'll be stale once the roster is final:
+  - `conference-speakers/index.html` — the italic line below the speaker grid: "Additional speakers to be announced." (remove or update once no more speakers are coming)
+  - `conference-faq/index.html`, "Who is lecturing and what classes will be offered?" answer — says speakers are "actively curating" and that "a full list of lectures and class topics will be published closer to the event"
+  - `conference-faq/index.html`, "What is the daily schedule?" answer — says "the schedule below is tentative" and "the final schedule will be published closer to the event"
+  - Re-grep the whole site for "to be announced", "TBD", "actively curating", and "published closer to the event" before closing this out, in case other pages pick up similar language later.
+
 ## Who you're working with
 Ben is the sole editor and not a developer. Explain any manual step he must take (publishing a Google Sheet, swapping an image, DNS changes) in plain numbered steps. When he reports a visual issue, ask for a screenshot rather than guessing.
 

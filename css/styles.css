@@ -2045,6 +2045,20 @@ body.menu-open {
   border-bottom: none;
 }
 
+/* Soft gold wash behind CE-credit sessions (June 2026) — bleeds slightly
+   past the row's text edges via negative margin so it reads as a gentle
+   highlight, not a hard-edged card. Text position is unchanged because
+   the matching padding cancels the margin out. */
+.agenda-item--ce,
+.agenda-concurrent-block--ce {
+  background: linear-gradient(90deg, rgba(184, 137, 42, 0.10), rgba(184, 137, 42, 0.02));
+  border-radius: 8px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* Left column: time + (optional) CE pill, stacked */
 .agenda-item__time-col {
   display: flex;
