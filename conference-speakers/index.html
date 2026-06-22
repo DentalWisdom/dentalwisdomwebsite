@@ -294,6 +294,12 @@
       line-height: 1.7;
       margin: 0 0 var(--space-md);
     }
+    .speaker-modal__bio p {
+      margin: 0 0 1em;
+    }
+    .speaker-modal__bio p:last-child {
+      margin-bottom: 0;
+    }
     .speaker-modal__session-box {
       background: var(--color-sand);
       border-radius: var(--radius-sm);
@@ -641,7 +647,11 @@
             data-photo="/images/speaker-gobbie-cohn.webp"
             data-name="Gobbie Cohn"
             data-specialty="Practice Management &amp; Insurance"
-            data-bio="Gobbie Cohn is a Managing Partner at APEX Reimbursement Specialists, where he helps dental practices nationwide maximize insurance revenue and improve their bottom line. With a strategic, results-driven approach, Gobbie leads marketing strategy, client growth, and operational execution at APEX. His team consistently delivers 7–10% average increases in insurance reimbursements through UCR fee analysis, credentialing support, and coding reviews — initiatives that have uncovered millions in additional production for dental practices across the country. Gobbie brings more than 25 years of experience in business development and the insurance industry. He earned his MBA from the University of Maryland and previously founded CG Insurance Group. Prior to that, he served as a producer and marketing manager at Howden Insurance Brokers (now PRS). A licensed insurance producer since 2001, Gobbie has developed deep expertise in sales, client relations, risk management, and account management, with particular strength in the Life Sciences and Technology sectors. In addition to his work in dental revenue optimization, Gobbie is a dynamic voice talent, singer, and cantor known for his rich, expressive voice and emotionally resonant performances. He has released original music and regularly performs at community events."
+            data-bio="Gobbie Cohn is a Managing Partner at APEX Reimbursement Specialists, where he helps dental practices nationwide maximize insurance revenue and improve their bottom line. With a strategic, results-driven approach, Gobbie leads marketing strategy, client growth, and operational execution at APEX. His team consistently delivers 7–10% average increases in insurance reimbursements through UCR fee analysis, credentialing support, and coding reviews — initiatives that have uncovered millions in additional production for dental practices across the country.
+
+Gobbie brings more than 25 years of experience in business development and the insurance industry. He earned his MBA from the University of Maryland and previously founded CG Insurance Group. Prior to that, he served as a producer and marketing manager at Howden Insurance Brokers (now PRS). A licensed insurance producer since 2001, Gobbie has developed deep expertise in sales, client relations, risk management, and account management, with particular strength in the Life Sciences and Technology sectors.
+
+In addition to his work in dental revenue optimization, Gobbie is a dynamic voice talent, singer, and cantor known for his rich, expressive voice and emotionally resonant performances. He has released original music and regularly performs at community events."
             data-course="Mincha, Kabbalas Shabbos &amp; Maariv"
             data-time="Friday, 6:15 PM"
             data-sponsor-label="Compliments of"
@@ -774,7 +784,7 @@
       <div class="speaker-modal__body">
         <h2 class="speaker-modal__name" id="speakerModalName"></h2>
         <p class="speaker-modal__specialty" id="speakerModalSpecialty"></p>
-        <p class="speaker-modal__bio" id="speakerModalBio"></p>
+        <div class="speaker-modal__bio" id="speakerModalBio"></div>
         <div class="speaker-modal__session-box">
           <p class="speaker-modal__session-label">Session</p>
           <p class="speaker-modal__session-title" id="speakerModalCourse"></p>
@@ -904,7 +914,13 @@
         avatar.alt                  = d.name;
         nameEl.textContent          = d.name;
         specialty.textContent       = d.specialty;
-        bio.textContent             = d.bio;
+        var bioParas = (d.bio || '').split(/\n\s*\n/).filter(Boolean);
+        bio.innerHTML = bioParas.map(function (p) {
+          return '<p>' + p.trim()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;') + '</p>';
+        }).join('');
         course.textContent          = d.course;
         time.textContent            = d.time;
 
