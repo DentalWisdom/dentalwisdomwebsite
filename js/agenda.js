@@ -10,7 +10,10 @@
 
    Fields per agenda item: day, time, title, speaker,
    speakerUrl, location, ce (boolean — CE credit lecture),
-   showInCEView (boolean — include in CE-only view even if not CE).
+   showInCEView (boolean — include in CE-only view even if not CE),
+   sponsor/sponsorUrl/sponsorLabel, and parts (array, for a
+   multi-part session sharing one concurrent-block card).
+   See js/agenda-data.js for full field docs.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -224,24 +227,59 @@ document.addEventListener('DOMContentLoaded', function () {
     html += '<div class="agenda-concurrent-block__grid">';
 
     items.forEach(function (item) {
-      var title      = (item.title      || '').trim();
-      var speaker    = (item.speaker    || '').trim();
-      var speakerUrl = (item.speakerUrl || '').trim();
-      var location   = (item.location   || '').trim();
-
-      var speakerHtml = '';
-      if (speaker) {
-        speakerHtml = speakerUrl
-          ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
-          : escapeHtml(speaker);
-      }
-      var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
+      var title        = (item.title        || '').trim();
+      var speaker      = (item.speaker      || '').trim();
+      var speakerUrl   = (item.speakerUrl   || '').trim();
+      var location     = (item.location     || '').trim();
+      var sponsor      = (item.sponsor      || '').trim();
+      var sponsorUrl   = (item.sponsorUrl   || '').trim();
+      var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
+      var parts        = Array.isArray(item.parts) ? item.parts : null;
 
       html += '<div class="agenda-concurrent-card">';
-      html += '<h3>' + escapeHtml(title || 'Session TBD') + '</h3>';
-      if (metaParts.length) {
-        html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+
+      if (parts) {
+        // Multi-part session sharing one room/time block — one compact line per lecture.
+        parts.forEach(function (part) {
+          var partTitle      = (part.title      || '').trim();
+          var partSpeaker    = (part.speaker    || '').trim();
+          var partSpeakerUrl = (part.speakerUrl || '').trim();
+          var partSpeakerHtml = '';
+          if (partSpeaker) {
+            partSpeakerHtml = partSpeakerUrl
+              ? '<a href="' + escapeHtml(partSpeakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(partSpeaker) + '</a>'
+              : escapeHtml(partSpeaker);
+          }
+          html += '<p class="agenda-concurrent-card__part-line">' +
+            '<span class="agenda-concurrent-card__part-title">' + escapeHtml(partTitle || 'Session TBD') + '</span>' +
+            (partSpeakerHtml ? ' — ' + partSpeakerHtml : '') +
+            '</p>';
+        });
+        if (location) {
+          html += '<p class="agenda-item__meta agenda-concurrent-card__location">' + escapeHtml(location) + '</p>';
+        }
+      } else {
+        var speakerHtml = '';
+        if (speaker) {
+          speakerHtml = speakerUrl
+            ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
+            : escapeHtml(speaker);
+        }
+        var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
+
+        html += '<h3>' + escapeHtml(title || 'Session TBD') + '</h3>';
+        if (metaParts.length) {
+          html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+        }
       }
+
+      if (sponsor) {
+        var sponsorInline = sponsorUrl
+          ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
+          : escapeHtml(sponsor);
+        html += '<p class="agenda-item__meta agenda-concurrent-card__sponsor"><strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong></p>';
+      }
+
       html += '</div>';
     });
 

@@ -2161,6 +2161,33 @@ body.menu-open {
   font-size: 0.78rem;
 }
 
+/* Multi-part session sharing one concurrent-block card — compact, one line per lecture */
+.agenda-concurrent-card__part-line {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.agenda-concurrent-card__part-line + .agenda-concurrent-card__part-line {
+  margin-top: 0.25rem;
+}
+
+.agenda-concurrent-card__part-title {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.agenda-concurrent-card__location {
+  margin-top: 0.4rem;
+}
+
+.agenda-concurrent-card__sponsor {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
 @media (max-width: 639px) {
   .agenda-concurrent-block__grid {
     grid-template-columns: 1fr;

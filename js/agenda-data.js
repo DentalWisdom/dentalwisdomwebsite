@@ -12,6 +12,22 @@
      speakerUrl - Link to speaker's profile page (optional)
      location   - Room or area name (optional — leave "" if not set)
      ce         - true for CE credit lectures (adds visual highlight)
+     sponsor / sponsorUrl / sponsorLabel
+                - Optional. Shows "Sponsored by <name>" (or a custom
+                  sponsorLabel) on the card, linked to sponsorUrl. Also
+                  works inside a concurrent block (applies to that one
+                  card, covering its whole time block).
+     parts      - Optional, only used on a card inside a concurrent
+                  block. For a single room's slot that's really a
+                  back-to-back multi-lecture session with different
+                  speakers (e.g. one 2-hour block split into two
+                  1-hour lectures). Array of { title, speaker,
+                  speakerUrl } — each renders as one compact line
+                  (lecture name — speaker) inside the same card, to
+                  keep the card from getting too tall.
+                  When present, the item's top-level title/speaker are
+                  ignored; sponsor/sponsorUrl still cover the card.
+                  See the Friday "Built to Scale" item below.
 
    Lecture sessions without a confirmed speaker show "Speaker TBD".
    Remaining lecture topics/speakers are still TBD and will be
@@ -57,7 +73,12 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "1:30 – 3:00 PM", title: "Ortho Tips and Tricks", speaker: "Dr. Dan German", speakerUrl: "/conference-speakers#speaker-dan-german", location: "Shul", ce: true, ceCredits: 2, sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Pediatric Dentistry Part 2: Lecture Title TBD", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
-  { day: "Friday", time: "3:00 – 4:00 PM", title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "311A1", ce: true, ceCredits: 1, concurrent: "fri-300-breakout" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations / Videography Meets AI: DIY Workshop", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout",
+    parts: [
+      { title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber" },
+      { title: "Videography Meets AI: DIY Workshop", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron" }
+    ],
+    sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Canvas & Calm: Paint Social", speaker: "Speaker TBD", location: "320A1", concurrent: "fri-300-breakout" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul", sponsor: "APEX Reimbursement Specialists & CG Insurance Group", sponsorUrl: "/conference-sponsors", sponsorLabel: "Compliments of" },
