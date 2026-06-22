@@ -42,7 +42,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
 - **URL structure (June 2026)**: All pages use the folder/index.html pattern — no `.html` in URLs. `dentalwisdom.org/conference-agenda` serves `conference-agenda/index.html`, etc. Only `index.html` and `404.html` live at the root. Never create new `.html` files at the root; always create `new-page/index.html`.
-- Speakers page (`conference-speakers/index.html`): **9 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
+- Speakers page (`conference-speakers/index.html`): **10 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
 - Speaker modal is **760px wide** (`max-width: 760px`) and **92vh tall** — larger than default to accommodate long bios. Both the ✕ button and clicking outside close it. Esc also closes.
 - **Sponsor support in modal**: add `data-sponsor-name`, `data-sponsor-url`, `data-sponsor-logo` attributes to an article to show a logo + link at the bottom of the bio. Logos live in `images/sponsors/`. Currently wired for Sam Waller (LiveWell Capital) and Rabbi Dr. Katz (Touro).
 
@@ -58,8 +58,9 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | Cosmetic Dentistry Lecture Title TBD | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
 | 9 | Dr. Dan German | `speaker-dan-german` | Ortho Tips and Tricks | Fri 1:30–3pm | orthobrain |
+| 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
 
-Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`.
+Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html).
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
