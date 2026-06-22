@@ -41,7 +41,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "Cosmetic Dentistry Lecture Title TBD", speaker: "Dr. Ariel Steinberger", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Pediatric Dentistry Part 1: Lecture Title TBD", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "Location TBD", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Ortho Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "Location TBD", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Ortho Hands-On: Lecture Title TBD", speaker: "Dr. Dan German", speakerUrl: "/conference-speakers#speaker-dan-german", location: "Location TBD", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "Location TBD", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Painting", speaker: "Speaker TBD", location: "Location TBD", concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
