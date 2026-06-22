@@ -215,17 +215,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var html = '<div class="agenda-concurrent-block"' + ceViewAttr + '>';
 
+    html += '<div class="agenda-item__time-col">';
     if (time) {
-      html += '<div class="agenda-item__time">' + escapeHtml(time);
-      if (isCE) {
-        var credLabel = ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit';
-        html += '<span class="agenda-item__ce-badge">' + credLabel + ' — choose one session</span>';
-      }
-      html += '</div>';
+      html += '<div class="agenda-item__time">' + escapeHtml(time) + '</div>';
     }
+    if (isCE) {
+      var credLabel = ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit';
+      html += '<span class="agenda-item__ce-badge">' + credLabel + '</span>';
+    }
+    html += '</div>';
 
+    html += '<div class="agenda-item__details">';
     html += '<p class="agenda-concurrent-block__label">Concurrent sessions</p>';
-    html += '<div class="agenda-concurrent-block__grid">';
+    html += '<div class="agenda-concurrent-block__list">';
 
     items.forEach(function (item) {
       var title        = (item.title        || '').trim();
@@ -237,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
       html += '<div class="agenda-concurrent-card">';
 
       // Build the shared meta line the same way every other agenda card does:
-      // Sponsored by X • Speaker • Location — all on one line.
+      // Speaker · Location — all on one line. Sponsor gets its own line below.
       var metaParts = [];
 
       if (parts) {
@@ -269,19 +271,19 @@ document.addEventListener('DOMContentLoaded', function () {
         metaParts.push(escapeHtml(location));
       }
 
-      var sponsorMeta = sponsorMetaHtml(item);
-      if (sponsorMeta) {
-        metaParts.unshift(sponsorMeta);
+      if (metaParts.length) {
+        html += '<p class="agenda-item__meta">' + metaParts.join(' &middot; ') + '</p>';
       }
 
-      if (metaParts.length) {
-        html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+      var sponsorMeta = sponsorMetaHtml(item);
+      if (sponsorMeta) {
+        html += sponsorMeta;
       }
 
       html += '</div>';
     });
 
-    html += '</div></div>';
+    html += '</div></div></div>';
     return html;
   }
 
@@ -309,28 +311,34 @@ document.addEventListener('DOMContentLoaded', function () {
     var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '') + (isEvent ? ' agenda-item--event' : '');
     var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
     var html = '<div class="' + classes + '"' + ceViewAttr + '>';
+
+    html += '<div class="agenda-item__time-col">';
     if (time) {
-      html += '<div class="agenda-item__time">' + escapeHtml(time) +
-        (isCE ? '<span class="agenda-item__ce-badge">' + (ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit') + '</span>' : '') +
-        '</div>';
+      html += '<div class="agenda-item__time">' + escapeHtml(time) + '</div>';
     }
+    if (isCE) {
+      html += '<span class="agenda-item__ce-badge">' + (ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit') + '</span>';
+    }
+    html += '</div>';
+
     html += '<div class="agenda-item__details">';
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
+    if (metaParts.length) {
+      html += '<p class="agenda-item__meta">' + metaParts.join(' &middot; ') + '</p>';
+    }
     var sponsorMeta = sponsorMetaHtml(item);
     if (sponsorMeta) {
-      metaParts.unshift(sponsorMeta);
-    }
-    if (metaParts.length) {
-      html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+      html += sponsorMeta;
     }
     html += '</div></div>';
     return html;
   }
 
-  // Builds the "Sponsored by X" / "Compliments of X & Y" meta string for
-  // an agenda item. Supports a `sponsors` array (multiple sponsors, each
-  // its own hyperlink, joined by a plain-text "&") or the legacy single
-  // sponsor/sponsorUrl fields. Returns '' if there's no sponsor at all.
+  // Builds the "Sponsored by X" / "Compliments of X & Y" meta line for
+  // an agenda item, as its own paragraph below the meta/CE line. Supports
+  // a `sponsors` array (multiple sponsors, each its own hyperlink, joined
+  // by a plain-text "&") or the legacy single sponsor/sponsorUrl fields.
+  // Returns '' if there's no sponsor at all.
   function sponsorMetaHtml(item) {
     var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
     var sponsorsList = Array.isArray(item.sponsors) ? item.sponsors : null;
@@ -345,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
           : escapeHtml(name);
       }).filter(Boolean);
       if (!links.length) { return ''; }
-      return '<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + links.join(' &amp; ') + '</strong>';
+      return '<p class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + links.join(' &amp; ') + '</p>';
     }
 
     var sponsor    = (item.sponsor    || '').trim();
@@ -354,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var sponsorInline = sponsorUrl
       ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
       : escapeHtml(sponsor);
-    return '<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>';
+    return '<p class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</p>';
   }
 
   function escapeHtml(str) {

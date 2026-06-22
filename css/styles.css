@@ -2004,18 +2004,28 @@ body.menu-open {
 
 .agenda-day-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   color: var(--color-ink);
-  margin: 0 0 var(--space-md);
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-sand);
+  text-align: center;
+  margin: 0 0 0.6rem;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.agenda-day-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold-warm);
+  margin: 0.9rem auto 0;
+}
+
 .agenda-list {
-  max-width: 950px;
+  max-width: 760px;
   margin: 0 auto;
 }
 
@@ -2024,68 +2034,69 @@ body.menu-open {
   outline-offset: 4px;
 }
 
-.agenda-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: var(--space-sm);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  margin-bottom: 0.4rem;
+.agenda-item,
+.agenda-concurrent-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--color-border);
   text-align: left;
 }
 
-.agenda-item:last-child {
-  margin-bottom: 0;
+.agenda-item:last-child,
+.agenda-concurrent-block:last-child {
+  border-bottom: none;
 }
 
-/* CE lecture highlight */
-.agenda-item--ce {
-  background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
-  border: 1px solid rgba(82,153,145,0.25);
-  border-left: 3px solid var(--color-ink);
+/* Left column: time + (optional) CE pill, stacked */
+.agenda-item__time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-/* Social event highlight */
-.agenda-item--event {
-  background: linear-gradient(to right, rgba(184,137,42,0.07) 0%, transparent 100%);
-  border: 1px solid rgba(184,137,42,0.25);
-  border-left: 3px solid var(--color-gold-warm);
-}
-
+/* CE credit indicator — pill badge */
 .agenda-item__ce-badge {
-  display: block;
-  font-size: 0.75rem;
+  display: inline-block;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-ink);
-  margin-top: 0.3rem;
+  color: var(--color-gold-text);
+  border: 1px solid var(--color-gold-warm);
+  border-radius: 1rem;
+  padding: 0.15rem 0.65rem;
 }
 
 .agenda-item__time {
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--color-gold-text);
-  font-size: var(--fs-small);
 }
 
 .agenda-item__details h3 {
-  margin: 0;
-  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin: 0 0 0.4rem;
 }
 
 .agenda-item__speaker-link {
   color: var(--color-ink);
   text-decoration: none;
   font-weight: 600;
+  border-bottom: 1px solid var(--color-gold-warm);
 }
 .agenda-item__speaker-link:hover {
-  text-decoration: underline;
+  color: var(--color-gold-text);
 }
 
 .agenda-item__sponsor {
-  font-style: normal;
-  color: var(--color-text);
+  font-style: italic;
+  color: var(--color-gold-text);
 }
 .agenda-item__sponsor-link {
   color: var(--color-gold-text);
@@ -2103,62 +2114,54 @@ body.menu-open {
 }
 
 .agenda-item__sponsor-label {
-  font-weight: 700;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--color-gold-text);
+  margin: 0.5rem 0 0;
 }
 
 @media (min-width: 640px) {
-  .agenda-item {
-    flex-direction: row;
-    align-items: baseline;
+  .agenda-item,
+  .agenda-concurrent-block {
+    grid-template-columns: 150px 1fr;
     gap: var(--space-md);
-  }
-
-  .agenda-item__time {
-    flex: 0 0 170px;
   }
 }
 
 /* ── Concurrent session block ─────────────────────────── */
-.agenda-concurrent-block {
-  padding: var(--space-sm);
-  border: 1px solid rgba(82,153,145,0.25);
-  border-left: 3px solid var(--color-ink);
-  border-radius: 4px;
-  margin-bottom: 0.4rem;
-  background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
-}
-
 .agenda-concurrent-block__label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin: 0.55rem 0 0.7rem;
+  color: var(--color-gold-text);
+  margin: 0 0 0.7rem;
 }
 
-.agenda-concurrent-block__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.65rem;
+.agenda-concurrent-block__list {
+  border-left: 1px solid var(--color-gold-warm);
+  padding-left: 1rem;
 }
 
 .agenda-concurrent-card {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-ink);
-  border-radius: 0;
-  padding: 0.8rem 0.9rem;
+  margin-bottom: 0.85rem;
+}
+
+.agenda-concurrent-card:last-child {
+  margin-bottom: 0;
 }
 
 .agenda-concurrent-card h3 {
-  margin: 0 0 0.3rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 0 0 0.2rem;
 }
 
 .agenda-concurrent-card .agenda-item__meta {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
 }
 
 /* Multi-part session sharing one concurrent-block card — one title line per
@@ -2166,9 +2169,10 @@ body.menu-open {
    roll into the single shared meta line below, same as every other card. */
 .agenda-concurrent-card__part-line {
   margin: 0;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.3;
   color: var(--color-text);
 }
 
@@ -2178,12 +2182,6 @@ body.menu-open {
 
 .agenda-concurrent-card__part-line:last-of-type {
   margin-bottom: 0.3rem;
-}
-
-@media (max-width: 639px) {
-  .agenda-concurrent-block__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ── Agenda day prev/next nav (single-day mode) ───────── */
