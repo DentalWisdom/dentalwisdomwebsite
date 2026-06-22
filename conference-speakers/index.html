@@ -98,6 +98,18 @@
       border: 3px solid var(--color-sand);
       box-shadow: 0 4px 16px rgba(30,42,56,0.12);
     }
+    /* Placeholder avatar — shown for speakers without a headshot yet (initials monogram) */
+    .speaker-avatar--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-sand);
+      color: var(--color-ink);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 0.04em;
+    }
 
     /* Card body */
     .speaker-card__body {
@@ -270,6 +282,21 @@
       object-position: top center;
       border: 4px solid var(--color-white);
       box-shadow: 0 6px 20px rgba(30,42,56,0.15);
+    }
+    /* Placeholder avatar — shown for speakers without a headshot yet (initials monogram) */
+    .speaker-modal__avatar--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-white);
+      color: var(--color-ink);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.25rem;
+      letter-spacing: 0.04em;
+    }
+    .speaker-modal__avatar--placeholder[hidden] {
+      display: none;
     }
     .speaker-modal__body {
       padding: var(--space-lg);
@@ -736,9 +763,10 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
         <div class="speaker-grid">
 
           <!-- Dr. Samuel Schuster -->
-          <!-- TODO: add headshot photo for Dr. Samuel Schuster to /images/speaker-samuel-schuster.jpg -->
+          <!-- TODO: add headshot photo for Dr. Samuel Schuster to /images/speaker-samuel-schuster.jpg, then swap the placeholder div below back to an <img> (see speaker-harold-katz card for the pattern) and set data-photo to the real path -->
           <article class="speaker-card" id="speaker-samuel-schuster" data-reveal
-            data-photo="/images/speaker-samuel-schuster.jpg"
+            data-photo=""
+            data-initials="SS"
             data-name="Dr. Samuel Schuster"
             data-specialty="General Dentistry"
             data-bio="Dr. Samuel Schuster is a dentist at Schuster Family Dentistry near Monsey, New York. He earned his Doctor of Dental Surgery (DDS) from Stony Brook University and holds a Bachelor of Science in Biology from Touro University, which he completed in 2009. With a strong scientific foundation and comprehensive clinical training, Dr. Schuster is committed to providing high-quality, patient-centered dental care to families in his community."
@@ -746,7 +774,7 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
             data-time="Shabbos, 8:15 – 9:15 AM">
             <button class="speaker-card__trigger" aria-haspopup="dialog">
               <div class="speaker-avatar-wrap">
-                <img class="speaker-avatar" src="/images/speaker-samuel-schuster.jpg" alt="Dr. Samuel Schuster" loading="lazy">
+                <div class="speaker-avatar speaker-avatar--placeholder" aria-hidden="true">SS</div>
               </div>
               <div class="speaker-card__body">
                 <h2 class="speaker-card__name">Dr. Samuel Schuster</h2>
@@ -830,6 +858,7 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       <button class="speaker-modal__close" id="speakerModalClose" aria-label="Close">&times;</button>
       <div class="speaker-modal__avatar-wrap">
         <img class="speaker-modal__avatar" id="speakerModalAvatar" src="" alt="">
+        <div class="speaker-modal__avatar speaker-modal__avatar--placeholder" id="speakerModalAvatarPlaceholder" hidden aria-hidden="true"></div>
       </div>
       <div class="speaker-modal__body">
         <h2 class="speaker-modal__name" id="speakerModalName"></h2>
@@ -953,6 +982,7 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       var backdrop  = document.getElementById('speakerModalBackdrop');
       var closeBtn  = document.getElementById('speakerModalClose');
       var avatar    = document.getElementById('speakerModalAvatar');
+      var avatarPlaceholder = document.getElementById('speakerModalAvatarPlaceholder');
       var nameEl    = document.getElementById('speakerModalName');
       var specialty = document.getElementById('speakerModalSpecialty');
       var bio       = document.getElementById('speakerModalBio');
@@ -967,8 +997,16 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       function openModal(card) {
         lastFocused = document.activeElement;
         var d = card.dataset;
-        avatar.src                  = d.photo;
-        avatar.alt                  = d.name;
+        if (d.photo) {
+          avatar.src     = d.photo;
+          avatar.alt     = d.name;
+          avatar.hidden  = false;
+          avatarPlaceholder.hidden = true;
+        } else {
+          avatar.hidden  = true;
+          avatarPlaceholder.hidden = false;
+          avatarPlaceholder.textContent = d.initials || '';
+        }
         nameEl.textContent          = d.name;
         specialty.textContent       = d.specialty;
         var bioParas = (d.bio || '').split(/\n\s*\n/).filter(Boolean);
