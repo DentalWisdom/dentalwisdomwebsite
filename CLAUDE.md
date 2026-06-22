@@ -49,7 +49,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
 - **URL structure (June 2026)**: All pages use the folder/index.html pattern — no `.html` in URLs. `dentalwisdom.org/conference-agenda` serves `conference-agenda/index.html`, etc. Only `index.html` and `404.html` live at the root. Never create new `.html` files at the root; always create `new-page/index.html`.
-- Speakers page (`conference-speakers/index.html`): **10 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
+- Speakers page (`conference-speakers/index.html`): **13 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
 - Speaker modal is **760px wide** (`max-width: 760px`) and **92vh tall** — larger than default to accommodate long bios. Both the ✕ button and clicking outside close it. Esc also closes.
 - **Sponsor support in modal**: add `data-sponsor-name`, `data-sponsor-url`, `data-sponsor-logo` attributes to an article to show a logo + link at the bottom of the bio. Logos live in `images/sponsors/`. Currently wired for Sam Waller (LiveWell Capital) and Rabbi Dr. Katz (Touro).
 - **No-photo-yet placeholder**: if a speaker doesn't have a headshot yet, don't point `data-photo` at a missing file (shows a broken image icon). Instead leave `data-photo=""`, add `data-initials="XX"` (their initials), and on the card use `<div class="speaker-avatar speaker-avatar--placeholder" aria-hidden="true">XX</div>` in place of the `<img class="speaker-avatar">`. The bio modal picks this up automatically (same `speakerModal` JS checks `data-photo`; if empty it shows the matching initials circle instead of a photo). Style is a light sand/white circle with dark navy initials — already built in `conference-speakers/index.html`'s `<style>` block (`.speaker-avatar--placeholder`, `.speaker-modal__avatar--placeholder`). Currently used for Dr. Samuel Schuster.
@@ -60,13 +60,16 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 1 | Dr. Harold Katz | `speaker-harold-katz` | Product Development – The Story of TheraBreath | Thu 9–10am | — |
 | 2 | Dr. Daniel Greenbaum | `speaker-daniel-greenbaum` | Designing Smiles That Last… | Thu 10am–12pm | — |
 | 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
-| 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? | Shabbos 4–5pm | LiveWell Capital |
+| 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? | Shabbos 5–6pm | LiveWell Capital |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
 | 6 | Dr. Gabe Hershman | `speaker-gabe-hershman` | Beyond the Extraction: Advanced Surgical Solutions for the Modern Dental Practice | Thu 2–4pm | — |
 | 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | The Art of the Smile: Blending Science and Aesthetics for Transformative Results | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
 | 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |
 | 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
+| 11 | Dr. Marc Faber | `speaker-marc-faber` | Built to Scale: 1 to 3+ Locations | Fri 3–4pm | — |
+| 12 | Yaakov Citron | `speaker-yaakov-citron` | Videography Meets AI: DIY Workshop | Fri 4–5pm | Citron Films |
+| 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | APEX Reimbursement Specialists & CG Insurance Group |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html).
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
