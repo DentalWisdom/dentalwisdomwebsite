@@ -140,8 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ----- Non-clickable scrolling logo strip (agenda + homepage) ----- */
+  /* Strip shows only confirmed 2027 sponsors — excludes pastSponsor and pending entries.
+     This keeps the strip in automatic sync with the sponsors page: edit sponsors-data.js
+     once and both the page and the strip update with no manual double-checking needed. */
   if (stripEl) {
-    stripEl.innerHTML = sponsors.map(function (s) {
+    var stripSponsors = sponsors.filter(function (s) { return !s.pastSponsor && !s.pending; });
+    stripEl.innerHTML = stripSponsors.map(function (s) {
       if (s.logoUrl) {
         return '<div class="logo-scroll-item">' +
           '<img src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '" loading="lazy">' +
