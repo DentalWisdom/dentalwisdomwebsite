@@ -2618,10 +2618,11 @@ body.menu-open {
 .sponsor-tier__grid--silver   .sponsor-card__logo { height: 78px; }
 .sponsor-tier__grid--bronze   .sponsor-card__logo { height: 62px; }
 
-/* Shared pill style — tier badge, attending badge, past-sponsor badge */
+/* Shared pill style — tier badge, attending badge, past-sponsor badge, pending badge */
 .sponsor-modal__tier,
 .sponsor-attending-badge,
-.sponsor-past-badge {
+.sponsor-past-badge,
+.sponsor-pending-badge {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 0.7rem;

@@ -87,7 +87,8 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/crazy-dental.png",
     link: "https://www.crazydentalprices.com/dentalwisdom",
     blurb: "Members-only dental supply marketplace with over 40,000 products at guaranteed lowest prices — free to join, with AI-powered pricing so your practice never overpays for supplies.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
   {
     name: "Lasso MD",
