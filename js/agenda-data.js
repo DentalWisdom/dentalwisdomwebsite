@@ -36,7 +36,7 @@
                   ignored; sponsor/sponsorUrl still cover the card.
                   See the Friday "Built to Scale" item below.
 
-   Lecture sessions without a confirmed speaker show "Speaker TBD".
+   Lecture sessions without a confirmed speaker show "To Be Announced Soon".
    Remaining lecture topics/speakers are still TBD and will be
    filled in as they're confirmed.
 
@@ -63,10 +63,10 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "Beyond the Extraction: Advanced Surgical Solutions for the Modern Dental Practice", speaker: "Dr. Gabe Hershman (Oral Surgeon)", speakerUrl: "/conference-speakers#speaker-gabe-hershman", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "The Art of the Smile: Blending Science and Aesthetics for Transformative Results", speaker: "Dr. Ariel Steinberger (Cosmetic Dentist)", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "301A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Build Your Clear Aligner Skill Set: A Hands-On Workshop for GPs", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "All-on-X & Photogrammetry: A Hands-On Full-Arch Implant Workshop", speaker: "Speaker TBD", location: "311A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Brush & Unwind: Dental Anatomy Through Art — A Hands-On Paint Workshop", speaker: "Speaker TBD", location: "320A1", concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "To Be Announced Soon", speaker: "To Be Announced Soon", location: "301A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Build Your Clear Aligner Skill Set: A Hands-On Workshop for GPs", speaker: "To Be Announced Soon", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "All-on-X & Photogrammetry: A Hands-On Full-Arch Implant Workshop", speaker: "To Be Announced Soon", location: "311A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Brush & Unwind: Dental Anatomy Through Art — A Hands-On Paint Workshop", speaker: "To Be Announced Soon", location: "320A1", concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------
@@ -74,14 +74,14 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "7:00 – 8:00 AM", title: "Shacharis", speaker: "", location: "Library" },
   { day: "Friday", time: "8:00 – 8:45 AM", title: "Breakfast", speaker: "", location: "OVO at The Altair" },
   { day: "Friday", time: "8:45 – 9:00 AM", title: "Welcoming Remarks", speaker: "Dr. Lisa (Greenstein) Sokol", location: "Shul", showInCEView: true, event: true },
-  { day: "Friday", time: "9:00 – 10:00 AM", title: "Practice Management Lecture", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Friday", time: "9:00 – 10:00 AM", title: "Practice Management Lecture", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Friday", time: "10:00 – 11:00 AM", title: "Intraosseous Anesthesia: Advanced Techniques for Predictable & Profound Pain Control", speaker: "Dr. Sara Werb (Pediatric Dentist)", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "Shul", ce: true, ceCredits: 1, sponsor: "NuSmile", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "11:00 AM – 12:30 PM", title: "'Hopeless' to Heroic: Modern Approaches to Periodontal Regeneration and Plastic Surgery", speaker: "Dr. Sean Ference (Periodontist)", speakerUrl: "/conference-speakers#speaker-sean-ference", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Friday", time: "12:30 – 1:30 PM", title: "Lunch", speaker: "", location: "OVO at The Altair", event: true, sponsor: "Sponsor TBD" },
-  { day: "Friday", time: "1:30 – 3:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 2 },
+  { day: "Friday", time: "1:30 – 3:00 PM", title: "To Be Announced Soon", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop", speaker: "Dr. Sara Werb (Pediatric Dentist)", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "NuSmile", sponsorUrl: "/conference-sponsors" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "The GP's Guide to Using Surgical Guides for Implant Placement", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Adin", sponsorUrl: "/conference-sponsors" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "Rotary Endo Mastery: A Hands-On Workshop in NiTi Instrumentation & Obturation", speaker: "Speaker TBD", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "The GP's Guide to Using Surgical Guides for Implant Placement", speaker: "To Be Announced Soon", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Adin", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "Rotary Endo Mastery: A Hands-On Workshop in NiTi Instrumentation & Obturation", speaker: "To Be Announced Soon", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron", location: "320A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",
@@ -90,15 +90,15 @@ window.AGENDA_DATA = [
       { name: "CG Insurance Group", url: "/conference-sponsors" }
     ], sponsorLabel: "Compliments of" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },
-  { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
   { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", speakerUrl: "/conference-speakers#speaker-samuel-schuster", location: "Library", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "9:00 AM", title: "Davening", speaker: "", location: "Shul" },
-  { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Shabbos Lunch", speaker: "", location: "OVO at The Altair" },
-  { day: "Shabbos", time: "2:45 PM", title: "Dental Volunteers for Israel (DVI)", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
-  { day: "Shabbos", time: "3:45 PM", title: "Making Aliyah and Practicing Dentistry in Israel", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "2:45 PM", title: "Dental Volunteers for Israel (DVI)", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "3:45 PM", title: "Making Aliyah and Practicing Dentistry in Israel", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "4:45 PM", title: "Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources", speaker: "Sam Waller, CFP®", speakerUrl: "/conference-speakers#speaker-sam-waller", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "5:45 PM", title: "Mincha", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "6:10 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz (General Dentist)", speakerUrl: "/conference-speakers#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1, sponsor: "Touro College of Dental Medicine", sponsorUrl: "/conference-sponsors" },
