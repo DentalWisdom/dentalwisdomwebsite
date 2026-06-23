@@ -81,7 +81,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Endo Lecture Title TBD", speaker: "Speaker TBD", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "Videography Meets AI: DIY Workshop", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron", location: "320A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron", location: "320A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",
     sponsors: [
