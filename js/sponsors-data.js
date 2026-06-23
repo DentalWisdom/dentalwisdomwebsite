@@ -180,6 +180,15 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
 
+  {
+    name: "NuSmile",
+    logoUrl: "/images/sponsors/nusmile.png",
+    link: "https://www.nusmile.com/",
+    blurb: "Founded in Houston in 1991, NuSmile pioneered prefabricated esthetic pediatric crowns — introducing one of the world's first pre-veneered crowns and, in 2012, the NuSmile ZR full-coverage zirconia system with exclusive Try-In crowns that eliminate contamination and ensure reliable retention. Their line also includes bioactive luting cements, MTA pulp therapy materials, and posterior stainless steel crowns — all engineered specifically for pediatric dentistry.",
+    tier: "silver",
+    pending: true
+  },
+
   /* ── BRONZE / SUPPORTING ──────────────────────────────── */
   {
     name: "AAFE",

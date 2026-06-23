@@ -2642,6 +2642,8 @@ body.menu-open {
 .sponsor-attending-badge       { background: #f5e9c8; color: #7a5a10; }
 /* Muted gray — visually quieter than the gold Attending pill */
 .sponsor-past-badge            { background: #e4e2dd; color: #5a5650; }
+/* Soft blue-gray — signals pending/provisional status */
+.sponsor-pending-badge         { background: #e0e7ef; color: #3a4f6a; }
 
 /* Card: attending badge pinned top-left */
 .sponsor-card {
