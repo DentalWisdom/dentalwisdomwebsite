@@ -441,5 +441,32 @@
       onScroll();
     })();
   </script>
+  <script>
+    /* Inject "proud sponsor" line into sponsor modal on this page only */
+    (function () {
+      function tryObserve() {
+        var modal = document.getElementById('sponsorModal');
+        if (!modal) { setTimeout(tryObserve, 100); return; }
+        new MutationObserver(function () {
+          var note = modal.querySelector('#sponsorLiveNote');
+          if (modal.classList.contains('is-open')) {
+            if (!note) {
+              var nameEl = modal.querySelector('#sponsorModalName');
+              note = document.createElement('p');
+              note.id = 'sponsorLiveNote';
+              note.style.cssText = 'margin-top:1rem;font-style:italic;color:var(--color-text-muted);font-size:0.9rem;';
+              note.textContent = (nameEl ? nameEl.textContent : 'This company') +
+                ' is a proud sponsor of Dental Wisdom Live and the Dental Wisdom Conference.';
+              var blurb = modal.querySelector('#sponsorModalBlurb');
+              if (blurb) blurb.insertAdjacentElement('afterend', note);
+            }
+          } else if (note) {
+            note.remove();
+          }
+        }).observe(modal, { attributes: true, attributeFilter: ['class'] });
+      }
+      tryObserve();
+    })();
+  </script>
 </body>
 </html>
