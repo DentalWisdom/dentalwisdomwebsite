@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         logoUrl: (row.logoUrl || '').trim(),
         link: (row.link || '').trim(),
         blurb: (row.blurb || '').trim(),
+        blurbHtml: (row.blurbHtml || '').trim(),
         tier: (row.tier || '').trim().toLowerCase(),
         attending: !!row.attending,
         pastSponsor: !!row.pastSponsor && !row.attending,
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '<span class="sponsor-pending-badge" id="sponsorModalPending" style="display:none" aria-label="Sponsorship pending">' + PENDING_BADGE_TEXT + '</span>' +
         '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
-        '<p id="sponsorModalBlurb"></p>' +
+        '<div id="sponsorModalBlurb"></div>' +
         '<div class="link-row" id="sponsorModalLinkRow">' +
           '<a class="btn btn-primary" id="sponsorModalLink" href="#" target="_blank" rel="noopener">Visit website &rarr;</a>' +
         '</div>' +
@@ -239,8 +240,13 @@ document.addEventListener('DOMContentLoaded', function () {
       tierEl.style.display = sponsor.tier ? '' : 'none';
     }
     nameEl.textContent = sponsor.name;
-    blurbEl.textContent = sponsor.blurb || '';
-    blurbEl.style.display = sponsor.blurb ? '' : 'none';
+    if (sponsor.blurbHtml) {
+      blurbEl.innerHTML = sponsor.blurbHtml;
+      blurbEl.style.display = '';
+    } else {
+      blurbEl.textContent = sponsor.blurb || '';
+      blurbEl.style.display = sponsor.blurb ? '' : 'none';
+    }
 
     if (sponsor.link) {
       linkEl.href = sponsor.link;

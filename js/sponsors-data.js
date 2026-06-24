@@ -61,8 +61,10 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/crown-catapult.png",
     link: "https://crowncatapult.com/",
     blurb: "The exclusive financial hub for dental professionals — access curated investment opportunities, expert practice valuations, and advisory services built by and for dentists.",
+    blurbHtml: "<p><strong>The Financial Hub Built for Dentistry</strong></p><p>Dental professionals face uniquely complex financial decisions. Yet the financial industry has never built anything specifically for them. Crown Catapult changes that, bringing together practice valuations, retirement planning, wealth management, exclusive investment opportunities, and more into one trusted ecosystem, backed by institutional partners like UBS and US Bank.</p><p><em>Founded by dentists, for dentists.</em></p>",
     tier: "platinum",
-    attending: true
+    attending: true,
+    videoUrl: "https://fast.wistia.net/embed/iframe/pww8p6dyz8?web_component=true&seo=true"
   },
   {
     name: "Emerald Dental Lab",
