@@ -86,7 +86,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",
     sponsors: [
-      { name: "Apex Reimbursement Specialists", url: "/conference-sponsors" },
+      { name: "APEX Reimbursement Specialists", url: "/conference-sponsors" },
       { name: "CG Insurance Group", url: "/conference-sponsors" }
     ], sponsorLabel: "Compliments of" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },

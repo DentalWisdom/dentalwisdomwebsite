@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/styles.css?v=26">
+  <link rel="stylesheet" href="/css/styles.css?v=25">
   <style>
     .live-cta-buttons {
       display: grid;
@@ -52,37 +52,6 @@
       justify-content: center;
       padding: 0.5rem 1.6rem;
       width: 100%;
-    }
-    /* Sponsor button on session cards */
-    .session-item__sponsor-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      color: var(--color-gold-text);
-      font-size: inherit;
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      transition: text-decoration-color 0.15s;
-    }
-    .session-item__sponsor-btn:hover,
-    .session-item__sponsor-btn:focus-visible {
-      text-decoration-color: var(--color-gold-text);
-    }
-    .session-item__sponsor-btn:focus-visible {
-      outline: 3px solid var(--color-ink);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-    .session-item__sponsor-logo {
-      height: 32px;
-      width: auto;
-      object-fit: contain;
-      vertical-align: middle;
     }
   </style>
 </head>
@@ -263,18 +232,18 @@
           <p>Exclusive prizes every session, generously provided by</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <a href="https://www.mbpreciousmetals.com" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none;">
-            <img src="/images/sponsors/mb-precious-metals.png" alt="MB Precious Metals" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-          </a>
-          <a href="https://www.livewellcapital.com" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); text-decoration: none;">
+          <button type="button" class="sponsor-card" data-sponsor-index="2" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); cursor: pointer;">
             <img src="/images/sponsors/livewell-capital.png" alt="LiveWell Capital" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-          </a>
+          </button>
+          <button type="button" class="sponsor-card" data-sponsor-index="5" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); cursor: pointer;">
+            <img src="/images/sponsors/mb-precious-metals.png" alt="MB Precious Metals" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </button>
         </div>
       </div>
     </section>
 
     <!-- ===================== HOW IT WORKS ===================== -->
-    <section class="section section--sand texture">
+    <section class="section section--ivory">
       <div class="container">
         <div class="section-heading" data-reveal>
           <h2>How Dental Wisdom Live Works</h2>
@@ -311,7 +280,7 @@
     </section>
 
     <!-- ===================== FINAL CTA ===================== -->
-    <section class="section section--ivory cta-band">
+    <section class="section section--sand texture cta-band">
       <div class="container" data-reveal>
         <h2>Never miss a session. Never stop learning.</h2>
         <p class="lede" style="margin-bottom: var(--space-md);">Dental Wisdom Live is one of the many ways we support our community year-round — with practical education, meaningful connection, and access to leading voices in dentistry.</p>
@@ -423,8 +392,6 @@
   </div>
 
   <script src="/js/main.js"></script>
-  <script src="/js/sponsors-data.js?v=2"></script>
-  <script src="/js/sponsors.js?v=3"></script>
   <script src="/js/live-data.js"></script>
   <script src="/js/live.js"></script>
   <script>

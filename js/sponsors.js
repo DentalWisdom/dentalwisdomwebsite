@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var tiersEl  = document.getElementById('sponsorTiers');
   var gridEl   = document.getElementById('sponsorGrid');
   var stripEl  = document.getElementById('logoScrollStrip');
-  // No early return — modal must be available on any page that loads this script
-  // (e.g. Live page uses openSponsorByName() without having any sponsor containers)
+  if (!tiersEl && !gridEl && !stripEl) return;
 
   var TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze'];
   var TIER_LABELS = {
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Modal is always set up so other pages (e.g. Live) can call openSponsorByName()
+  if (!tiersEl && !gridEl) return; // strip-only pages don't need the modal
 
   /* ----- Inject the shared pop-up (once) ----- */
   var modal = document.getElementById('sponsorModal');
@@ -338,12 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
   modal.querySelectorAll('[data-sponsor-close]').forEach(function (el) {
     el.addEventListener('click', closeModal);
   });
-
-  // Global hook so other pages (e.g. Live) can open a sponsor modal by name
-  window.openSponsorByName = function (name) {
-    var match = sponsors.find(function (s) { return s.name === name; });
-    if (match) openModal(match);
-  };
 
   /* ----- Helpers ----- */
   function escapeHtml(str) {
