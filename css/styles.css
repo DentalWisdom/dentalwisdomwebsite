@@ -3049,7 +3049,6 @@ body.menu-open {
 .conf-pricing-box {
   margin-top: auto;
   border: 1px solid rgba(184,137,42,0.3);
-  border-top: 3px solid var(--color-gold-warm);
   border-radius: var(--radius-md);
   background-color: #fff;
   padding: var(--space-md) var(--space-md);
