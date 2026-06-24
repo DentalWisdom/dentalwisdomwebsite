@@ -470,9 +470,8 @@
               var nameEl = modal.querySelector('#sponsorModalName');
               note = document.createElement('p');
               note.id = 'sponsorLiveNote';
-              note.style.cssText = 'margin-top:1rem;font-style:italic;color:var(--color-text-muted);font-size:0.9rem;';
-              note.textContent = (nameEl ? nameEl.textContent : 'This company') +
-                ' is a proud sponsor of Dental Wisdom Live and the Dental Wisdom Conference.';
+              note.style.cssText = 'margin-top:1rem;padding-top:1rem;border-top:1px solid var(--color-border);font-style:italic;color:var(--color-text-muted);font-size:0.85rem;text-align:center;';
+              note.textContent = 'Proud sponsor of Dental Wisdom Live and the Dental Wisdom Conference.';
               var blurb = modal.querySelector('#sponsorModalBlurb');
               if (blurb) blurb.insertAdjacentElement('afterend', note);
             }
