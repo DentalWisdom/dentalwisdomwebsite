@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var tiersEl  = document.getElementById('sponsorTiers');
   var gridEl   = document.getElementById('sponsorGrid');
   var stripEl  = document.getElementById('logoScrollStrip');
-  if (!tiersEl && !gridEl && !stripEl) return;
+  // No early return — modal must be available on any page that loads this script
+  // (e.g. Live page uses openSponsorByName() without having any sponsor containers)
 
   var TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze'];
   var TIER_LABELS = {
