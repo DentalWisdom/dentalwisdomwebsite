@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // that opens the shared sponsor modal — single source of truth.
         var sponsorData = (window.SPONSORS_DATA || []).find(function (d) { return d.name === s.sponsor; });
         if (sponsorData) {
-          html += '<button type="button" class="session-item__sponsor-btn" onclick="window.openSponsorByName(' + JSON.stringify(s.sponsor) + ')">';
+          html += '<button type="button" class="session-item__sponsor-btn" data-open-sponsor="' + escAttr(s.sponsor) + '">';
           if (sponsorData.logoUrl) {
             html += '<img src="' + escAttr(sponsorData.logoUrl) + '" alt="" aria-hidden="true" class="session-item__sponsor-logo">';
           }
@@ -109,6 +109,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       return html;
     }).join('');
+
+    // Wire sponsor modal buttons (data-open-sponsor avoids inline onclick quote issues)
+    container.querySelectorAll('[data-open-sponsor]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var name = btn.getAttribute('data-open-sponsor');
+        if (window.openSponsorByName) window.openSponsorByName(name);
+      });
+    });
 
     // "Show more" button — only appears when there are more than 3
     if (overflow) {
