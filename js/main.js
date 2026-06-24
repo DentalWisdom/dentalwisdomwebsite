@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
       mobileMenu.classList.add('is-open');
       document.body.classList.add('menu-open');
       menuToggle.setAttribute('aria-expanded', 'true');
-      var firstLink = mobileMenu.querySelector('.mobile-menu__list a');
-      if (firstLink) firstLink.focus();
+      // Focus the menu container (tabindex="-1") rather than the first nav link,
+      // so no gold focus ring appears on "Conference" when visiting other pages.
+      mobileMenu.focus();
     };
 
     menuToggle.addEventListener('click', function () {
