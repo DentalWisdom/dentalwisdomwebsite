@@ -58,7 +58,7 @@
 
   /* Sponsor logo column inside session rows */
   .session-item__logo-col {
-    flex: 0 0 160px;
+    flex: 0 0 220px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -67,14 +67,35 @@
     border-left: 1px solid var(--color-border);
     padding-left: var(--space-md);
   }
-  /* Override .sponsor-card defaults for the compact logo box */
+  /* Shared sponsor logo card size — used in session rows AND giveaway section */
+  .live-sponsor-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 110px;
+    padding: 10px 14px;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .live-sponsor-logo-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  /* Session row logo column — sized to match the shared card */
   .session-item__logo-btn {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 90px;
-    padding: 8px 10px;
+    width: 200px;
+    height: 110px;
+    padding: 10px 14px;
     gap: 0;
   }
   .session-item__logo-btn img {
@@ -117,10 +138,10 @@
       padding-top: var(--space-sm);
     }
     .session-item__logo-btn {
-      width: 140px;
+      width: 200px;
     }
     .session-item__logo-register {
-      width: 140px;
+      width: 200px;
     }
   }
   </style>
@@ -302,11 +323,11 @@
           <p>Exclusive prizes every session, generously provided by</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <button type="button" class="sponsor-card" data-sponsor-index="2" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); cursor: pointer;">
-            <img src="/images/sponsors/livewell-capital.png" alt="LiveWell Capital" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-index="2" aria-haspopup="dialog" aria-label="View LiveWell Capital details">
+            <img src="/images/sponsors/livewell-capital.png" alt="LiveWell Capital" loading="lazy">
           </button>
-          <button type="button" class="sponsor-card" data-sponsor-index="5" style="display: flex; align-items: center; justify-content: center; width: 240px; height: 120px; padding: 6px 12px; background: var(--color-white); border-radius: var(--radius-md); border: 1px solid var(--color-border); cursor: pointer;">
-            <img src="/images/sponsors/mb-precious-metals.png" alt="MB Precious Metals" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-index="5" aria-haspopup="dialog" aria-label="View MB Precious Metals details">
+            <img src="/images/sponsors/mb-precious-metals.png" alt="MB Precious Metals" loading="lazy">
           </button>
         </div>
       </div>
