@@ -125,10 +125,10 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   {
-    name: "APEX",
+    name: "Apex Reimbursement Specialists",
     logoUrl: "/images/sponsors/apex.png",
     link: "https://apexreimbursement.com/dental-wisdom/",
-    blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
+    blurb: "PPO analysis and revenue cycle management consulting for dental practices — Apex Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
     pastSponsor: true
   },
