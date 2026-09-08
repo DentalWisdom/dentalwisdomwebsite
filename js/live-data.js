@@ -21,6 +21,17 @@
                     it's over: "Request the recording to earn CE credit.").
      pastPerkLink - Optional URL that makes the pastPerk line a link
                     (e.g. the recording-request form). Only used with pastPerk.
+     recordingEmail
+                  - PAST sessions only. Set it (e.g. "Ben@dentalwisdom.org")
+                    and the session gets a "Get Recording" button in the exact
+                    spot "Sign Up" occupies on upcoming ones. It opens the
+                    visitor's email app with the subject and message already
+                    written, built from this session's own title / presenter /
+                    date — nothing is retyped per session. Omit it and the
+                    session shows no button. Keep any label change SHORT: it
+                    must stay one line in the 220px sponsor column ("Get
+                    Recording" fits, "Request Recording" wraps). Label lives
+                    in js/live.js.
      registerLink - Registration URL
      sponsor      - Sponsor display name
      sponsorLink  - Sponsor website URL

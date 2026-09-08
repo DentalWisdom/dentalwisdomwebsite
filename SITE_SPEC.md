@@ -382,8 +382,42 @@ Deals, Live CE, and Agenda content each live in a small local data file in `/js`
 }
 ```
 
-### Live CE data — `js/live-data.js` (TBD)
-Same idea, one object per session, with fields: title, date, time, description (short), registerLink (Jotform URL), status (Upcoming / Past), imageUrl (optional).
+### Live CE data — `js/live-data.js` (BUILT — field list updated Sept 8, 2026)
+One object per session. The file's own header comment is the authoritative field
+reference; this is the summary.
+
+| Field | Notes |
+|---|---|
+| `title` | Session title (required) |
+| `date` | Display date, e.g. `"October 15, 2026"` |
+| `time` | Display time — **always labelled "EST"**, never "ET"/"EDT" (see CLAUDE.md) |
+| `presenter` | Presenter name |
+| `description` | Full session description; only the first paragraph shows in the preview |
+| `perk` | UPCOMING only. Italic gold line under the description. Defaults to "Register and attend to earn CE credit." if omitted |
+| `pastPerk` | PAST only. No perk line shows on a past session unless this is set |
+| `pastPerkLink` | Optional URL that turns `pastPerk` into a link |
+| `recordingEmail` | PAST only. Adds a **"Get Recording"** button where "Sign Up" sits on upcoming sessions; opens the visitor's email app with the request pre-written from this session's own title/presenter/date. Added Sept 8, 2026 |
+| `registerLink` | Registration URL (Teams event link) |
+| `sponsor` / `sponsorName` / `sponsorLink` | Sponsor display name, the name matched against `js/sponsors-data.js` for the logo, and the sponsor's URL |
+| `sortDate` | ISO date used for sorting and the date badge, e.g. `"2026-10-15"` |
+| `status` | **lowercase** `"upcoming"` or `"past"` — the page filters on this field alone, it does not compare dates. A session that has happened stays in "Upcoming" until this is changed by hand |
+
+**Sample entry**:
+```js
+{
+  title: "Dental Exit Planning: Building Your Practice's Endgame Before You Need It",
+  date: "October 15, 2026",
+  time: "8:00 PM – 9:30 PM EST",
+  presenter: "Saul Kaplan",
+  description: "Every dentist eventually steps away from the chair...",
+  registerLink: "https://events.teams.microsoft.com/event/...",
+  sponsor: "Crown Catapult",
+  sponsorName: "Crown Catapult",
+  sponsorLink: "https://crowncatapult.com/",
+  sortDate: "2026-10-15",
+  status: "upcoming"
+}
+```
 
 ### Agenda data — `js/agenda-data.js` (TBD)
 Same idea, one object per agenda item, with fields: day, time, title, speaker, location.

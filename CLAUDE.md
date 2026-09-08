@@ -33,6 +33,21 @@ Quick reference for what's actually published on the live pages right now. Updat
 - Removed / archived (commented in-file, not deleted): Nobel Biocare, Dental Processing Solutions, NuSmile, AAFE.
 - `attending: true` sponsors get the gold "✓ Attending" pill; `pastSponsor: true` get a gray "Past Sponsor" pill and stay off the homepage logo strip.
 
+**Conference pricing (Sept 8, 2026):**
+- **Early bird now runs through September 30, 2026**, extended from August 31. Live in 4 places: homepage hero, homepage gold pricing box, homepage "Conference Fees — Dentists" accordion, and the FAQ page's closing CTA band.
+- Prices unchanged, and **were never actually raised on September 1** — the deadline lapsed on paper only, so nobody was charged more and nothing needed refunding.
+- The FAQ cost answer now names the date directly ("These are early bird rates, held through September 30, 2026") instead of only warning about dynamic pricing.
+- **Open question for Ben: is Sept 30 a date he will hold?** "Extended" is a one-time card — a second extension teaches the list that the deadlines are decorative. If it may move again, use a plain date with no "extended".
+
+**Dental Wisdom Live (Sept 8, 2026):**
+- Aug 27, 2026 (Pearl / Dr. Mitchell Rubinstein) is `status: "past"` and carries the **Get Recording** button.
+- **Oct 15, 2026 (Crown Catapult / Saul Kaplan) is the only upcoming session.**
+
+**Shabbos meals:** the FAQ now says sign-up details **will be announced after Sukkos**, replacing a stale line promising the link "5–6 months before the conference" — a window that had already arrived.
+
+**Sponsors:** 18 current (24 entries, 6 marked Past Sponsor). The FAQ answer no longer says sponsors "may support" the event; that wording predated any signing.
+
+
 ## Open follow-ups
 - **Once the full agenda is finalized AND all speaker cards are done** (all "Speaker TBD" / "Lecture Title TBD" slots in `js/agenda-data.js` filled in, all ~16 speaker cards added to `conference-speakers/index.html`), revisit every line on the site that still reads as "lineup pending" — they'll be stale once the roster is final:
   - ~~`conference-speakers/index.html` — the italic line below the speaker grid: "Additional speakers to be announced."~~ DONE July 24, 2026: replaced with a schedule-change disclaimer (same disclaimer also added to the bottom of the agenda in _archive/conference-agenda-full.html).
@@ -40,6 +55,12 @@ Quick reference for what's actually published on the live pages right now. Updat
   - `conference-faq/index.html`, "What is the daily schedule?" answer — says "the schedule below is tentative" and "the final schedule will be published closer to the event"
   - Re-grep the whole site for "to be announced", "TBD", "actively curating", and "published closer to the event" before closing this out, in case other pages pick up similar language later.
   - **[Done Sept 8, 2026: both conference-faq answers above have already been rewritten. The page now says only "A few sessions are still being confirmed and may be added closer to the event," which is accurate. A full-site grep confirms nothing still says "actively curating" or "the schedule below is tentative."]**
+- **The live slides deck (`liveslides/index.html`) still holds the August 27 content** — Alphaeon spotlight, Pearl lecture, August giveaways — and its pink urgency bar still reads *"Hotel rates go up next week"*, written in late August and now simply wrong. Ben's call to leave it (the deck isn't linked or searchable) and rebuild before **Oct 15**. When rebuilding: either set `alert: ""` to hide the bar, or use **the hotel's real rate-increase date**. Do NOT reuse the Sept 30 early bird date there — that bar is about The Altair's room rates, a different deadline. Archive the outgoing `spotlight` / `lecture` / `giveaways` values first, per the standing rule.
+- **The `$175` / `DentalWisdomLive` discount code appears only on the slides deck**, nowhere on the website, so the deck and the registration page imply different effective prices. Ben has said to leave it — noted here so it isn't mistaken for an oversight. *Still unanswered: is that code live, and does it stack on early bird?*
+- **"Can I attend without staying at the host hotel?" never answers its own question.** The FAQ replies "We strongly recommend staying at The Altair…", which is a nudge, not a yes or no. Needs a policy decision from Ben before the wording is touched.
+- **Hotel room rates (~$400 / $600 / $950) appear on BOTH the homepage and the FAQ.** If The Altair raises rates, both places must be updated together.
+- `_archive/superseded-js/` was created Sept 8, 2026 to hold a safety copy of `js/live.js` from before the Get Recording work — archived, not deleted, per the standing rule.
+
 
 ## Who you're working with
 Ben is the sole editor and not a developer. Explain any manual step he must take (publishing a Google Sheet, swapping an image, DNS changes) in plain numbered steps. When he reports a visual issue, ask for a screenshot rather than guessing.
@@ -48,9 +69,24 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 
 **Performance guardrail**: If Ben asks for something that would make the site slower (e.g., a large uncompressed image, an embedded widget, a big uncompressed logo, extra render-blocking scripts, a big new video file), don't just build it — tell him plainly what the slowdown would be (in terms of what a visitor would notice, not technical terms) and suggest a faster alternative that gets him the same result (e.g., a compressed/resized version, a lazy-loaded version, a lighter-weight approach). Let him choose once he knows the trade-off.
 
+**How Ben approves changes (standing — he has asked for this more than once).** He reviews before anything is edited. Give him a numbered list where every item shows the **exact current text and the exact replacement text**, in code blocks:
+- **One item per change**, individually numbered so he can answer yes/no to each. Never bundle unrelated edits into one item.
+- **Quote the current text verbatim**, pulled fresh from the file — not from memory, not from earlier in the chat.
+- **Recommend one option** and label it. Offer alternatives only where the choice is genuinely his (tone, wording, a real trade-off), never to avoid deciding.
+- **State the measured line-count impact** on every copy change (see the no-wrap rule under "Known intentional decisions").
+- **Then stop and wait.** He replies item by item ("1a good, 1b no, 2 yes…"). A "[No preference]" or a non-answer is **not** approval — say what you'd do and ask again.
+- **When he asks for risks**, give per-item risk analysis plus a recommended way to minimise each, grounded in checks actually run (git log, the rendering code, the live site) rather than generic caution. On Sept 8 that turned up two facts that changed the advice entirely: the early bird prices had never actually been raised, so nobody was owed a refund; and the Live page's Sign Up button is already guarded on `isPast`, so the fix was one word instead of three edits.
+
 ## Stack (locked — do not introduce frameworks, build steps, or npm)
 - GitHub Pages hosting. Plain HTML files, one shared stylesheet `css/styles.css`, vanilla JS in `js/main.js` (nav, modal, scroll reveals).
 - Dynamic content (Deals, Live sessions, Agenda) lives in local data files (`js/deals-data.js`, `js/live-data.js`, `js/agenda-data.js`) that each page's script reads directly — no Google Sheets, no CSV fetching. Ben tells Claude about changes (new/updated/removed entries) in chat, and Claude edits the relevant data file and commits. See SITE_SPEC.md §6 for each file's field format.
+- **`js/live-data.js` — the `recordingEmail` field (added Sept 8, 2026).** A past session can offer a **"Get Recording"** button that opens the visitor's email app with the request already written. Switch it on with one line on that session: `recordingEmail: "Ben@dentalwisdom.org",`
+  - It renders in **the same place the "Sign Up" button occupies on upcoming sessions** — stacked under the sponsor logo on desktop, full width below it on a phone — at the same size (200×45px). `js/live.js` covers all three spots Sign Up can appear in (footer with sponsor text, footer without, sponsor logo column).
+  - **The email writes itself** from that session's own `title`, `presenter` and `date` via `recordingMailto()` in `js/live.js`, so the message can never drift out of sync with the session. Omit the field and the session shows no button, exactly as before.
+  - **Keep the label short** — it must fit one line in the 220px sponsor column. Verified fitting: `Get Recording`, `Request Link`, `Request Video`, `Recording`. Verified NOT fitting: `Request Recording`, `Watch Recording`, `Get the Recording`, `Get Recording Link`.
+  - Currently set on the **Aug 27, 2026 Pearl session** only. Note the address is **Ben@**dentalwisdom.org while the rest of the site uses **info@** — that is what Ben asked for, not a typo to "fix".
+  - Bump `live.js` and `live-data.js` `?v=` in `live/index.html` after editing either (currently `?v=2`).
+  - **Caveat worth repeating to Ben if it comes up:** `mailto:` opens whatever mail app the device has configured. Fine on phones. A desktop visitor using webmail with no mail client set up may see nothing happen.
 - **Sponsor data** (`js/sponsors-data.js`): fields are `name`, `logoUrl`, `link`, `blurb`, `tier` (platinum/gold/silver/bronze), `attending` (boolean), and `videoUrl` (optional YouTube embed URL — renders at the bottom of that sponsor's modal). Set `attending: true` on any sponsor who will have a booth/table at the conference — this shows a gold "✓ ATTENDING" pill badge on their card (top-left) and in their modal (next to the tier pill). Omit or set `false` for sponsors not physically present. **Modal media**: some sponsors will have a `videoUrl`, others will have a featured photo at the bottom of their modal instead — Ben specifies which for each sponsor. Photo support is built: optional `photoUrl` field renders a featured photo at the bottom of that sponsor's modal (Crazy Dental uses it). Optional `pending: true` shows a "Pending" pill and keeps the sponsor off the homepage logo strip. **Static sponsor buttons in page HTML** (e.g. the Live page giveaway logos) must use `data-sponsor-name="Exact Name"` (matched by name in `sponsors.js`) — never `data-sponsor-index`, which breaks silently if the data file is reordered.
 - **Agenda data fields** (June 2026): `day`, `time`, `title` (use real course title, not "Lecture"; placeholders say "Lecture Title TBD"), `speaker` ("Speaker TBD" if unconfirmed), `speakerUrl` (links to `/conference-speakers#anchor`), `location`, `ce: true` (CE credit lecture), `ceCredits` (number, e.g. 1, 2, 1.5).
 - **Agenda page behavior** (June 2026): defaults to **all-days view** (all days stacked, scrollable). Filter bar shows "All Days" + one button per day. Clicking a day filters to that day only; prev/next arrows appear in single-day mode. **Visual style (editorial program, updated June 2026)**: day headings are italic Playfair with a centered gold rule beneath; sessions are separated by hairlines (no card backgrounds/borders) with small-caps gold time labels in a left column and the title in Playfair to the right. CE credits show as a gold outline pill badge under the title (not a left-border highlight). Sponsor credit is its own italic gold line below the meta line. Speaker names are ink-colored links with a thin gold underline to the speakers page. Concurrent sessions render as a list indented under a left gold rule (no grid of boxed cards).
@@ -166,6 +202,16 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
 ## Known intentional decisions (do not "fix" these)
+- **Never let text grow from one line to two. Verify it, don't eyeball it.** Ben's rule, stated Sept 8, 2026: if a piece of text fits on one line today, it must still fit on one line after an edit. Applies to any copy change anywhere — buttons, labels, eyebrows, headings, hero notes, FAQ answers. **Guessing at this has been wrong repeatedly**, so measure it in a real browser before writing to the file, and again after:
+  1. Stage the affected page(s) + `css/styles.css` into the container, serve with `python3 -m http.server`, load with Playwright (Chromium is preinstalled at `/opt/pw-browsers`; `PLAYWRIGHT_BROWSERS_PATH` is set — never run `playwright install`).
+  2. **Wait for the real fonts**: `await page.waitForFunction(() => document.fonts.status === 'loaded')`. Fallback fonts give wrong widths.
+  3. Force hidden content visible or nothing measures: open every `<details>`, and set `opacity:1; transform:none` on every `[data-reveal]`.
+  4. Count **visual lines**, not height: `const r=document.createRange(); r.selectNodeContents(el); r.getClientRects().length` — one rect per rendered line.
+  5. Swap `el.innerHTML` to each candidate wording, re-measure, restore.
+  6. Test **320, 360, 375, 390, 414, 430, 600, 768, 1024, 1280, 1440, 1920**. A candidate is acceptable only if it grows at **none** of them.
+  - **Do not check mobile only.** Some elements are *narrower* on desktop: the homepage gold pricing box sits in a two-column grid, so it is 1 line at 375px and 3 lines at 1280px. A wording safe on a phone can add a 4th line on a laptop.
+  - Real failures this caught on Sept 8, 2026, all of which looked fine by eye: `Early Bird Pricing — Extended to Sept 30` (4th line in the desktop pricing box) · `Early bird pricing extended through September 30.` (wrapped in the hero at 320px) · `...extended through Sept 30.` in the FAQ band (wrapped at 320 and 430px) · `Extended Through September 30, 2026` in the fees FAQ (+1 line at 375, 414, 430, 1024px) · `Request Recording` (2 lines in the 220px sponsor column).
+  - **When a wording grows, find shorter wording** — don't ship it and don't ask Ben to accept the wrap. Every one of the above had a working alternative.
 - **Time labels are always "EST"** (Ben's call, July 2026): every Live session time — and any time shown anywhere on the site — displays as "EST", e.g. "8:00 PM – 9:30 PM EST". Never use "ET" or "EDT", even for events during daylight-saving months. Ben understands "EST" is technically standard time; he wants the clock time to read as New York local time with the "EST" label used uniformly. When adding a new session to `js/live-data.js`, always write the `time` field with "EST".
 - **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.

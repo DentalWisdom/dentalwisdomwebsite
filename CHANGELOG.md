@@ -3,6 +3,24 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 8, 2026 (docs)
+
+- **Your standing preferences are written down now, so you don't have to keep repeating them.** Three documents updated; no visitor sees any difference — this is all so a future chat starts from the truth instead of asking you again.
+
+- **`CLAUDE.md` — the notes Claude reads at the start of every session.** Five things added:
+  - **The one-line rule, with the method attached.** "If text fits on one line today it must still fit after an edit" is now recorded as a locked decision, along with the actual procedure for proving it: render the real page in a browser with the real fonts loaded, count rendered lines, and test twelve screen widths from 320px to 1920px. It also records the trap that caused most of the near-misses — the homepage gold pricing box is *narrower* on a laptop than on a phone, so checking mobile alone misses it — and lists the five wordings that failed this week despite looking perfectly fine by eye.
+  - **How you approve changes.** Exact current text and exact replacement text, one numbered item per change, a labelled recommendation, the measured line impact, then stop and wait for your yes/no. Including the note that "no preference" is not a yes.
+  - **The `recordingEmail` field**, how to switch the Get Recording button on for a future session, and the tested list of button labels that do and don't fit the sponsor column — so nobody rediscovers that "Request Recording" wraps.
+  - **Current state:** early bird through Sept 30 (and the fact prices were never actually raised on Sept 1), Oct 15 as the only upcoming Live session, Shabbos meals after Sukkos, 18 sponsors.
+  - **Four things carried forward** so they can't get lost: the August slides deck and its wrong "hotel rates go up next week" bar — with an explicit warning *not* to reuse the Sept 30 date there, because that bar is about The Altair's room rates and is a different deadline; the $175 code that exists only on the slides; the hotel FAQ answer that never answers its own question; and the room rates that appear in two places and must be changed together.
+
+- **`SITE_SPEC.md` — the Live sessions field list was still marked "TBD" and was simply wrong.** It described fields that don't exist (`imageUrl`), missed most of the ones that do (`presenter`, `sponsor`, `sortDate`, `perk`, `pastPerk`), and showed `status` capitalized when the code requires lowercase. Replaced with an accurate table and a real sample entry.
+  - It now also spells out the thing that caused the stale Pearl session in the first place: **the Live page filters on the `status` field alone and never compares dates**, so a session that has already happened stays under "Upcoming Sessions" until someone changes that word by hand.
+
+- **`js/live-data.js` — its own header comment now documents `recordingEmail`**, including the warning to keep any replacement button label short enough to stay on one line.
+
+---
+
 ## September 8, 2026 (later)
 
 - **The Pearl session on the Live page now has a "Get Recording" button.** It sits in exactly the same place the "Sign Up" button occupies on upcoming sessions — stacked directly under the sponsor logo on desktop, full-width below it on a phone — and is the same navy button at the same size (200x45px, identical to Sign Up).
