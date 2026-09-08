@@ -79,6 +79,7 @@ window.LIVE_DATA = [
     sponsor: "Pearl",
     sponsorName: "Pearl",
     sponsorLink: "https://discover.hellopearl.com/dental-wisdom/",
+    recordingEmail: "Ben@dentalwisdom.org",
     sortDate: "2026-08-27",
     status: "past"
   },

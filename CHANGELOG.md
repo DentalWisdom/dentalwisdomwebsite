@@ -3,6 +3,17 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 8, 2026 (later)
+
+- **The Pearl session on the Live page now has a "Get Recording" button.** It sits in exactly the same place the "Sign Up" button occupies on upcoming sessions — stacked directly under the sponsor logo on desktop, full-width below it on a phone — and is the same navy button at the same size (200x45px, identical to Sign Up).
+  - **It opens the visitor's email app with the message already written**, addressed to Ben@dentalwisdom.org, with the subject "Recording request — AI in Dentistry: Enhancing Patient Communication and Clinical Outcomes" and a short note that already names the session, the presenter and the date. The visitor just presses send.
+  - **The label is "Get Recording", not "Request Recording".** "Request Recording" was built and tested first, but it wrapped onto two lines inside the 220px-wide sponsor column on desktop while "Sign Up" stayed on one — so the two buttons no longer matched. Nine labels were measured at seven screen widths; "Get Recording" is the longest wording that stays on one line everywhere. If you prefer different words, "Request Link", "Request Video" and "Recording" also fit; "Watch Recording" and "Get the Recording" do not.
+  - **It is reusable.** The button is switched on per session by one line in `js/live-data.js` — `recordingEmail: "Ben@dentalwisdom.org"` — and the email subject and body are generated from that session's own title, presenter and date. To offer a recording on a future past session, add that one line and nothing else. Leave it off and the session shows no button, exactly as before.
+  - **Worth knowing about mailto buttons:** they open whatever email app the visitor's device is set up with. On phones that is essentially always fine. On a desktop where someone uses webmail in a browser and has no mail app configured, the button may do nothing visible. Most of your traffic is on phones, so this is a small edge case, but it is the reason a plain contact link is sometimes preferred.
+  - `live/index.html` now loads `live.js` and `live-data.js` at `?v=2` so returning visitors get the new versions rather than a cached copy.
+
+---
+
 ## September 8, 2026
 
 - **Early bird pricing extended to September 30 — updated in all four places it appeared.** The August 31 date had passed, so the site was showing an expired deadline. Worth knowing: the prices themselves were never actually raised on September 1, so nobody was ever charged more than the early bird rate and there is nothing to refund. The deadline had lapsed on paper only.

@@ -27,25 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var SESSIONS_LIMIT = 3;
 
-  // Past sessions can offer a "Request Recording" button in the same spot the
-  // "Sign Up" button occupies on upcoming ones. Turn it on by adding
-  //   recordingEmail: "Ben@dentalwisdom.org"
-  // to that session in live-data.js. The subject and message are built from the
-  // session's own title / presenter / date, so nothing is re-typed per session.
-  function recordingMailto(s) {
-    if (!s.recordingEmail) return null;
-    var subject = 'Recording request \u2014 ' + (s.title || 'Dental Wisdom Live session');
-    var body = 'Hi Ben,\n\n'
-      + 'Could you please send me the recording link for this Dental Wisdom Live session?\n\n'
-      + (s.title ? s.title + '\n' : '')
-      + (s.presenter ? s.presenter + '\n' : '')
-      + (s.date ? s.date + '\n' : '')
-      + '\nThank you!\n';
-    return 'mailto:' + s.recordingEmail
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(body);
-  }
-
   function render(rows, container, opts) {
     if (!rows.length) {
       container.innerHTML = opts.isPast
@@ -82,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var sponsorIdx = (s.sponsorName !== undefined) ? sponsorIndexMap[s.sponsorName] : undefined;
       var sponsorData = (sponsorIdx !== undefined) ? (window.SPONSORS_DATA || [])[sponsorIdx] : null;
       var showLogoCol = !!(sponsorData && sponsorData.logoUrl);
-
-      var recLink = opts.isPast ? recordingMailto(s) : null;
 
       var html = '<article class="session-item' + modClass + hidden + '">';
 
@@ -144,19 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '</span>';
         if (!opts.isPast && s.registerLink) {
           html += '<a class="btn btn-live" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
-        } else if (recLink) {
-          html += '<a class="btn btn-live" href="' + escAttr(recLink) + '">Get Recording</a>';
         }
         html += '</div>'; // .session-item__footer
-      } else if (!showLogoCol && ((!opts.isPast && s.registerLink) || recLink)) {
-        // No sponsor text, but still needs a sign-up / request-recording button
+      } else if (!showLogoCol && !opts.isPast && s.registerLink) {
+        // No sponsor text, but still needs a sign-up button
         html += '<div class="session-item__footer">';
         html += '<span></span>';
-        if (!opts.isPast && s.registerLink) {
-          html += '<a class="btn btn-live" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
-        } else {
-          html += '<a class="btn btn-live" href="' + escAttr(recLink) + '">Get Recording</a>';
-        }
+        html += '<a class="btn btn-live" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
         html += '</div>';
       }
 
@@ -173,8 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '</button>';
         if (!opts.isPast && s.registerLink) {
           html += '<a class="btn btn-live session-item__logo-register" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
-        } else if (recLink) {
-          html += '<a class="btn btn-live session-item__logo-register" href="' + escAttr(recLink) + '">Get Recording</a>';
         }
         html += '</div>'; // .session-item__logo-col
       }
