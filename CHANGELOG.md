@@ -25,6 +25,13 @@ A plain-English record of every update made to the site, most recent first. This
 - **Project notes (`CLAUDE.md`) brought back in line with the actual site.** These are the notes Claude reads at the start of every chat, so when they drift, every future session starts from a slightly wrong picture. Corrected: the speaker count (12 to 13), Rabbi Dr. Ephraim Rudolph added to the Friday roster, and the stylesheet version (47 to 54).
   - Two older entries were **annotated rather than rewritten**, so the history stays intact: the July 24 speaker-reorganization note now carries a dated update saying Dr. Craig Berry is live again, and the open follow-up about "actively curating" / "tentative schedule" wording in the FAQ is now marked done, since both of those lines were already replaced.
 
+- **The FAQ cost answer now names the early bird date.** "How much does the Dental Wisdom Conference cost for dentists to attend?" previously ended with only a vague warning that prices might rise "dynamically based on demand" — which told a different story from the homepage, where a specific deadline is advertised. It now opens with the actual date: "These are early bird rates, held through September 30, 2026. We also reserve the right to raise pricing dynamically based on demand due to limited space."
+  - This wording was chosen over a longer version specifically because it keeps the answer at exactly the same number of lines on every screen size. The trade-off, worth knowing: the old closing line "Register early to lock in the current rates" is gone, replaced by the harder information of a real date.
+
+- **Shabbos meal sign-up: the FAQ no longer promises a link that hasn't gone out.** The answer used to say the reservation link typically arrives "5–6 months before the conference" — a window that opened this month, so the page was quietly setting an expectation. It now says plainly: "Sign-up details will be announced after Sukkos." The "these sell out quickly, book as soon as you get the link" urgency is kept, and the estimated meal pricing is unchanged.
+
+- **Left alone at Ben's direction:** the $175 / DentalWisdomLive discount code that appears on the live event slides. It is not mentioned anywhere on the website, so the deck and the registration page imply different effective prices — noted here so it isn't mistaken for an oversight later.
+
 - **Deliberately left alone:** the live event slides (`liveslides/index.html`) still hold the August 27 deck, including a pink bar that reads "Hotel rates go up next week." Ben's call — the deck isn't linked from the site or searchable, and it gets rebuilt before the October 15 session anyway.
 
 ---
