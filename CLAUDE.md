@@ -11,12 +11,12 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 
 **Gobbie Cohn temporarily hidden (July 28, 2026):** Ben asked to hide Gobbie Cohn's name because his attendance is unconfirmed — restore when Ben says he's coming. Two spots, both marked with dated "HIDDEN"/"restore when he tells us" comments: (1) `js/agenda-data.js` Friday 6:15 PM line — `speaker` set to `""`, session line + APEX/CG sponsor credit kept (Ben's call); to restore, put back `speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn"`. (2) `_archive/conference-speakers-full.html` — his whole speaker card is wrapped in an HTML comment (`CARD HIDDEN 2026-07-28` … `END HIDDEN 2026-07-28 (Gobbie Cohn)`); to restore, delete those two comment lines. Nothing was deleted.
 
-## Current live state (snapshot — updated July 30, 2026)
+## Current live state (snapshot — updated September 8, 2026)
 Quick reference for what's actually published on the live pages right now. Update this whenever speakers/sponsors/agenda change.
 
-**Speakers live on `conference-speakers/index.html` (12 active cards, chronological):**
+**Speakers live on `conference-speakers/index.html` (13 active cards, chronological):**
 - Thursday: Dr. Harold Katz (TheraBreath), Dr. Daniel Greenbaum (TruAbutment), Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Marc Faber.
-- Friday: Dr. Nathaniel Dancykier (2 sessions — Fri 9:00 AM + Shabbos 2:45 PM DVI), Dr. Sara Werb, Dr. Craig Berry, Dr. Sam Glick (orthobrain), Dr. Elaine Bylis.
+- Friday: Dr. Nathaniel Dancykier (2 sessions — Fri 9:00 AM + Shabbos 2:45 PM DVI), Dr. Sara Werb, Dr. Craig Berry, Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Rabbi Dr. Ephraim Rudolph (Fri 10:30 PM Oneg & Shiur, Crown Catapult).
 - Shabbos: Sam Waller (LiveWell Capital), Rabbi Dr. David J. Katz (Touro).
 - Hidden (unconfirmed, restore when Ben says): Gobbie Cohn. Archived in-file (commented, not deleted): Dr. Sean Ference, Yaakov Citron, Dr. Samuel Schuster.
 
@@ -39,6 +39,7 @@ Quick reference for what's actually published on the live pages right now. Updat
   - `conference-faq/index.html`, "Who is lecturing and what classes will be offered?" answer — says speakers are "actively curating" and that "a full list of lectures and class topics will be published closer to the event"
   - `conference-faq/index.html`, "What is the daily schedule?" answer — says "the schedule below is tentative" and "the final schedule will be published closer to the event"
   - Re-grep the whole site for "to be announced", "TBD", "actively curating", and "published closer to the event" before closing this out, in case other pages pick up similar language later.
+  - **[Done Sept 8, 2026: both conference-faq answers above have already been rewritten. The page now says only "A few sessions are still being confirmed and may be added closer to the event," which is accurate. A full-site grep confirms nothing still says "actively curating" or "the schedule below is tentative."]**
 
 ## Who you're working with
 Ben is the sole editor and not a developer. Explain any manual step he must take (publishing a Google Sheet, swapping an image, DNS changes) in plain numbered steps. When he reports a visual issue, ask for a screenshot rather than guessing.
@@ -148,7 +149,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 
 **Confirmed (session titles + speakers locked, per Ben, July 13, 2026):** Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, Sam Waller.
 
-**Speaker page reorganized (July 24, 2026)** — the table above is partially stale; the LIVE `conference-speakers/index.html` is now the source of truth (it's the full published page, not `_archive/...-full.html`). See "Current live state" below for the up-to-date roster. Current state: 12 active cards, ordered chronologically by speaking time within each day. Removed (archived in-file as comments, not deleted): Dr. Craig Berry, Dr. Samuel Schuster (his agenda entry stays but no longer links to a card), Yaakov Citron (session replaced by hands-on tracks; Citron Films still a sponsor), plus Dr. Sean Ference (archived earlier). Restored: Dr. Marc Faber (Thu 6:30 PM). Dr. Nathaniel Dancykier's card is first in Friday and lists both his sessions (Fri 9:00 AM lecture + Shabbos 2:45 PM DVI). Dr. Sara Werb's card is single-session (Fri 10:30 AM–12:30 PM, NuSmile sponsor removed). Gobbie Cohn's card session reads "Kabbalas Shabbos" (Ben's wording) and sits last in Friday.
+**Speaker page reorganized (July 24, 2026)** — the table above is partially stale; the LIVE `conference-speakers/index.html` is now the source of truth (it's the full published page, not `_archive/...-full.html`). See "Current live state" below for the up-to-date roster. Current state: 12 active cards, ordered chronologically by speaking time within each day. Removed (archived in-file as comments, not deleted): Dr. Craig Berry, Dr. Samuel Schuster (his agenda entry stays but no longer links to a card), Yaakov Citron (session replaced by hands-on tracks; Citron Films still a sponsor), plus Dr. Sean Ference (archived earlier). Restored: Dr. Marc Faber (Thu 6:30 PM). Dr. Nathaniel Dancykier's card is first in Friday and lists both his sessions (Fri 9:00 AM lecture + Shabbos 2:45 PM DVI). Dr. Sara Werb's card is single-session (Fri 10:30 AM–12:30 PM, NuSmile sponsor removed). Gobbie Cohn's card session reads "Kabbalas Shabbos" (Ben's wording) and sits last in Friday. **[Updated Sept 8, 2026: now 13 active cards. Dr. Craig Berry was restored to the live page, and Rabbi Dr. Ephraim Rudolph was added Sept 3, 2026. The removals listed above still stand for Sean Ference, Yaakov Citron, Samuel Schuster and Gobbie Cohn.]**
 
 **Still-pending slots (as of July 13, 2026)** — for reference, not urgent, not blocking publish:
 - Thursday 6:30–8:00 PM: FILLED (July 24, 2026) — Dr. Marc Faber, CEO of Edge Dental Management, "I Buy Junk Practices" (CE, 1.5 credits). Was previously "Concurrent Classes — Topics to Be Announced."
@@ -168,7 +169,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - **Time labels are always "EST"** (Ben's call, July 2026): every Live session time — and any time shown anywhere on the site — displays as "EST", e.g. "8:00 PM – 9:30 PM EST". Never use "ET" or "EDT", even for events during daylight-saving months. Ben understands "EST" is technically standard time; he wants the clock time to read as New York local time with the "EST" label used uniformly. When adding a new session to `js/live-data.js`, always write the `time` field with "EST".
 - **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
-- **CSS cache version**: The stylesheet currently loads as `styles.css?v=47`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
+- **CSS cache version**: The stylesheet currently loads as `styles.css?v=54`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
   ```python
   import os, re
   root = "/sessions/.../mnt/Dental Wisdom Site"  # use correct sandbox path

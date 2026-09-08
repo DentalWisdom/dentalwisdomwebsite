@@ -80,7 +80,7 @@ window.LIVE_DATA = [
     sponsorName: "Pearl",
     sponsorLink: "https://discover.hellopearl.com/dental-wisdom/",
     sortDate: "2026-08-27",
-    status: "upcoming"
+    status: "past"
   },
   {
     title: "Dental Exit Planning: Building Your Practice's Endgame Before You Need It",

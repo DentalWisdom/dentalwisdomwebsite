@@ -3,6 +3,32 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 8, 2026
+
+- **Early bird pricing extended to September 30 — updated in all four places it appeared.** The August 31 date had passed, so the site was showing an expired deadline. Worth knowing: the prices themselves were never actually raised on September 1, so nobody was ever charged more than the early bird rate and there is nothing to refund. The deadline had lapsed on paper only.
+  - **Homepage hero** (under the headline): now reads "Early bird pricing through Sept 30."
+  - **Gold pricing box** in the Overview section: now reads "Early Bird — Extended to Sept 30."
+  - **Homepage FAQ, "Conference Fees — Dentists"**: now reads "Early Bird — Extended to Sept 30, 2026: Prices increase after Sept 30. Register now to lock in the early bird rate."
+  - **FAQ page, "Ready to join us?" band** at the bottom: now reads "Early bird pricing through Sept 30."
+  - **Every wording was measured in a real browser before it went in**, at twelve screen widths from 320px (small iPhone) up to 1920px, with your actual fonts loaded. Nothing gained a line anywhere — one spot on the homepage FAQ actually got a line shorter on the narrowest phones. Several longer phrasings were rejected for exactly this reason: "Early Bird Pricing — Extended to Sept 30" in the gold box would have wrapped onto a fourth line on desktop, and "extended through September 30" in the hero would have wrapped on a 320px phone.
+  - The prices are unchanged: $1,995 dentist, $1,595 resident, $2,995 vendor dentist, $450 spouse, $100 child.
+
+- **The August 27 Dental Wisdom Live session is now filed as past.** The Pearl session with Dr. Mitchell Rubinstein was still sitting at the top of "Upcoming Sessions" with a working Sign Up button, twelve days after it ran — the most visibly out-of-date thing on the site, because a visitor could actually click it.
+  - The fix was a single word in `js/live-data.js` (its status changed from upcoming to past). The Sign Up button and the "Register and attend to earn CE credit and a free month of Pearl" line both disappear on their own, because the page only draws those for upcoming sessions.
+  - **Nothing was deleted.** The Pearl offer text stays in the file as a record of what was offered; it is simply no longer read for a session that has passed.
+  - Upcoming Sessions now holds one session — Crown Catapult on October 15. That is correct, just thinner than before.
+  - If you get a recording-request link for the Pearl session, say the word and a "Request the recording to earn CE credit" line can be added to it.
+
+- **The FAQ no longer describes your sponsors as hypothetical.** The "Will there be sponsors or exhibitors?" answer opened with "A limited number of aligned sponsors may support the event" — wording written before any sponsors had signed. You now have eighteen current sponsors across all four tiers, a full Sponsors page and a logo strip on the homepage, so that line read like a conference that hadn't attracted anyone. It now opens "Yes. A curated group of aligned sponsors supports the event." Same length, same line count, and the rest of the answer is untouched.
+  - A version that also linked through to the Sponsors page was tested and set aside — it was better content but added three lines to the answer.
+
+- **Project notes (`CLAUDE.md`) brought back in line with the actual site.** These are the notes Claude reads at the start of every chat, so when they drift, every future session starts from a slightly wrong picture. Corrected: the speaker count (12 to 13), Rabbi Dr. Ephraim Rudolph added to the Friday roster, and the stylesheet version (47 to 54).
+  - Two older entries were **annotated rather than rewritten**, so the history stays intact: the July 24 speaker-reorganization note now carries a dated update saying Dr. Craig Berry is live again, and the open follow-up about "actively curating" / "tentative schedule" wording in the FAQ is now marked done, since both of those lines were already replaced.
+
+- **Deliberately left alone:** the live event slides (`liveslides/index.html`) still hold the August 27 deck, including a pink bar that reads "Hotel rates go up next week." Ben's call — the deck isn't linked from the site or searchable, and it gets rebuilt before the October 15 session anyway.
+
+---
+
 ## September 4, 2026
 
 - **Dr. Harold Katz's photo swapped again — the branded TheraBreath portrait you dropped in this afternoon.** It replaces the suit photo from this morning everywhere he appears: his card and bio pop-up on the Speakers page, his private review page, and the TheraBreath sponsor review page.
